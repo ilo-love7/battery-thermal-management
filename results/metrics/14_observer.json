@@ -1,0 +1,423 @@
+{
+ "scenario": "US06×3 循环（scale=2，峰值 ~3C），真值=两节点 h=500 冷板",
+ "noise_k": 0.05,
+ "n_cases": 27,
+ "nominal": {
+  "h_scale": 1.0,
+  "c_scale": 1.0,
+  "q_scale": 1.0,
+  "scenario": "full",
+  "core_err_rmse_k": 0.04338717188538241,
+  "core_err_max_k": 0.3920393741105208,
+  "within_3k_share": 1.0,
+  "diverged": false,
+  "innovation_rms_k": 0.05379810700648731
+ },
+ "pass_share": 1.0,
+ "us06_worst_rmse_k": 0.17133057114745956,
+ "sustained_3c": [
+  {
+   "r_int_scale": 0.7,
+   "q_scale": 0.7,
+   "steady_bias_k": -3.1096250374992715,
+   "steady_bias_theory_k": -3.2467608390746645,
+   "core_err_rmse_k": 3.023140950192598,
+   "core_err_max_k": 3.1538434924382024,
+   "within_3k_share": 0.1,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 0.7,
+   "q_scale": 1.0,
+   "steady_bias_k": -1.9242929407099203,
+   "steady_bias_theory_k": -1.909859317102744,
+   "core_err_rmse_k": 1.859136122279331,
+   "core_err_max_k": 1.9685113956488536,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 0.7,
+   "q_scale": 1.5,
+   "steady_bias_k": 0.051260553938992,
+   "steady_bias_theory_k": 0.31830988618378947,
+   "core_err_rmse_k": 0.14897120584020024,
+   "core_err_max_k": 0.6378343774284723,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 1.0,
+   "q_scale": 0.7,
+   "steady_bias_k": -1.5523820175810883,
+   "steady_bias_theory_k": -1.909859317102744,
+   "core_err_rmse_k": 1.5171451964082345,
+   "core_err_max_k": 1.6130652514796964,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 1.0,
+   "q_scale": 1.0,
+   "steady_bias_k": -0.01846777760464171,
+   "steady_bias_theory_k": 0.0,
+   "core_err_rmse_k": 0.029024860273378826,
+   "core_err_max_k": 0.08768341502482713,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 1.0,
+   "q_scale": 1.5,
+   "steady_bias_k": 2.5380559556894267,
+   "steady_bias_theory_k": 3.183098861837906,
+   "core_err_rmse_k": 2.490164437527953,
+   "core_err_max_k": 2.6014178626842295,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 1.3,
+   "q_scale": 0.7,
+   "steady_bias_k": 0.003565965819192722,
+   "steady_bias_theory_k": -0.5729577951308236,
+   "core_err_rmse_k": 0.10403254608579905,
+   "core_err_max_k": 0.41819099310373176,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 1.3,
+   "q_scale": 1.0,
+   "steady_bias_k": 1.8874555324596014,
+   "steady_bias_theory_k": 1.909859317102744,
+   "core_err_rmse_k": 1.822046899595624,
+   "core_err_max_k": 1.9588371426884876,
+   "within_3k_share": 1.0,
+   "diverged": false
+  },
+  {
+   "r_int_scale": 1.3,
+   "q_scale": 1.5,
+   "steady_bias_k": 5.027271476860299,
+   "steady_bias_theory_k": 6.047887837492023,
+   "core_err_rmse_k": 4.884395338939636,
+   "core_err_max_k": 5.098647761015862,
+   "within_3k_share": 0.03888888888888889,
+   "diverged": false
+  }
+ ],
+ "sustained_worst_bias_k": 5.027271476860299,
+ "verdict": "US06 动态工况：27/27 失配组合芯温 |err|<3 K 占比 ≥95%（最差 RMSE 0.17 K）——短时尖峰下观测器对失配鲁棒；持续 3C 应力：稳态偏差与理论值 (q·r−1)·Q·R_int 一致，最差 5.0 K，Q 失配是持续高倍率下的主误差源（须在线校核热源估计）",
+ "cases": [
+  {
+   "h_scale": 0.7,
+   "c_scale": 0.8,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.14362413346534753,
+   "core_err_max_k": 0.35791082628555415,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.054357215728291164
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 0.8,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.11226787229266265,
+   "core_err_max_k": 0.35791082974250443,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05509524997975239
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 0.8,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.08583492009893709,
+   "core_err_max_k": 0.357910835504093,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05869096719704034
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 1.0,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.1450706083978717,
+   "core_err_max_k": 0.4048122132086718,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05493624455290441
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 1.0,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.11344415679394143,
+   "core_err_max_k": 0.40481221636037645,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05524582382329934
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 1.0,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.07702690741761663,
+   "core_err_max_k": 0.40481222161323416,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05724607593787681
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 1.2,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.14675964694479862,
+   "core_err_max_k": 0.4348427164844004,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.055461897844381824
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 1.2,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.11543516681959425,
+   "core_err_max_k": 0.43484271941539987,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05558985973098558
+  },
+  {
+   "h_scale": 0.7,
+   "c_scale": 1.2,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.07369288843854996,
+   "core_err_max_k": 0.4348427243004096,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05680037885190013
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 0.8,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.061844798799448666,
+   "core_err_max_k": 0.34586409191526,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.053516093379464086
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 0.8,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.04574830154090308,
+   "core_err_max_k": 0.3458640954614687,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.053337024288004735
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 0.8,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.09245271022490989,
+   "core_err_max_k": 0.4182236752622863,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.055375233414375294
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 1.0,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.06375658995405757,
+   "core_err_max_k": 0.39203937089623864,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05407476505666324
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 1.0,
+   "q_scale": 1.0,
+   "scenario": "full",
+   "core_err_rmse_k": 0.04338717188538241,
+   "core_err_max_k": 0.3920393741105208,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05379810700648731
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 1.0,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.07579936619392838,
+   "core_err_max_k": 0.39203937946768264,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05478783748934975
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 1.2,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.06673973745275831,
+   "core_err_max_k": 0.4218989631817891,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05460546050917365
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 1.2,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.045188335375532,
+   "core_err_max_k": 0.4218989661578121,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.054326303044224714
+  },
+  {
+   "h_scale": 1.0,
+   "c_scale": 1.2,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.06638921160794528,
+   "core_err_max_k": 0.421898971117848,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05483338354741384
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 0.8,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.06781321047206114,
+   "core_err_max_k": 0.33312212564351285,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05373381352422968
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 0.8,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.09935206830695997,
+   "core_err_max_k": 0.3331221292944946,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.052727298613388894
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 0.8,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.17133057114745956,
+   "core_err_max_k": 0.5058967682239093,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05326808817513342
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 1.0,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.07616713493197537,
+   "core_err_max_k": 0.3788382558616057,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.053988730381636665
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 1.0,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.10101673114979638,
+   "core_err_max_k": 0.3788382591471269,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05317712492983848
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 1.0,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.1610993184177201,
+   "core_err_max_k": 0.37883826462300974,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05320462582136474
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 1.2,
+   "q_scale": 0.7,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.08270776925055981,
+   "core_err_max_k": 0.40861403033390076,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05434993096950739
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 1.2,
+   "q_scale": 1.0,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.10356519534195291,
+   "core_err_max_k": 0.40861403336018043,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.05369564669998416
+  },
+  {
+   "h_scale": 1.3,
+   "c_scale": 1.2,
+   "q_scale": 1.5,
+   "scenario": "mismatch",
+   "core_err_rmse_k": 0.15571963589383042,
+   "core_err_max_k": 0.40861403840403554,
+   "within_3k_share": 1.0,
+   "diverged": false,
+   "innovation_rms_k": 0.053534567508015905
+  }
+ ],
+ "calce_demo": {
+  "n_points": 1392,
+  "duration_s": 6979.606669715013,
+  "t_surface_range_k": [
+   26.757484436035156,
+   27.677783966064453
+  ],
+  "gap_max_k": 1.73756162702756,
+  "gap_p95_k": 1.6065893895423762,
+  "note": "无芯温真值，只演示 gap 估计量级（CALCE 温升 ~1 K，gap 估计应很小）"
+ },
+ "elapsed_s": 33.1
+}

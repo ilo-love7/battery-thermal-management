@@ -1,0 +1,353 @@
+{
+ "fluid": "FC-72 类介电流体（典型值）",
+ "fluid_note": "文献典型值（FC-72/Novec 类），非特定牌号实测",
+ "q_chf_wm2": 160384.73216984025,
+ "cell_area_m2": 0.00531,
+ "nominal_h_sp_1500": [
+  {
+   "q_w": 0.22603284251178593,
+   "q_avg_wm2": 42.56739030353784,
+   "q_local_wm2": 42.56739030353784,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.02837826020236,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 3767.784001466269,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 0.46774248066281776,
+    "h_eff": 91.0060387143315,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 0.7821775390520517,
+   "q_avg_wm2": 147.30273805123386,
+   "q_local_wm2": 147.30273805123386,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.09820182536749,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 1088.810257648139,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 0.7074863730048123,
+    "h_eff": 208.2057600991163,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 2.706693840589218,
+   "q_avg_wm2": 509.7351865516418,
+   "q_local_wm2": 509.7351865516418,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.339823457701094,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 314.6432430039662,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.0701122704916926,
+    "h_eff": 476.33804471509325,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 5.595155836631424,
+   "q_avg_wm2": 1053.701664149044,
+   "q_local_wm2": 1053.701664149044,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.70246777609936,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 152.2107610026078,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.3631815350549243,
+    "h_eff": 772.9723716559798,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 13.968032725935586,
+   "q_avg_wm2": 2630.514637652653,
+   "q_local_wm2": 2630.514637652653,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 26.75367642510177,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 60.97085713727866,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.8492461094689918,
+    "h_eff": 1422.4794764651426,
+    "q_chf": 160384.73216984025
+   }
+  }
+ ],
+ "degraded_h_sp_200": [
+  {
+   "q_w": 0.22603284251178593,
+   "q_avg_wm2": 42.56739030353784,
+   "q_local_wm2": 42.56739030353784,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.21283695151769,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 3767.784001466269,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 0.46774248066281776,
+    "h_eff": 91.0060387143315,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 0.7821775390520517,
+   "q_avg_wm2": 147.30273805123386,
+   "q_local_wm2": 147.30273805123386,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.73651369025617,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 1088.810257648139,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 0.7074863730048123,
+    "h_eff": 208.2057600991163,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 2.706693840589218,
+   "q_avg_wm2": 509.7351865516418,
+   "q_local_wm2": 509.7351865516418,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 27.548675932758208,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 314.6432430039662,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.0701122704916926,
+    "h_eff": 476.33804471509325,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 5.595155836631424,
+   "q_avg_wm2": 1053.701664149044,
+   "q_local_wm2": 1053.701664149044,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 30.26850832074522,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 152.2107610026078,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.3631815350549243,
+    "h_eff": 772.9723716559798,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 13.968032725935586,
+   "q_avg_wm2": 2630.514637652653,
+   "q_local_wm2": 2630.514637652653,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 38.15257318826327,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 60.97085713727866,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.8492461094689918,
+    "h_eff": 1422.4794764651426,
+    "q_chf": 160384.73216984025
+   }
+  }
+ ],
+ "poor_h_sp_50": [
+  {
+   "q_w": 0.22603284251178593,
+   "q_avg_wm2": 42.56739030353784,
+   "q_local_wm2": 42.56739030353784,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 25.851347806070756,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 3767.784001466269,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 0.46774248066281776,
+    "h_eff": 91.0060387143315,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 0.7821775390520517,
+   "q_avg_wm2": 147.30273805123386,
+   "q_local_wm2": 147.30273805123386,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 27.946054761024676,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 1088.810257648139,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 0.7074863730048123,
+    "h_eff": 208.2057600991163,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 2.706693840589218,
+   "q_avg_wm2": 509.7351865516418,
+   "q_local_wm2": 509.7351865516418,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 35.19470373103284,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 314.6432430039662,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.0701122704916926,
+    "h_eff": 476.33804471509325,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 5.595155836631424,
+   "q_avg_wm2": 1053.701664149044,
+   "q_local_wm2": 1053.701664149044,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 46.07403328298088,
+   "t_sat_c": 56.0,
+   "boiling_onset": false,
+   "regime": "single_phase_ok",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 152.2107610026078,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.3631815350549243,
+    "h_eff": 772.9723716559798,
+    "q_chf": 160384.73216984025
+   }
+  },
+  {
+   "q_w": 13.968032725935586,
+   "q_avg_wm2": 2630.514637652653,
+   "q_local_wm2": 2630.514637652653,
+   "hotspot_factor": 1.0,
+   "t_wall_single_phase_c": 77.61029275305307,
+   "t_sat_c": 56.0,
+   "boiling_onset": true,
+   "regime": "two_phase_required",
+   "q_chf_wm2": 160384.73216984025,
+   "chf_margin": 60.97085713727866,
+   "boiling": {
+    "regime": "nucleate_boiling",
+    "dt_e_k": 1.8492461094689918,
+    "h_eff": 1422.4794764651426,
+    "q_chf": 160384.73216984025
+   }
+  }
+ ],
+ "hotspot_to_chf": [
+  {
+   "c_rate": 0.5,
+   "q_avg_wm2": 42.56739030353784,
+   "factor_to_chf": 3767.784001466269
+  },
+  {
+   "c_rate": 1.0,
+   "q_avg_wm2": 147.30273805123386,
+   "factor_to_chf": 1088.810257648139
+  },
+  {
+   "c_rate": 2.0,
+   "q_avg_wm2": 509.7351865516418,
+   "factor_to_chf": 314.6432430039662
+  },
+  {
+   "c_rate": 3.0,
+   "q_avg_wm2": 1053.701664149044,
+   "factor_to_chf": 152.2107610026078
+  },
+  {
+   "c_rate": 5.0,
+   "q_avg_wm2": 2630.514637652653,
+   "factor_to_chf": 60.97085713727866
+  }
+ ],
+ "onset_threshold_h_sp": {
+  "3c": 33.99037626287239,
+  "5c": 84.85531089202107
+ },
+ "boiling_h_eff": {
+  "0.5": {
+   "regime": "nucleate_boiling",
+   "dt_e_k": 0.46774248066281776,
+   "h_eff": 91.0060387143315,
+   "q_chf": 160384.73216984025
+  },
+  "1.0": {
+   "regime": "nucleate_boiling",
+   "dt_e_k": 0.7074863730048123,
+   "h_eff": 208.2057600991163,
+   "q_chf": 160384.73216984025
+  },
+  "2.0": {
+   "regime": "nucleate_boiling",
+   "dt_e_k": 1.0701122704916926,
+   "h_eff": 476.33804471509325,
+   "q_chf": 160384.73216984025
+  },
+  "3.0": {
+   "regime": "nucleate_boiling",
+   "dt_e_k": 1.3631815350549243,
+   "h_eff": 772.9723716559798,
+   "q_chf": 160384.73216984025
+  },
+  "5.0": {
+   "regime": "nucleate_boiling",
+   "dt_e_k": 1.8492461094689918,
+   "h_eff": 1422.4794764651426,
+   "q_chf": 160384.73216984025
+  }
+ },
+ "findings": [
+  "CHF（Zuber 大平板池沸腾）= 16.0 W/cm²，与 FC-72 类介电体文献量级（11–15 W/cm²）一致；电芯平均热流 5C 仅 2631 W/m²，CHF 裕度 61×——CHF 不是电芯级约束",
+  "等效 h=1500（单相标称）：全倍率壁温 ≤ 26.8 °C < T_sat 56 °C，单相假设成立；循环退化到 h_sp=50 时 5C 壁温 77.6 °C 逼近沸点",
+  "失效边界（反解）：3C 下 h_sp < 34、5C 下 h_sp < 85 W/(m²·K) 时壁温达沸点，必须换两相模型——即'循环丧失'而不是'热流过大'触发两相",
+  "局部热点放大到 61× 才撞 CHF；两相设计的必要性来自**均匀性与循环可靠性**，不是平均热流",
+  "若进入核态沸腾，h_eff 是负荷的函数（3C 约 773 W/(m²·K)），不再是常数 1500——这就是'等效 h'表达在两相区失效的机制"
+ ],
+ "elapsed_s": 0.0
+}
