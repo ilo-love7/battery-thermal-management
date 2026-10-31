@@ -48,6 +48,12 @@ def setup_style() -> None:
     })
 
 
+def subplots(*args, **kwargs):
+    """``plt.subplots`` 的薄封装，统一风格。"""
+    setup_style()
+    return plt.subplots(*args, **kwargs)
+
+
 def save(fig, name: str, out_dir: Path | None = None) -> Path:
     setup_style()
     out = Path(out_dir) if out_dir else FIG_DIR

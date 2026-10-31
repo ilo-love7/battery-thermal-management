@@ -1,0 +1,377 @@
+{
+ "q_3c_w": 5.587966566449906,
+ "tm_latent_scan": [
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 35.0,
+   "latent_j": 60.0,
+   "t_peak_enthalpy_c": 135.07712273970003,
+   "t_peak_equiv_c": 130.41189989003036,
+   "peak_diff_k": -4.665222849669675,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.05375770499478,
+   "t_peak_equiv_c": 124.06376905378966,
+   "peak_diff_k": -10.989988651205124,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 35.0,
+   "latent_j": 240.0,
+   "t_peak_enthalpy_c": 135.00604936982822,
+   "t_peak_equiv_c": 110.96867346465596,
+   "peak_diff_k": -24.037375905172254,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 45.0,
+   "latent_j": 60.0,
+   "t_peak_enthalpy_c": 135.07458893197273,
+   "t_peak_equiv_c": 130.41189989003036,
+   "peak_diff_k": -4.662689041942372,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.04861578227064,
+   "t_peak_equiv_c": 124.06376905378966,
+   "peak_diff_k": -10.984846728480989,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 45.0,
+   "latent_j": 240.0,
+   "t_peak_enthalpy_c": 134.99546189364943,
+   "t_peak_equiv_c": 110.96867346465596,
+   "peak_diff_k": -24.02678842899347,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 55.0,
+   "latent_j": 60.0,
+   "t_peak_enthalpy_c": 135.07143027266602,
+   "t_peak_equiv_c": 130.41189989003036,
+   "peak_diff_k": -4.6595303826356655,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.04219500690533,
+   "t_peak_equiv_c": 124.06376905378966,
+   "peak_diff_k": -10.978425953115675,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.587966566449906,
+   "t_melt_c": 55.0,
+   "latent_j": 240.0,
+   "t_peak_enthalpy_c": 134.98219645790846,
+   "t_peak_equiv_c": 110.96867346465596,
+   "peak_diff_k": -24.013522993252494,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  }
+ ],
+ "q_scan": [
+  {
+   "q_w": 1.0,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 44.60247701331548,
+   "t_peak_equiv_c": 42.728053286604634,
+   "peak_diff_k": -1.8744237267108446,
+   "melt_final": 0.9999324433850892,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 1.0,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 44.39090822915743,
+   "t_peak_equiv_c": 42.728053286604634,
+   "peak_diff_k": -1.6628549425527979,
+   "melt_final": 0.3522664050955551,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 1.0,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 44.703048309312734,
+   "t_peak_equiv_c": 42.728053286604634,
+   "peak_diff_k": -1.9749950227081001,
+   "melt_final": 3.373463762029738e-05,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 2.5,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 74.20363805967845,
+   "t_peak_equiv_c": 69.32013321651166,
+   "peak_diff_k": -4.88350484316679,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 2.5,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 74.18462568269948,
+   "t_peak_equiv_c": 69.32013321651166,
+   "peak_diff_k": -4.864492466187812,
+   "melt_final": 0.9999999999997885,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 2.5,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 74.14485082626072,
+   "t_peak_equiv_c": 69.32013321651166,
+   "peak_diff_k": -4.824717609749058,
+   "melt_final": 0.9999999951527332,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.6,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.29086483913602,
+   "t_peak_equiv_c": 124.2770984049863,
+   "peak_diff_k": -11.013766434149716,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.6,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.28573784395329,
+   "t_peak_equiv_c": 124.2770984049863,
+   "peak_diff_k": -11.00863943896698,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.6,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.27933953582212,
+   "t_peak_equiv_c": 124.2770984049863,
+   "peak_diff_k": -11.002241130835813,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 9.0,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 202.28326274243648,
+   "t_peak_equiv_c": 184.55247957944243,
+   "peak_diff_k": -17.730783162994044,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 9.0,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 202.28045490944945,
+   "t_peak_equiv_c": 184.55247957944243,
+   "peak_diff_k": -17.727975330007013,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 9.0,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 202.2772710292617,
+   "t_peak_equiv_c": 184.55247957944243,
+   "peak_diff_k": -17.724791449819264,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 14.0,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 300.79973663671274,
+   "t_peak_equiv_c": 273.19274601246633,
+   "peak_diff_k": -27.606990624246407,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 14.0,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 300.79805463287204,
+   "t_peak_equiv_c": 273.19274601246633,
+   "peak_diff_k": -27.605308620405708,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 14.0,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 300.79623907064183,
+   "t_peak_equiv_c": 273.19274601246633,
+   "peak_diff_k": -27.603493058175502,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  }
+ ],
+ "failure_rule": "|ΔT_peak| > 2 K → 等效热容法失效",
+ "failure_points": [
+  {
+   "q_w": 2.5,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 74.20363805967845,
+   "t_peak_equiv_c": 69.32013321651166,
+   "peak_diff_k": -4.88350484316679,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 2.5,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 74.18462568269948,
+   "t_peak_equiv_c": 69.32013321651166,
+   "peak_diff_k": -4.864492466187812,
+   "melt_final": 0.9999999999997885,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 2.5,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 74.14485082626072,
+   "t_peak_equiv_c": 69.32013321651166,
+   "peak_diff_k": -4.824717609749058,
+   "melt_final": 0.9999999951527332,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.6,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.29086483913602,
+   "t_peak_equiv_c": 124.2770984049863,
+   "peak_diff_k": -11.013766434149716,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.6,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.28573784395329,
+   "t_peak_equiv_c": 124.2770984049863,
+   "peak_diff_k": -11.00863943896698,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 5.6,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 135.27933953582212,
+   "t_peak_equiv_c": 124.2770984049863,
+   "peak_diff_k": -11.002241130835813,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 9.0,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 202.28326274243648,
+   "t_peak_equiv_c": 184.55247957944243,
+   "peak_diff_k": -17.730783162994044,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 9.0,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 202.28045490944945,
+   "t_peak_equiv_c": 184.55247957944243,
+   "peak_diff_k": -17.727975330007013,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 9.0,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 202.2772710292617,
+   "t_peak_equiv_c": 184.55247957944243,
+   "peak_diff_k": -17.724791449819264,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 14.0,
+   "t_melt_c": 35.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 300.79973663671274,
+   "t_peak_equiv_c": 273.19274601246633,
+   "peak_diff_k": -27.606990624246407,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 14.0,
+   "t_melt_c": 45.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 300.79805463287204,
+   "t_peak_equiv_c": 273.19274601246633,
+   "peak_diff_k": -27.605308620405708,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  },
+  {
+   "q_w": 14.0,
+   "t_melt_c": 55.0,
+   "latent_j": 120.0,
+   "t_peak_enthalpy_c": 300.79623907064183,
+   "t_peak_equiv_c": 273.19274601246633,
+   "peak_diff_k": -27.603493058175502,
+   "melt_final": 1.0,
+   "equiv_overestimates": false
+  }
+ ],
+ "findings": [
+  "方向与直觉相反：等效热容法**低估**峰值（差为负）——它把潜热永久摊进热容，熔完后还在'保护'；焓法熔完保护消失、温度快速跟随功率。**焓法是悲观/真实的一侧**",
+  "Tm 不改变 1 小时峰值（都熔完后稳态相同），只改变钉扎时长——评价 PCM 不能只看峰值，要看'Tm 以上还能撑多久'",
+  "失效边界（|ΔT|>2 K）从 Q≈2.5 W 起（即 2C 以上）：2C 以下两法可互换，3C 以上必须用焓法",
+  "这正是'PCM 不能替代散热'的定量证据：L=240 J 也只把1 小时峰值从 111 压到 135→两法都远超安全线，只是路径不同"
+ ],
+ "elapsed_s": 1.1
+}

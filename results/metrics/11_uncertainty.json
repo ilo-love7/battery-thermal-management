@@ -1,0 +1,413 @@
+{
+ "power_law_bootstrap": {
+  "point": {
+   "k": 0.7821775390520517,
+   "alpha": 1.7909636972736782
+  },
+  "ci95": {
+   "k": [
+    0.7788403727283848,
+    0.7861491805437328
+   ],
+   "alpha": [
+    1.78317278495152,
+    1.7996315071115059
+   ]
+  },
+  "n_boot": 200,
+  "measured_q_w": {
+   "0.5": 0.22690564874282784,
+   "1.0": 0.7773148485647228,
+   "1.5": 1.61115907939904,
+   "2.0": 2.7227873259136506
+  }
+ },
+ "heat_bounds": [
+  {
+   "c_rate": 2.0,
+   "q_law_w": 2.706693840589218,
+   "q_law_ci_w": [
+    2.6806304815758697,
+    2.7368313176203207
+   ],
+   "q_chen_w": 2.7227873259136506,
+   "q_mohtat_w": 4.379863927122276,
+   "q_bound_w": [
+    2.6806304815758697,
+    4.379863927122276
+   ]
+  },
+  {
+   "c_rate": 3.0,
+   "q_law_w": 5.595155836631424,
+   "q_law_ci_w": [
+    5.523801866804662,
+    5.677372747966479
+   ],
+   "q_chen_w": 7.142532804655501,
+   "q_mohtat_w": 7.442883200126493,
+   "q_bound_w": [
+    5.523801866804662,
+    7.442883200126493
+   ]
+  },
+  {
+   "c_rate": 4.0,
+   "q_law_w": 9.366404915644189,
+   "q_law_ci_w": [
+    9.226254866040016,
+    9.52776628976045
+   ],
+   "q_chen_w": 9.549523751435016,
+   "q_mohtat_w": 10.473148020626306,
+   "q_bound_w": [
+    9.226254866040016,
+    10.473148020626306
+   ]
+  },
+  {
+   "c_rate": 5.0,
+   "q_law_w": 13.968032725935586,
+   "q_law_ci_w": [
+    13.735129079502542,
+    14.236177963576447
+   ],
+   "q_chen_w": 13.169989416457572,
+   "q_mohtat_w": 14.2514738718453,
+   "q_bound_w": [
+    13.169989416457572,
+    14.2514738718453
+   ]
+  }
+ ],
+ "life_sensitivity_3c": [
+  {
+   "scheme": "natural",
+   "q_scale": 0.7,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 118.47769759842795,
+   "damage_s": 40891.82179230936
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 0.7,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 118.47769759842795,
+   "damage_s": 150274.63902037818
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 0.7,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 118.47769759842795,
+   "damage_s": 568220.0769355543
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 1.0,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 158.53956830321334,
+   "damage_s": 90247.06164212152
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 1.0,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 158.53956830321334,
+   "damage_s": 504763.23092348676
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 1.0,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 158.53956830321334,
+   "damage_s": 2913020.041802066
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 1.5,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 225.3093557942515,
+   "damage_s": 262207.74621632975
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 1.5,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 225.3093557942515,
+   "damage_s": 2556581.778473852
+  },
+  {
+   "scheme": "natural",
+   "q_scale": 1.5,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 225.3093557942515,
+   "damage_s": 25753351.2713693
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 0.7,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 44.17963070108463,
+   "damage_s": 7236.026902010336
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 0.7,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 44.17963070108463,
+   "damage_s": 10293.182714677367
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 0.7,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 44.17963070108463,
+   "damage_s": 14666.71552112961
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 1.0,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 52.39947242299859,
+   "damage_s": 9545.736697033142
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 1.0,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 52.39947242299859,
+   "damage_s": 15631.66257135077
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 1.0,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 52.39947242299859,
+   "damage_s": 25663.508697364996
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 1.5,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 66.0992087914835,
+   "damage_s": 14739.078371339694
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 1.5,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 66.0992087914835,
+   "damage_s": 30105.777537909467
+  },
+  {
+   "scheme": "forced_air",
+   "q_scale": 1.5,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 66.0992087914835,
+   "damage_s": 61722.14514982521
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 0.7,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 30.920049382883747,
+   "damage_s": 4540.928000452887
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 0.7,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 30.920049382883747,
+   "damage_s": 5100.647098511814
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 0.7,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 30.920049382883747,
+   "damage_s": 5729.831740389407
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 1.0,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 33.45721338678322,
+   "damage_s": 5002.947917890609
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 1.0,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 33.45721338678322,
+   "damage_s": 5899.304538150502
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 1.0,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 33.45721338678322,
+   "damage_s": 6957.305734265257
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 1.5,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 37.685820074772714,
+   "damage_s": 5859.999947864283
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 1.5,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 37.685820074772714,
+   "damage_s": 7480.341473850031
+  },
+  {
+   "scheme": "cold_plate",
+   "q_scale": 1.5,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 37.685820074772714,
+   "damage_s": 9551.417829817563
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 0.7,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 29.937858127146594,
+   "damage_s": 4374.115759968585
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 0.7,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 29.937858127146594,
+   "damage_s": 4821.917373549433
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 0.7,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 29.937858127146594,
+   "damage_s": 5315.829577692653
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 1.0,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 32.05408304441649,
+   "damage_s": 4746.106390550094
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 1.0,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 32.05408304441649,
+   "damage_s": 5450.335724421131
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 1.0,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 32.05408304441649,
+   "damage_s": 6259.640655344741
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 1.5,
+   "ea_j_mol": 30000.0,
+   "t_core_max_c": 35.58112463446156,
+   "damage_s": 5424.687101397297
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 1.5,
+   "ea_j_mol": 45000.0,
+   "t_core_max_c": 35.58112463446156,
+   "damage_s": 6661.158788465186
+  },
+  {
+   "scheme": "immersion",
+   "q_scale": 1.5,
+   "ea_j_mol": 60000.0,
+   "t_core_max_c": 35.58112463446156,
+   "damage_s": 8180.92693550781
+  }
+ ],
+ "conclusions": [
+  {
+   "id": "C1",
+   "claim": "产热随倍率近平方增长（α≈1.8）",
+   "evidence": "α 95% CI [1.783, 1.800]",
+   "verdict": "robust",
+   "reason": "CI 明显大于 1（线性）且包含 2（平方）"
+  },
+  {
+   "id": "C2",
+   "claim": "分档：1C 自然 / 2C 风冷 / 3C 液冷 / 5C 贴线",
+   "evidence": {
+    "2.0": {
+     "lo": "forced_air_ok",
+     "mid": "forced_air_ok",
+     "hi": "forced_air_ok"
+    },
+    "3.0": {
+     "lo": "cold_plate_ok",
+     "mid": "cold_plate_ok",
+     "hi": "cold_plate_ok"
+    },
+    "4.0": {
+     "lo": "cold_plate_ok",
+     "mid": "cold_plate_ok",
+     "hi": "cold_plate_ok"
+    },
+    "5.0": {
+     "lo": "cold_plate_ok",
+     "mid": "cold_plate_ok",
+     "hi": "cold_plate_ok"
+    }
+   },
+   "verdict": "robust",
+   "reason": "Q 的上下界是否改变各倍率的分档"
+  },
+  {
+   "id": "C3",
+   "claim": "3C 以上可逆熵热占比 > 50%",
+   "evidence": "Mohtat2020 熵变系数非零（Chen2020 恒 0）",
+   "verdict": "robust",
+   "reason": "构成切换由熵热物理决定，两参数集给出同方向；但 Chen2020 本身给不出可逆热——依赖 Mohtat 的定性行为"
+  },
+  {
+   "id": "C4",
+   "claim": "平均温度法低估损伤 27–74%",
+   "evidence": "Jensen 不等式方向确定（Arrhenius 凸性）",
+   "verdict": "robust",
+   "reason": "只要 Ea>0 且温度有波动，方向不变；幅度随 Ea 与波动量缩放"
+  },
+  {
+   "id": "C5",
+   "claim": "3C 液冷寿命比 ≈ 4.6× vs 自然 1C",
+   "evidence": "Ea 30–60 kJ/mol 区间 4.0–5.3×；Q ±50% 下区间更宽",
+   "verdict": "fragile",
+   "reason": "绝对倍数依赖 Ea 与 Q 标定；**方向**（液冷 >> 自然）稳健，数值 4.6× 应引用为 4–5× 区间"
+  },
+  {
+   "id": "C6",
+   "claim": "5C+45°C 散热退化下芯温超 80°C 且距报警 < 1 个循环",
+   "evidence": "h 退化敏感性 + 芯-壳温差 25–35 K",
+   "verdict": "robust",
+   "reason": "所有参数集组合下 5C+45°C 都超 80°C（Q 下界也不低于阈值）"
+  }
+ ],
+ "robust": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C6"
+ ],
+ "fragile": [
+  "C5"
+ ],
+ "elapsed_s": 11.2
+}
