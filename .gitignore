@@ -1,0 +1,20 @@
+# 大体积中间产物（可重算，不进 git）
+results/cache/
+results/*.log
+
+# 说明：results/figures/*.png 是报告的配图（约 1.5 MB），**进 git**，
+# 否则 GitHub 上的报告里所有图都是断链。
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,255 @@
+{
+  "baseline": "natural convection @ 1C, 25 °C ambient",
+  "ea_grid_j_mol": [
+    30000.0,
+    45000.0,
+    60000.0
+  ],
+  "life_table": [
+    {
+      "c_rate": 1.0,
+      "scheme": "natural",
+      "scheme_name": "自然对流",
+      "t_max_core_c": 44.32994676405967,
+      "damage_s": 7440.311063663149,
+      "life_ratio_vs_natural_1c": 1.0,
+      "life_ratio_ea30k": 1.0,
+      "life_ratio_ea45k": 1.0,
+      "life_ratio_ea60k": 1.0
+    },
+    {
+      "c_rate": 1.0,
+      "scheme": "forced_air",
+      "scheme_name": "强制风冷",
+      "t_max_core_c": 29.36018905556163,
+      "damage_s": 4142.138988884849,
+      "life_ratio_vs_natural_1c": 1.7962485285087542,
+      "life_ratio_ea30k": 1.4673077128047365,
+      "life_ratio_ea45k": 1.7962485285087542,
+      "life_ratio_ea60k": 2.212391683815151
+    },
+    {
+      "c_rate": 1.0,
+      "scheme": "cold_plate",
+      "scheme_name": "底部液冷板",
+      "t_max_core_c": 26.379373064974803,
+      "damage_s": 3583.1029758716213,
+      "life_ratio_vs_natural_1c": 2.076499367661413,
+      "life_ratio_ea30k": 1.615982392011177,
+      "life_ratio_ea45k": 2.076499367661413,
+      "life_ratio_ea60k": 2.6849468899992597
+    },
+    {
+      "c_rate": 1.0,
+      "scheme": "immersion",
+      "scheme_name": "浸没式",
+      "t_max_core_c": 26.15150171904727,
+      "damage_s": 3542.4287886671746,
+      "life_ratio_vs_natural_1c": 2.100341745038307,
+      "life_ratio_ea30k": 1.6283247411491542,
+      "life_ratio_ea45k": 2.100341745038307,
+      "life_ratio_ea60k": 2.726143099472638
+    },
+    {
+      "c_rate": 1.0,
+      "scheme": "pcm",
+      "scheme_name": "PCM 复合（自然对流基底）",
+      "t_max_core_c": 36.61298060196658,
+      "damage_s": 5018.605385423651,
+      "life_ratio_vs_natural_1c": 1.482545546472582,
+      "life_ratio_ea30k": 1.2953968111129184,
+      "life_ratio_ea45k": 1.482545546472582,
+      "life_ratio_ea60k": 1.7015864984468272
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "natural",
+      "scheme_name": "自然对流",
+      "t_max_core_c": 111.3915391103975,
+      "damage_s": 11622.042658585784,
+      "life_ratio_vs_natural_1c": 0.6401896191773672,
+      "life_ratio_ea30k": 1.1660754008788523,
+      "life_ratio_ea45k": 0.6401896191773672,
+      "life_ratio_ea60k": 0.3272878505862497
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "forced_air",
+      "scheme_name": "强制风冷",
+      "t_max_core_c": 64.9280810940515,
+      "damage_s": 3011.67855265232,
+      "life_ratio_vs_natural_1c": 2.470486452516863,
+      "life_ratio_ea30k": 2.67629424624823,
+      "life_ratio_ea45k": 2.470486452516863,
+      "life_ratio_ea60k": 2.252788562504604
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "cold_plate",
+      "scheme_name": "底部液冷板",
+      "t_max_core_c": 43.48161780000692,
+      "damage_s": 1619.2996990826682,
+      "life_ratio_vs_natural_1c": 4.594770855498879,
+      "life_ratio_ea30k": 3.998191402596505,
+      "life_ratio_ea45k": 4.594770855498879,
+      "life_ratio_ea60k": 5.291399988976495
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "immersion",
+      "scheme_name": "浸没式",
+      "t_max_core_c": 41.093615632951085,
+      "damage_s": 1526.6897312919714,
+      "life_ratio_vs_natural_1c": 4.87349257099328,
+      "life_ratio_ea30k": 4.1547397087826266,
+      "life_ratio_ea45k": 4.87349257099328,
+      "life_ratio_ea60k": 5.734388573206569
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "pcm",
+      "scheme_name": "PCM 复合（自然对流基底）",
+      "t_max_core_c": 63.820196681322976,
+      "damage_s": 2908.904821217834,
+      "life_ratio_vs_natural_1c": 2.557770542849253,
+      "life_ratio_ea30k": 2.760761899570998,
+      "life_ratio_ea45k": 2.557770542849253,
+      "life_ratio_ea60k": 2.3237952292500976
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "natural",
+      "scheme_name": "自然对流",
+      "t_max_core_c": 169.07144458936588,
+      "damage_s": 28186.99367029389,
+      "life_ratio_vs_natural_1c": 0.26396256197781215,
+      "life_ratio_ea30k": 0.8536955108875918,
+      "life_ratio_ea45k": 0.26396256197781215,
+      "life_ratio_ea60k": 0.07254171467755889
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "forced_air",
+      "scheme_name": "强制风冷",
+      "t_max_core_c": 104.53237187796842,
+      "damage_s": 5246.47897884095,
+      "life_ratio_vs_natural_1c": 1.4181532211736527,
+      "life_ratio_ea30k": 2.3406086368185752,
+      "life_ratio_ea45k": 1.4181532211736527,
+      "life_ratio_ea60k": 0.8100566434948602
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "cold_plate",
+      "scheme_name": "底部液冷板",
+      "t_max_core_c": 64.01327226516194,
+      "damage_s": 1564.8298337525653,
+      "life_ratio_vs_natural_1c": 4.754709364034038,
+      "life_ratio_ea30k": 5.004426153154531,
+      "life_ratio_ea45k": 4.754709364034038,
+      "life_ratio_ea60k": 4.457975342183686
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "immersion",
+      "scheme_name": "浸没式",
+      "t_max_core_c": 59.3726420295717,
+      "damage_s": 1374.1771322380907,
+      "life_ratio_vs_natural_1c": 5.414375548183723,
+      "life_ratio_ea30k": 5.438874116262774,
+      "life_ratio_ea45k": 5.414375548183723,
+      "life_ratio_ea60k": 5.341410193010204
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "pcm",
+      "scheme_name": "PCM 复合（自然对流基底）",
+      "t_max_core_c": 89.6585896455232,
+      "damage_s": 3238.710892669083,
+      "life_ratio_vs_natural_1c": 2.2973063389216097,
+      "life_ratio_ea30k": 3.2191544690601055,
+      "life_ratio_ea45k": 2.2973063389216097,
+      "life_ratio_ea60k": 1.5491395347399528
+    }
+  ],
+  "mean_temperature_bias": [
+    {
+      "c_rate": 1.0,
+      "scheme": "natural",
+      "t_mean_c": 33.2786114411473,
+      "t_eff_c": 38.761467485687206,
+      "bias_k": 5.482856044539908,
+      "damage_underestimate_pct": 26.69002378917208,
+      "life_error_pct": 36.40708286743373
+    },
+    {
+      "c_rate": 1.0,
+      "scheme": "cold_plate",
+      "t_mean_c": 25.905694892538783,
+      "t_eff_c": 26.157705334227842,
+      "bias_k": 0.25201044168905895,
+      "damage_underestimate_pct": 1.5122451838313733,
+      "life_error_pct": 1.53546518209704
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "natural",
+      "t_mean_c": 55.59375438059094,
+      "t_eff_c": 69.66900807087836,
+      "bias_k": 14.075253690287425,
+      "damage_underestimate_pct": 49.13251346982149,
+      "life_error_pct": 96.58922982300746
+    },
+    {
+      "c_rate": 3.0,
+      "scheme": "cold_plate",
+      "t_mean_c": 30.729567865249503,
+      "t_eff_c": 31.621387960786535,
+      "bias_k": 0.8918200955370317,
+      "damage_underestimate_pct": 5.078225296193628,
+      "life_error_pct": 5.349905553325041
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "natural",
+      "t_mean_c": 72.02592113778742,
+      "t_eff_c": 104.44867989765066,
+      "bias_k": 32.42275875986324,
+      "damage_underestimate_pct": 73.98112665574929,
+      "life_error_pct": 284.336395649878
+    },
+    {
+      "c_rate": 5.0,
+      "scheme": "cold_plate",
+      "t_mean_c": 37.66839720410429,
+      "t_eff_c": 41.06958477387258,
+      "bias_k": 3.4011875697682896,
+      "damage_underestimate_pct": 17.17842521898466,
+      "life_error_pct": 20.74148585607716
+    }
+  ],
+  "duty_vs_constant": [
+    {
+      "scheme": "natural",
+      "t_max_core_c": 26.174244049927946,
+      "damage_dynamic_s": 624.7655202536355,
+      "damage_mean_equiv_s": 622.9293989522101,
+      "dynamic_penalty_pct": 0.2947559233058783
+    },
+    {
+      "scheme": "forced_air",
+      "t_max_core_c": 25.537636872025455,
+      "damage_dynamic_s": 612.9239460443721,
+      "damage_mean_equiv_s": 612.4610027689159,
+      "dynamic_penalty_pct": 0.07558738815420796
+    },
+    {
+      "scheme": "cold_plate",
+      "t_max_core_c": 25.26104474104857,
+      "damage_dynamic_s": 604.4048711410401,
+      "damage_mean_equiv_s": 604.4461272369671,
+      "dynamic_penalty_pct": -0.0068254380445109675
+    }
+  ],
+  "elapsed_s": 6.9
+}

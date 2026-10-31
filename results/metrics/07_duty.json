@@ -1,0 +1,259 @@
+{
+  "provenance": "CALCE A123 (LFP) 25 °C DST-US06-FUDS 动态放电段，US06 前 600 s，按 2.5 Ah 标称容量归一为 C 率（与 A4 项目同源）",
+  "profile_stats": {
+    "mean_c": 0.2113974281438222,
+    "peak_c": 1.4604445846880638,
+    "regen_min_c": -0.26427351247651876,
+    "duration_s": 600.0
+  },
+  "dfn_q": {
+    "q_mean_w": 0.11123429439378946,
+    "q_peak_w": 1.5218379683015506
+  },
+  "matrix": [
+    {
+      "duty": "US06",
+      "scheme": "natural",
+      "scheme_name": "自然对流",
+      "h": 8.0,
+      "t_amb_c": 25.0,
+      "t_max_c": 26.33549025596593,
+      "t_rise_k": 1.3354902559659294,
+      "core_surface_gap_k": 0.16199341536109202,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "forced_air",
+      "scheme_name": "强制风冷",
+      "h": 50.0,
+      "t_amb_c": 25.0,
+      "t_max_c": 25.611667229947955,
+      "t_rise_k": 0.6116672299479546,
+      "core_surface_gap_k": 0.20659999756629688,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "cold_plate",
+      "scheme_name": "底部液冷板",
+      "h": 500.0,
+      "t_amb_c": 25.0,
+      "t_max_c": 25.288161045070417,
+      "t_rise_k": 0.2881610450704173,
+      "core_surface_gap_k": 0.21732344920274826,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "immersion",
+      "scheme_name": "浸没式",
+      "h": 1500.0,
+      "t_amb_c": 25.0,
+      "t_max_c": 25.261653442240817,
+      "t_rise_k": 0.2616534422408172,
+      "core_surface_gap_k": 0.23594623203711862,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "pcm",
+      "scheme_name": "PCM 复合（自然对流基底）",
+      "h": 8.0,
+      "t_amb_c": 25.0,
+      "t_max_c": 25.593457174435823,
+      "t_rise_k": 0.593457174435823,
+      "core_surface_gap_k": 0.22200977043158687,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "natural",
+      "scheme_name": "自然对流",
+      "h": 8.0,
+      "t_amb_c": 35.0,
+      "t_max_c": 36.335502299159856,
+      "t_rise_k": 1.335502299159856,
+      "core_surface_gap_k": 0.16199693940659898,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "forced_air",
+      "scheme_name": "强制风冷",
+      "h": 50.0,
+      "t_amb_c": 35.0,
+      "t_max_c": 35.6116726145682,
+      "t_rise_k": 0.6116726145681994,
+      "core_surface_gap_k": 0.20659763571715217,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "cold_plate",
+      "scheme_name": "底部液冷板",
+      "h": 500.0,
+      "t_amb_c": 35.0,
+      "t_max_c": 35.28819621371523,
+      "t_rise_k": 0.2881962137152314,
+      "core_surface_gap_k": 0.21734987216625257,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "immersion",
+      "scheme_name": "浸没式",
+      "h": 1500.0,
+      "t_amb_c": 35.0,
+      "t_max_c": 35.261653664663754,
+      "t_rise_k": 0.26165366466375417,
+      "core_surface_gap_k": 0.23594628127636952,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "pcm",
+      "scheme_name": "PCM 复合（自然对流基底）",
+      "h": 8.0,
+      "t_amb_c": 35.0,
+      "t_max_c": 35.59345256442222,
+      "t_rise_k": 0.5934525644222219,
+      "core_surface_gap_k": 0.22201317023252898,
+      "pass_45c": true
+    },
+    {
+      "duty": "US06",
+      "scheme": "natural",
+      "scheme_name": "自然对流",
+      "h": 8.0,
+      "t_amb_c": 45.0,
+      "t_max_c": 46.335496474994194,
+      "t_rise_k": 1.3354964749941942,
+      "core_surface_gap_k": 0.16199478075707674,
+      "pass_45c": false
+    },
+    {
+      "duty": "US06",
+      "scheme": "forced_air",
+      "scheme_name": "强制风冷",
+      "h": 50.0,
+      "t_amb_c": 45.0,
+      "t_max_c": 45.611663598487546,
+      "t_rise_k": 0.6116635984875458,
+      "core_surface_gap_k": 0.20660006813595544,
+      "pass_45c": false
+    },
+    {
+      "duty": "US06",
+      "scheme": "cold_plate",
+      "scheme_name": "底部液冷板",
+      "h": 500.0,
+      "t_amb_c": 45.0,
+      "t_max_c": 45.2881752623702,
+      "t_rise_k": 0.28817526237020274,
+      "core_surface_gap_k": 0.21733409370540357,
+      "pass_45c": false
+    },
+    {
+      "duty": "US06",
+      "scheme": "immersion",
+      "scheme_name": "浸没式",
+      "h": 1500.0,
+      "t_amb_c": 45.0,
+      "t_max_c": 45.26165209712987,
+      "t_rise_k": 0.26165209712986837,
+      "core_surface_gap_k": 0.23594505846372726,
+      "pass_45c": false
+    },
+    {
+      "duty": "US06",
+      "scheme": "pcm",
+      "scheme_name": "PCM 复合（自然对流基底）",
+      "h": 8.0,
+      "t_amb_c": 45.0,
+      "t_max_c": 45.59345955366585,
+      "t_rise_k": 0.593459553665852,
+      "core_surface_gap_k": 0.2220150642920089,
+      "pass_45c": false
+    }
+  ],
+  "repeat_stress": [
+    {
+      "scheme": "natural",
+      "t_amb_c": 35.0,
+      "t_max_1cycle_c": 36.335502299159856,
+      "t_max_3cycle_c": 38.22241254957523,
+      "accumulation_k": 1.8869102504153759
+    },
+    {
+      "scheme": "forced_air",
+      "t_amb_c": 35.0,
+      "t_max_1cycle_c": 35.6116726145682,
+      "t_max_3cycle_c": 36.066837007562306,
+      "accumulation_k": 0.4551643929941065
+    },
+    {
+      "scheme": "cold_plate",
+      "t_amb_c": 35.0,
+      "t_max_1cycle_c": 35.28819621371523,
+      "t_max_3cycle_c": 35.47639465267341,
+      "accumulation_k": 0.18819843895818167
+    },
+    {
+      "scheme": "pcm",
+      "t_amb_c": 35.0,
+      "t_max_1cycle_c": 35.59345256442222,
+      "t_max_3cycle_c": 36.46841015962917,
+      "accumulation_k": 0.8749575952069506
+    },
+    {
+      "scheme": "natural",
+      "t_amb_c": 45.0,
+      "t_max_1cycle_c": 46.335496474994194,
+      "t_max_3cycle_c": 48.222428093608904,
+      "accumulation_k": 1.8869316186147103
+    },
+    {
+      "scheme": "forced_air",
+      "t_amb_c": 45.0,
+      "t_max_1cycle_c": 45.611663598487546,
+      "t_max_3cycle_c": 46.066845515682004,
+      "accumulation_k": 0.45518191719445866
+    },
+    {
+      "scheme": "cold_plate",
+      "t_amb_c": 45.0,
+      "t_max_1cycle_c": 45.2881752623702,
+      "t_max_3cycle_c": 45.47639460334407,
+      "accumulation_k": 0.18821934097386617
+    },
+    {
+      "scheme": "pcm",
+      "t_amb_c": 45.0,
+      "t_max_1cycle_c": 45.59345955366585,
+      "t_max_3cycle_c": 46.46841290596166,
+      "accumulation_k": 0.8749533522958046
+    }
+  ],
+  "dynamic_vs_constant": [
+    {
+      "scheme": "natural",
+      "t_max_dynamic_c": 26.33549025596593,
+      "t_max_const_c": 26.20280901732535,
+      "dynamic_extra_k": 0.13268123864057912
+    },
+    {
+      "scheme": "forced_air",
+      "t_max_dynamic_c": 25.611667229947955,
+      "t_max_const_c": 25.519391625270604,
+      "dynamic_extra_k": 0.09227560467735074
+    },
+    {
+      "scheme": "cold_plate",
+      "t_max_dynamic_c": 25.288161045070417,
+      "t_max_const_c": 25.168346069554666,
+      "dynamic_extra_k": 0.1198149755157516
+    }
+  ],
+  "elapsed_s": 35.6
+}

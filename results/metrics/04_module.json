@@ -1,0 +1,208 @@
+{
+  "module": {
+    "n_rows": 2,
+    "n_cols": 6,
+    "h_w_m2k": 500.0,
+    "area_fraction": 0.25,
+    "limit_k": 5.0
+  },
+  "sweep": [
+    {
+      "c_rate": 0.5,
+      "flow_lpm": 0.5,
+      "q_mean_w": 0.22690564874282784,
+      "coolant_rise_k": 0.09451004519793216,
+      "delta_t_max_k": 0.07460774827150018,
+      "t_max_c": 25.493850655041303,
+      "t_cool_out_c": 25.094510045197932,
+      "pass_5k": true,
+      "required_flow_lpm": 0.018859690285118164
+    },
+    {
+      "c_rate": 0.5,
+      "flow_lpm": 1.0,
+      "q_mean_w": 0.22690564874282784,
+      "coolant_rise_k": 0.04718655723337761,
+      "delta_t_max_k": 0.037253798346203126,
+      "t_max_c": 25.45181056625528,
+      "t_cool_out_c": 25.047186557233378,
+      "pass_5k": true,
+      "required_flow_lpm": 0.018859690285118164
+    },
+    {
+      "c_rate": 0.5,
+      "flow_lpm": 2.0,
+      "q_mean_w": 0.22690564874282784,
+      "coolant_rise_k": 0.02357575582740523,
+      "delta_t_max_k": 0.018614211539237147,
+      "t_max_c": 25.430852083192587,
+      "t_cool_out_c": 25.023575755827405,
+      "pass_5k": true,
+      "required_flow_lpm": 0.018859690285118164
+    },
+    {
+      "c_rate": 0.5,
+      "flow_lpm": 4.0,
+      "q_mean_w": 0.22690564874282784,
+      "coolant_rise_k": 0.011783515946838463,
+      "delta_t_max_k": 0.009303953009069943,
+      "t_max_c": 25.420390875145717,
+      "t_cool_out_c": 25.01178351594684,
+      "pass_5k": true,
+      "required_flow_lpm": 0.018859690285118164
+    },
+    {
+      "c_rate": 1.0,
+      "flow_lpm": 0.5,
+      "q_mean_w": 0.7773148485647228,
+      "coolant_rise_k": 0.31652060351497724,
+      "delta_t_max_k": 0.25177051096105174,
+      "t_max_c": 26.655053755239056,
+      "t_cool_out_c": 25.316520603514977,
+      "pass_5k": true,
+      "required_flow_lpm": 0.06460798741317177
+    },
+    {
+      "c_rate": 1.0,
+      "flow_lpm": 1.0,
+      "q_mean_w": 0.7773148485647228,
+      "coolant_rise_k": 0.15796738531948407,
+      "delta_t_max_k": 0.1257001980724226,
+      "t_max_c": 26.51311905796867,
+      "t_cool_out_c": 25.157967385319484,
+      "pass_5k": true,
+      "required_flow_lpm": 0.06460798741317177
+    },
+    {
+      "c_rate": 1.0,
+      "flow_lpm": 2.0,
+      "q_mean_w": 0.7773148485647228,
+      "coolant_rise_k": 0.07890926482280847,
+      "delta_t_max_k": 0.06280254648847006,
+      "t_max_c": 26.442382125964038,
+      "t_cool_out_c": 25.07890926482281,
+      "pass_5k": true,
+      "required_flow_lpm": 0.06460798741317177
+    },
+    {
+      "c_rate": 1.0,
+      "flow_lpm": 4.0,
+      "q_mean_w": 0.7773148485647228,
+      "coolant_rise_k": 0.03943592009092001,
+      "delta_t_max_k": 0.031389287781205866,
+      "t_max_c": 26.40707369835113,
+      "t_cool_out_c": 25.03943592009092,
+      "pass_5k": true,
+      "required_flow_lpm": 0.06460798741317177
+    },
+    {
+      "c_rate": 2.0,
+      "flow_lpm": 0.5,
+      "q_mean_w": 2.7227873259136506,
+      "coolant_rise_k": 1.2118466327472461,
+      "delta_t_max_k": 0.9508893043261857,
+      "t_max_c": 31.328967219149327,
+      "t_cool_out_c": 26.211846632747246,
+      "pass_5k": true,
+      "required_flow_lpm": 0.22630959592009564
+    },
+    {
+      "c_rate": 2.0,
+      "flow_lpm": 1.0,
+      "q_mean_w": 2.7227873259136506,
+      "coolant_rise_k": 0.6052663084991501,
+      "delta_t_max_k": 0.4749911398504736,
+      "t_max_c": 30.79371267432002,
+      "t_cool_out_c": 25.60526630849915,
+      "pass_5k": true,
+      "required_flow_lpm": 0.22630959592009564
+    },
+    {
+      "c_rate": 2.0,
+      "flow_lpm": 2.0,
+      "q_mean_w": 2.7227873259136506,
+      "coolant_rise_k": 0.3024653013342835,
+      "delta_t_max_k": 0.23737770575352002,
+      "t_max_c": 30.526763622851057,
+      "t_cool_out_c": 25.302465301334284,
+      "pass_5k": true,
+      "required_flow_lpm": 0.22630959592009564
+    },
+    {
+      "c_rate": 2.0,
+      "flow_lpm": 4.0,
+      "q_mean_w": 2.7227873259136506,
+      "coolant_rise_k": 0.15119066476773568,
+      "delta_t_max_k": 0.11865939386074942,
+      "t_max_c": 30.39347689008003,
+      "t_cool_out_c": 25.151190664767736,
+      "pass_5k": true,
+      "required_flow_lpm": 0.22630959592009564
+    },
+    {
+      "c_rate": 3.0,
+      "flow_lpm": 0.5,
+      "q_mean_w": 5.595155836631424,
+      "coolant_rise_k": 3.9920835739332645,
+      "delta_t_max_k": 2.480125142877384,
+      "t_max_c": 45.466424969789294,
+      "t_cool_out_c": 28.992083573933265,
+      "pass_5k": true,
+      "required_flow_lpm": 0.4650519136940404
+    },
+    {
+      "c_rate": 3.0,
+      "flow_lpm": 1.0,
+      "q_mean_w": 5.595155836631424,
+      "coolant_rise_k": 2.01717116909402,
+      "delta_t_max_k": 1.251430289256433,
+      "t_max_c": 44.111992274170866,
+      "t_cool_out_c": 27.01717116909402,
+      "pass_5k": true,
+      "required_flow_lpm": 0.4650519136940404
+    },
+    {
+      "c_rate": 3.0,
+      "flow_lpm": 2.0,
+      "q_mean_w": 5.595155836631424,
+      "coolant_rise_k": 1.0139030943319227,
+      "delta_t_max_k": 0.6285661867023578,
+      "t_max_c": 43.42669846256024,
+      "t_cool_out_c": 26.013903094331923,
+      "pass_5k": true,
+      "required_flow_lpm": 0.4650519136940404
+    },
+    {
+      "c_rate": 3.0,
+      "flow_lpm": 4.0,
+      "q_mean_w": 5.595155836631424,
+      "coolant_rise_k": 0.5082838663752405,
+      "delta_t_max_k": 0.31499679822876203,
+      "t_max_c": 43.0819738171545,
+      "t_cool_out_c": 25.50828386637524,
+      "pass_5k": true,
+      "required_flow_lpm": 0.4650519136940404
+    }
+  ],
+  "robustness_q_scale": [
+    {
+      "q_scale": 0.7,
+      "delta_t_max_k": 0.166164921008491,
+      "t_max_c": 28.868740676309493,
+      "coolant_rise_k": 0.21172603821801061
+    },
+    {
+      "q_scale": 1.0,
+      "delta_t_max_k": 0.23737770575352002,
+      "t_max_c": 30.526763622851057,
+      "coolant_rise_k": 0.3024653013342835
+    },
+    {
+      "q_scale": 1.5,
+      "delta_t_max_k": 0.35606761397600195,
+      "t_max_c": 33.290164671511356,
+      "coolant_rise_k": 0.45369899718730977
+    }
+  ],
+  "elapsed_s": 7.1
+}

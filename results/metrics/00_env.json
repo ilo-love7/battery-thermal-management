@@ -1,0 +1,127 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "pybamm": "26.10.1.1",
+  "cell_thermal_capacity_j_k": 42.77529812749004,
+  "cell_volume_m3": 2.42e-05,
+  "cell_area_m2": 0.00531,
+  "r_int_k_w": 1.1368210220849666,
+  "model_rate_matrix": [
+    {
+      "model": "SPM",
+      "c_rate": 1.0,
+      "ok": true,
+      "elapsed_s": 0.15,
+      "t_end_s": 3416.555387594114,
+      "delivered_ah": 4.745215816102936,
+      "q_mean_w": 0.5119740304488605,
+      "t_max_c": 33.34621620947769,
+      "thermal": "lumped"
+    },
+    {
+      "model": "SPM",
+      "c_rate": 3.0,
+      "ok": true,
+      "elapsed_s": 0.08,
+      "t_end_s": 1040.5665769606148,
+      "delivered_ah": 4.335694070669229,
+      "q_mean_w": 2.5327721454309766,
+      "t_max_c": 52.62764265410192,
+      "thermal": "lumped"
+    },
+    {
+      "model": "SPMe",
+      "c_rate": 1.0,
+      "ok": true,
+      "elapsed_s": 0.31,
+      "t_end_s": 3371.318866550374,
+      "delivered_ah": 4.682387314653297,
+      "q_mean_w": 0.748215795240358,
+      "t_max_c": 37.72403306106219,
+      "thermal": "lumped"
+    },
+    {
+      "model": "SPMe",
+      "c_rate": 3.0,
+      "ok": true,
+      "elapsed_s": 0.37,
+      "t_end_s": 52.76547912125153,
+      "delivered_ah": 0.21985616300521474,
+      "q_mean_w": 4.879256221721062,
+      "t_max_c": 31.516234498143376,
+      "thermal": "lumped"
+    },
+    {
+      "model": "DFN",
+      "c_rate": 1.0,
+      "ok": true,
+      "elapsed_s": 0.68,
+      "t_end_s": 3369.336800528555,
+      "delivered_ah": 4.679634445178548,
+      "q_mean_w": 0.7146896161125023,
+      "t_max_c": 38.2140325992346,
+      "thermal": "lumped"
+    },
+    {
+      "model": "DFN",
+      "c_rate": 3.0,
+      "ok": true,
+      "elapsed_s": 0.8,
+      "t_end_s": 537.4430501967992,
+      "delivered_ah": 2.2393460424866634,
+      "q_mean_w": 5.714503581392759,
+      "t_max_c": 78.37980021964995,
+      "thermal": "lumped"
+    }
+  ],
+  "rate_ceiling": [
+    {
+      "model": "DFN",
+      "c_rate": 4.0,
+      "ok": true,
+      "elapsed_s": 0.59,
+      "t_end_s": 117.93854080242569,
+      "delivered_ah": 0.6552141155690316,
+      "q_mean_w": 9.344803967437386,
+      "t_max_c": 49.101584463499194,
+      "thermal": "lumped"
+    },
+    {
+      "model": "DFN",
+      "c_rate": 5.0,
+      "ok": true,
+      "elapsed_s": 0.63,
+      "t_end_s": 52.553671774424686,
+      "delivered_ah": 0.3649560539890603,
+      "q_mean_w": 12.865578560446568,
+      "t_max_c": 39.570692401681924,
+      "thermal": "lumped"
+    }
+  ],
+  "thickness_gradient": {
+    "c_rate": 2.0,
+    "h": 10.0,
+    "option": "x-full",
+    "dT_stack_max_k": 0.0008038656224584884,
+    "note": "x=叠片厚度方向（~100um），非卷芯径向；卷芯径向梯度见两节点模型",
+    "q_mean_w": 2.6737962820936465
+  },
+  "entropic_change": {
+    "Chen2020": {
+      "negative": 0.0,
+      "positive": 0.0,
+      "capacity_ah": 5.0
+    },
+    "Mohtat2020": {
+      "negative": "callable",
+      "positive": "callable",
+      "capacity_ah": 5.0
+    },
+    "OKane2022": {
+      "negative": 0.0,
+      "positive": 0.0,
+      "capacity_ah": 5.0
+    }
+  },
+  "total_elapsed_s": 6.0
+}
