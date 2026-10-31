@@ -1,0 +1,188 @@
+{
+  "scenario": {
+    "duty": "持续 3C（5.6 W）+ 脉冲 ×2.0 每 300s/60s",
+    "q_scale": 1.5,
+    "r_scale": 1.3,
+    "duration_s": 1800.0,
+    "noise_k": 0.05,
+    "tau_truth_s": 67.93346650454853,
+    "steady_err_theory_k": -7.284196400957244,
+    "w_q_theory_w": 3.372375690607735,
+    "w_int_theory_w": -3.0351381215469617
+  },
+  "cases": {
+    "baseline_kalman": {
+      "core_err_rmse_k": 6.3396124665038185,
+      "core_err_max_k": 8.596042666662981,
+      "within_3k_share": 0.016574585635359115,
+      "diverged": true,
+      "innovation_rms_k": 0.7908017064176183,
+      "steady_err_k": -6.514353435077629,
+      "steady_err_theory_k": -7.284196400957244
+    },
+    "bias_kalman": {
+      "core_err_rmse_k": 3.543453741409259,
+      "core_err_max_k": 5.62505728893386,
+      "steady_err_k": -3.535544939154377,
+      "w_q_hat_final": 3.100181278685767,
+      "w_int_hat_final": 0.04594670499013428,
+      "w_q_theory_w": 3.372375690607735,
+      "w_int_theory_w": -3.0351381215469617,
+      "diverged": false,
+      "w_int_converged": false
+    },
+    "corrected": {
+      "core_err_rmse_k": 1.2611965145022972,
+      "core_err_max_k": 2.801597557884911,
+      "steady_err_k": -1.0721962473064461,
+      "w_q_hat_final": 3.0062521791788304,
+      "w_int_hat_final": 1.3779401690677755,
+      "w_q_theory_w": 3.372375690607735,
+      "w_int_theory_w": -3.0351381215469617,
+      "diverged": false,
+      "r_scale_est": 1.4034666768361213,
+      "r_scale_err_pct": 7.958975141240092
+    }
+  },
+  "identification": {
+    "per_pulse": [
+      {
+        "pulse": 0,
+        "pulse_end_s": 60.0,
+        "tau_s": 71.12312312301347,
+        "tau_r2": 0.7972864009868464,
+        "r_int_est_k_w": 1.566239047003175,
+        "r_scale_est": 1.3777358234725832
+      },
+      {
+        "pulse": 1,
+        "pulse_end_s": 360.0,
+        "tau_s": 65.69686580872548,
+        "tau_r2": 0.9862413279901316,
+        "r_int_est_k_w": 1.4158619248528865,
+        "r_scale_est": 1.245457198052293
+      },
+      {
+        "pulse": 2,
+        "pulse_end_s": 660.0,
+        "tau_s": 73.87233690184566,
+        "tau_r2": 0.9885970012018422,
+        "r_int_est_k_w": 1.642361777206902,
+        "r_scale_est": 1.4446968742667665
+      },
+      {
+        "pulse": 3,
+        "pulse_end_s": 960.0,
+        "tau_s": 79.21039533846486,
+        "tau_r2": 0.9876555542601666,
+        "r_int_est_k_w": 1.7900625644430712,
+        "r_scale_est": 1.5746212725377284
+      },
+      {
+        "pulse": 4,
+        "pulse_end_s": 1260.0,
+        "tau_s": 73.23585459685303,
+        "tau_r2": 0.9843379637990909,
+        "r_int_est_k_w": 1.6247417970428868,
+        "r_scale_est": 1.4291975301996596
+      },
+      {
+        "pulse": 5,
+        "pulse_end_s": 1560.0,
+        "tau_s": 61.829214145476755,
+        "tau_r2": 0.986705320150803,
+        "r_int_est_k_w": 1.3085515612595622,
+        "r_scale_est": 1.1510620720750186
+      }
+    ],
+    "r_scale_median": 1.4034666768361213,
+    "r_scale_err_pct": 7.958975141240092,
+    "method": "脉冲后表面弛豫单指数拟合 τ → brentq 反解 R_int（慢模态指纹）"
+  },
+  "pulse_scan": [
+    {
+      "period_s": 150.0,
+      "dur_s": 20.0,
+      "duty_pct": 13.333333333333334,
+      "n_pulses": 10,
+      "r_scale_est": 1.1880889374795967,
+      "r_scale_err_pct": 8.60854327080026,
+      "ok": false
+    },
+    {
+      "period_s": 150.0,
+      "dur_s": 60.0,
+      "duty_pct": 40.0,
+      "n_pulses": 10,
+      "r_scale_est": 1.1719607425495628,
+      "r_scale_err_pct": 9.84917365003363,
+      "ok": false
+    },
+    {
+      "period_s": 150.0,
+      "dur_s": 120.0,
+      "duty_pct": 80.0,
+      "n_pulses": 0,
+      "r_scale_est": NaN,
+      "r_scale_err_pct": NaN,
+      "ok": false
+    },
+    {
+      "period_s": 300.0,
+      "dur_s": 20.0,
+      "duty_pct": 6.666666666666667,
+      "n_pulses": 6,
+      "r_scale_est": 1.250285316892128,
+      "r_scale_err_pct": 3.824206392913237,
+      "ok": true
+    },
+    {
+      "period_s": 300.0,
+      "dur_s": 60.0,
+      "duty_pct": 20.0,
+      "n_pulses": 6,
+      "r_scale_est": 1.3066546798665897,
+      "r_scale_err_pct": 0.5118984512761253,
+      "ok": true
+    },
+    {
+      "period_s": 300.0,
+      "dur_s": 120.0,
+      "duty_pct": 40.0,
+      "n_pulses": 6,
+      "r_scale_est": 1.2294664976410616,
+      "r_scale_err_pct": 5.425654027610646,
+      "ok": false
+    },
+    {
+      "period_s": 600.0,
+      "dur_s": 20.0,
+      "duty_pct": 3.3333333333333335,
+      "n_pulses": 3,
+      "r_scale_est": 1.3176922400851308,
+      "r_scale_err_pct": 1.3609415450100544,
+      "ok": true
+    },
+    {
+      "period_s": 600.0,
+      "dur_s": 60.0,
+      "duty_pct": 10.0,
+      "n_pulses": 3,
+      "r_scale_est": 1.3725515594207685,
+      "r_scale_err_pct": 5.580889186212954,
+      "ok": false
+    },
+    {
+      "period_s": 600.0,
+      "dur_s": 120.0,
+      "duty_pct": 20.0,
+      "n_pulses": 3,
+      "r_scale_est": 1.347999215857618,
+      "r_scale_err_pct": 3.6922473736629158,
+      "ok": true
+    }
+  ],
+  "min_duty_pct_for_ok": 3.3333333333333335,
+  "verdict": "基线稳态偏差 -6.5 K（gap 理论 -7.3 K）；负结果：w_int 偏置态不收敛（+0.05 vs 理论 -3.04 W）——R_int 失配不能用加性偏置吸收，须显式辨识；脉冲-弛豫辨识 r_scale=1.40（真 1.3，误差 8%）后校核稳态偏差 -1.07 K，w_Q 由偏置 Kalman 吸收；最低可用占空比 ~3%——在线校核闭掉 v1.2 的失配天花板大头（残余为辨识误差残留）",
+  "elapsed_s": 1.9
+}
