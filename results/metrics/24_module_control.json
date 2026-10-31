@@ -1,0 +1,170 @@
+{
+ "scenario": {
+  "base_c": 2.0,
+  "cycles": 12,
+  "tail_c": 0.3,
+  "h_lo": 150.0,
+  "h_hi": 500.0,
+  "t_on_c": 43.0,
+  "t_off_c": 40.0,
+  "min_dwell_s": 20.0,
+  "limit_c": 45.0,
+  "t_in_c": 29.0,
+  "q_spread_sigma": 0.08,
+  "flows_lpm": {
+   "design_2.0lpm": 2.0,
+   "low_0.25lpm": 0.25
+  }
+ },
+ "results": {
+  "design_2.0lpm/full_cool": {
+   "energy_norm_affinity": 0.9981979812945644,
+   "energy_norm_pump": 0.9985374479118435,
+   "duty_high": 0.9981481481481481,
+   "n_switch": 1,
+   "t_max_c": 34.76122001606248,
+   "delta_t_max_k": 0.4409075812509968,
+   "damage_max_s": 17040.649583293263,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "worst",
+   "steady_grad_at_5w_k": 0.5629925144341499
+  },
+  "design_2.0lpm/probe_upstream": {
+   "energy_norm_affinity": 0.10989286045004167,
+   "energy_norm_pump": 0.2775723960551903,
+   "duty_high": 0.08518518518518518,
+   "n_switch": 70,
+   "t_max_c": 43.24877097619578,
+   "delta_t_max_k": 0.5283644848651505,
+   "damage_max_s": 23791.12887624183,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "probe",
+   "steady_grad_at_5w_k": 0.5629925144341499
+  },
+  "design_2.0lpm/probe_downstream": {
+   "energy_norm_affinity": 0.11665043059542551,
+   "energy_norm_pump": 0.28305696638577643,
+   "duty_high": 0.09212962962962963,
+   "n_switch": 70,
+   "t_max_c": 43.12359031612488,
+   "delta_t_max_k": 0.5283644848651505,
+   "damage_max_s": 23570.156169672307,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 11,
+   "estimator": "probe",
+   "steady_grad_at_5w_k": 0.5629925144341499
+  },
+  "design_2.0lpm/probe_compensated": {
+   "energy_norm_affinity": 0.11502861376053337,
+   "energy_norm_pump": 0.2817406695064358,
+   "duty_high": 0.09046296296296297,
+   "n_switch": 70,
+   "t_max_c": 43.07058457010885,
+   "delta_t_max_k": 0.5283644848651505,
+   "damage_max_s": 23621.158700641725,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "probe_comp",
+   "steady_grad_at_5w_k": 0.5629925144341499
+  },
+  "design_2.0lpm/ideal_percell": {
+   "energy_norm_affinity": 0.11592962311325122,
+   "energy_norm_pump": 0.28247194555051397,
+   "duty_high": 0.0913888888888889,
+   "n_switch": 68,
+   "t_max_c": 43.03357643531325,
+   "delta_t_max_k": 0.5283644848651505,
+   "damage_max_s": 23599.65654919498,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "worst",
+   "steady_grad_at_5w_k": 0.5629925144341499
+  },
+  "low_0.25lpm/full_cool": {
+   "energy_norm_affinity": 0.9981979812945644,
+   "energy_norm_pump": 0.9985374479118435,
+   "duty_high": 0.9981481481481481,
+   "n_switch": 1,
+   "t_max_c": 36.61290424939761,
+   "delta_t_max_k": 1.9457589279972112,
+   "damage_max_s": 18387.715549971752,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "worst",
+   "steady_grad_at_5w_k": 2.8435036914054237
+  },
+  "low_0.25lpm/probe_upstream": {
+   "energy_norm_affinity": 0.12511991851097323,
+   "energy_norm_pump": 0.28993096120011114,
+   "duty_high": 0.10083333333333333,
+   "n_switch": 80,
+   "t_max_c": 44.57960328860272,
+   "delta_t_max_k": 2.667277428420668,
+   "damage_max_s": 25547.17590218292,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "probe",
+   "steady_grad_at_5w_k": 2.8435036914054237
+  },
+  "low_0.25lpm/probe_downstream": {
+   "energy_norm_affinity": 0.20675136586720996,
+   "energy_norm_pump": 0.356184570793592,
+   "duty_high": 0.18472222222222223,
+   "n_switch": 70,
+   "t_max_c": 43.12560353147857,
+   "delta_t_max_k": 2.724725450148256,
+   "damage_max_s": 23466.521286375973,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 11,
+   "estimator": "probe",
+   "steady_grad_at_5w_k": 2.8435036914054237
+  },
+  "low_0.25lpm/probe_compensated": {
+   "energy_norm_affinity": 0.18530734327252524,
+   "energy_norm_pump": 0.338780200944532,
+   "duty_high": 0.16268518518518518,
+   "n_switch": 92,
+   "t_max_c": 43.26999233384785,
+   "delta_t_max_k": 2.7236895671632837,
+   "damage_max_s": 23922.647145565028,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "probe_comp",
+   "steady_grad_at_5w_k": 2.8435036914054237
+  },
+  "low_0.25lpm/ideal_percell": {
+   "energy_norm_affinity": 0.20666126493193815,
+   "energy_norm_pump": 0.35611144318918425,
+   "duty_high": 0.18462962962962962,
+   "n_switch": 70,
+   "t_max_c": 43.06902710102272,
+   "delta_t_max_k": 2.7190308582596643,
+   "damage_max_s": 23468.038261391146,
+   "time_over_limit_s": 0.0,
+   "probe_idx": 0,
+   "estimator": "worst",
+   "steady_grad_at_5w_k": 2.8435036914054237
+  }
+ },
+ "robustness_q_x1.15": {
+  "probe_upstream": {
+   "t_max_c": 45.00887403378727,
+   "time_over_limit_s": 1.0,
+   "energy_norm_pump": 0.34016962542828044
+  },
+  "probe_compensated": {
+   "t_max_c": 43.500775077983924,
+   "time_over_limit_s": 0.0,
+   "energy_norm_pump": 0.4027668548013705
+  },
+  "ideal_percell": {
+   "t_max_c": 43.14407866032317,
+   "time_over_limit_s": 0.0,
+   "energy_norm_pump": 0.42806900592647473
+  }
+ },
+ "verdict": "低流量下空间梯度进入控制带宽量级（σ_q=8%，t_in=29°C）：上游探针漏报 → 超限 0 s（峰值 44.6 °C），梯度补偿后 0 s（峰值 43.3 °C，≈逐芯理想 43.1 °C）；下游探针天然贴近最坏点（与逐芯理想几乎同轨迹），代价是相对上游多用 23% 泵能耗——上游的『省能』以温度水平/合规为代价，不是真省；低流量下布点峰值差 1.5 K，设计流量下仅 0.2 K（梯度 <1 K，布点几乎无差别）；+15% 产热失配下合规裕度耗尽：上游超限 1 s（峰值 45.0 °C），补偿 0 s / 理想 0 s（峰值 43.1 °C）——布点决定的是合规裕度。建议：NTC 放下游（热端）或上游+梯度补偿；流量衰减工况必须按最坏芯口径定阈值。",
+ "elapsed_s": 92.32588362693787
+}

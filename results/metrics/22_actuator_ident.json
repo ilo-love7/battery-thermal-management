@@ -1,0 +1,244 @@
+{
+ "scenario": {
+  "t_total_s": 10799.0,
+  "t_amb_c": 30.0,
+  "base_c": 2.0,
+  "tail_c": 0.3,
+  "cycles": 12,
+  "h_lo": 25.0,
+  "h_hi": 500.0,
+  "min_dwell_s": 20.0,
+  "t_on_c": 43.0,
+  "t_off_c": 40.0,
+  "q_lowload_w": 1.0,
+  "ident_window_s": 60.0
+ },
+ "strategies": {
+  "full_cool": {
+   "energy": {
+    "affinity": {
+     "energy_norm": 0.998148208167423,
+     "energy_w_s": 10779.0025,
+     "p_idle_w": 0.0,
+     "p_lo_w": 0.00012500000000000003,
+     "p_hi_w": 1.0
+    },
+    "fan_typical": {
+     "energy_norm": 0.9984259769423094,
+     "energy_w_s": 431280.08499999996,
+     "p_idle_w": 6.0,
+     "p_lo_w": 6.00425,
+     "p_hi_w": 40.0
+    },
+    "pump_typical": {
+     "energy_norm": 0.9983624837947958,
+     "energy_w_s": 269532.9115625,
+     "p_idle_w": 2.5,
+     "p_lo_w": 2.895578125,
+     "p_hi_w": 25.0
+    }
+   },
+   "duty_high": 0.9981481481481481,
+   "n_switch": 1,
+   "t_max_core_c": 35.50788365104741,
+   "damage_s": 17841.608089703386
+  },
+  "surface_trigger": {
+   "energy": {
+    "affinity": {
+     "energy_norm": 0.1167878854523567,
+     "energy_w_s": 1261.192375,
+     "p_idle_w": 0.0,
+     "p_lo_w": 0.00012500000000000003,
+     "p_hi_w": 1.0
+    },
+    "fan_typical": {
+     "energy_norm": 0.24926970263450318,
+     "energy_w_s": 107674.54075,
+     "p_idle_w": 6.0,
+     "p_lo_w": 6.00425,
+     "p_hi_w": 40.0
+    },
+    "pump_typical": {
+     "energy_norm": 0.21898664592786368,
+     "energy_w_s": 59120.919734375,
+     "p_idle_w": 2.5,
+     "p_lo_w": 2.895578125,
+     "p_hi_w": 25.0
+    }
+   },
+   "duty_high": 0.11666666666666667,
+   "n_switch": 126,
+   "t_max_core_c": 45.62114629979439,
+   "damage_s": 26162.39062858568
+  },
+  "core_est_trigger": {
+   "energy": {
+    "affinity": {
+     "energy_norm": 0.17271199879618482,
+     "energy_w_s": 1865.1168749999997,
+     "p_idle_w": 0.0,
+     "p_lo_w": 0.00012500000000000003,
+     "p_hi_w": 1.0
+    },
+    "fan_typical": {
+     "energy_norm": 0.29680519897675717,
+     "energy_w_s": 128207.97375000002,
+     "p_idle_w": 6.0,
+     "p_lo_w": 6.00425,
+     "p_hi_w": 40.0
+    },
+    "pump_typical": {
+     "energy_norm": 0.2684396353250301,
+     "energy_w_s": 72471.99054687501,
+     "p_idle_w": 2.5,
+     "p_lo_w": 2.895578125,
+     "p_hi_w": 25.0
+    }
+   },
+   "duty_high": 0.1725925925925926,
+   "n_switch": 128,
+   "t_max_core_c": 43.1691790450261,
+   "damage_s": 23796.014440871488
+  }
+ },
+ "analytic_pump_check": {
+  "full_cool": 0.9983626354166667,
+  "surface_trigger": 0.21897709375,
+  "core_est_trigger": 0.26842550416666666
+ },
+ "ident_cadence": {
+  "cs2_dcir_lower": {
+   "cs2_0.5C_per_efc": {
+    "period_efc": 302.81007751937983,
+    "hours_at_1c": 605.6201550387597,
+    "hours_at_3c": 201.8733850129199
+   },
+   "cs2_1.0C_per_efc": {
+    "period_efc": 373.35722819593786,
+    "hours_at_1c": 746.7144563918757,
+    "hours_at_3c": 248.9048187972919
+   },
+   "model_2000efc": {
+    "period_efc": 1041.6666666666667,
+    "hours_at_1c": 2083.3333333333335,
+    "hours_at_3c": 694.4444444444445
+   }
+  },
+  "model_default": {
+   "cs2_0.5C_per_efc": {
+    "period_efc": 58.13953488372093,
+    "hours_at_1c": 116.27906976744185,
+    "hours_at_3c": 38.75968992248062
+   },
+   "cs2_1.0C_per_efc": {
+    "period_efc": 71.68458781362007,
+    "hours_at_1c": 143.36917562724014,
+    "hours_at_3c": 47.789725209080046
+   },
+   "model_2000efc": {
+    "period_efc": 200.0,
+    "hours_at_1c": 400.0,
+    "hours_at_3c": 133.33333333333334
+   }
+  },
+  "model_upper": {
+   "cs2_0.5C_per_efc": {
+    "period_efc": 41.52823920265781,
+    "hours_at_1c": 83.05647840531562,
+    "hours_at_3c": 27.685492801771872
+   },
+   "cs2_1.0C_per_efc": {
+    "period_efc": 51.20327700972862,
+    "hours_at_1c": 102.40655401945725,
+    "hours_at_3c": 34.135518006485746
+   },
+   "model_2000efc": {
+    "period_efc": 142.85714285714286,
+    "hours_at_1c": 285.7142857142857,
+    "hours_at_3c": 95.23809523809524
+   }
+  }
+ },
+ "ident_control_impact": {
+  "baseline_no_ident": {
+   "t_max_core_c": 43.1691790450261,
+   "damage_s": 23796.014440871488,
+   "time_over_limit_s": 0.0
+  },
+  "p600_unconditional": {
+   "period_s": 600.0,
+   "n_windows": 17,
+   "window_s_total": 1037.0,
+   "t_max_core_c": 44.13454102189455,
+   "damage_s": 23839.98180815953,
+   "time_over_limit_s": 0.0,
+   "delta_peak_k": 0.9653619768684507
+  },
+  "p600_low_load_only": {
+   "period_s": 600.0,
+   "n_windows": 6,
+   "window_s_total": 366.0,
+   "t_max_core_c": 43.1691790450261,
+   "damage_s": 23796.014440871488,
+   "time_over_limit_s": 0.0,
+   "delta_peak_k": 0.0
+  },
+  "p1800_unconditional": {
+   "period_s": 1800.0,
+   "n_windows": 5,
+   "window_s_total": 305.0,
+   "t_max_core_c": 43.92805334535763,
+   "damage_s": 23774.812271615752,
+   "time_over_limit_s": 0.0,
+   "delta_peak_k": 0.7588743003315344
+  },
+  "p1800_low_load_only": {
+   "period_s": 1800.0,
+   "n_windows": 2,
+   "window_s_total": 122.0,
+   "t_max_core_c": 43.1691790450261,
+   "damage_s": 23796.014440871488,
+   "time_over_limit_s": 0.0,
+   "delta_peak_k": 0.0
+  },
+  "p3600_unconditional": {
+   "period_s": 3600.0,
+   "n_windows": 2,
+   "window_s_total": 122.0,
+   "t_max_core_c": 43.92805334535763,
+   "damage_s": 23880.61320446814,
+   "time_over_limit_s": 0.0,
+   "delta_peak_k": 0.7588743003315344
+  },
+  "p3600_low_load_only": {
+   "period_s": 3600.0,
+   "n_windows": 1,
+   "window_s_total": 61.0,
+   "t_max_core_c": 43.1691790450261,
+   "damage_s": 23796.014440871488,
+   "time_over_limit_s": 0.0,
+   "delta_peak_k": 0.0
+  }
+ },
+ "curve_params": {
+  "affinity": {
+   "p_max_w": 1.0,
+   "idle_frac": 0.0,
+   "static_frac": 0.0
+  },
+  "fan_typical": {
+   "p_max_w": 40.0,
+   "idle_frac": 0.15,
+   "static_frac": 0.0
+  },
+  "pump_typical": {
+   "p_max_w": 25.0,
+   "idle_frac": 0.1,
+   "static_frac": 0.35
+  },
+  "note": "p_max/idle/static 为文献工程典型量级，不冒充实测"
+ },
+ "verdict": "理想 P∝h³ 高估触发式节能：真实曲线下芯温触发归一能耗上移 风机 +0.124 / 泵 +0.096（空载份额+静扬程吃掉低档免费假设）；辨识周期（R 误差容忍 5%）：β=0.48→303 EFC，β=2.5→58 EFC（生产级是天级，60 s 窗的控制代价可忽略）；压力档 600 s 强制开窗 Δpeak 最大 1.0 K，而低负荷排程 Δpeak≈0——辨识排程应与放电计划耦合（驻车/低倍率段开窗），既免控制冻结又正对弛豫黄金窗。",
+ "elapsed_s": 7.72504520000075
+}
