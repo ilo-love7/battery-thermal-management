@@ -1,0 +1,209 @@
+{
+ "dataset": "Sandia SNL（Preger 2020）61 节 + CALCE CS2 形状审计",
+ "reference_condition": {
+  "temp_c": 25.0,
+  "c_dis": 1.0,
+  "c_chg": 0.5,
+  "soc_window": [
+   0,
+   100
+  ],
+  "damage_model_ref": {
+   "d_ref_s": 7440.311063663149,
+   "d_ref_h": 2.0667530732397634,
+   "span_s": 3340.1482365810493,
+   "q_source": "Chen2020 measured",
+   "t_core_peak_c": 44.32994676405967
+  }
+ },
+ "chem_anchors": [
+  {
+   "chem": "LFP",
+   "temp_c": 25.0,
+   "c_dis": 1.0,
+   "fade_ref_per_efc": 2.4952505022868134e-05,
+   "fade_std_per_efc": 1.4209828218932186e-06,
+   "n_cells": 4,
+   "d_ref_s": 7440.311063663149,
+   "fade_per_damage_s": 3.3536911036866064e-09,
+   "n_eol_ref_linear": 8015.227321533719,
+   "n_eol_ref_power": 9140.101390528127,
+   "n_eol_cross_median": NaN,
+   "b_fade": 0.891499966676031,
+   "a_fade": 5.8862987361711556e-05,
+   "note": "SNL 18650 实测；跨格式迁移只保证量级"
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 25.0,
+   "c_dis": 1.0,
+   "fade_ref_per_efc": 0.00027429311428710793,
+   "fade_std_per_efc": 8.197062432918276e-05,
+   "n_cells": 4,
+   "d_ref_s": 7440.311063663149,
+   "fade_per_damage_s": 3.686581272477914e-08,
+   "n_eol_ref_linear": 729.1469948846624,
+   "n_eol_ref_power": 586.3164801003345,
+   "n_eol_cross_median": NaN,
+   "b_fade": 0.6566243629163618,
+   "a_fade": 0.00304373626006407,
+   "note": "SNL 18650 实测；跨格式迁移只保证量级"
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 25.0,
+   "c_dis": 1.0,
+   "fade_ref_per_efc": 0.00035976494596009025,
+   "fade_std_per_efc": 4.566648854690016e-05,
+   "n_cells": 4,
+   "d_ref_s": 7440.311063663149,
+   "fade_per_damage_s": 4.8353481847970514e-08,
+   "n_eol_ref_linear": 555.9185302677781,
+   "n_eol_ref_power": 502.14376773293435,
+   "n_eol_cross_median": 499.44999999999993,
+   "b_fade": 0.827461424461873,
+   "a_fade": 0.0011646594313523668,
+   "note": "SNL 18650 实测；跨格式迁移只保证量级"
+  }
+ ],
+ "extrapolation_audit": {
+  "n_cells": 8,
+  "err_linear_median_pct": 24.234236067253725,
+  "err_power_median_pct": 19.878863670500024,
+  "err_oracle_median_pct": -0.876554876654751,
+  "err_linear_max_abs_pct": 4117.017329517436,
+  "err_power_max_abs_pct": 52.29334589370945,
+  "verdict": "CS2 全寿命审计：线性窗口外推偏乐观 +24%、幂律 +20%（参考=平滑实测交叉；单点毛刺已滤）——SNL 的 N_EOL 按审计中位下修 ×0.82（中心带），线性/幂律原值保留为上界侧。",
+  "rows": [
+   {
+    "cell_id": "CS2_33",
+    "n_cross": 492.0967620294742,
+    "n_linear": 567.7243211056199,
+    "n_power": 653.6821173985352,
+    "n_oracle_wide_window": 526.4062198137274,
+    "b": 0.7094921907700422,
+    "err_linear_pct": 15.368432574977192,
+    "err_power_pct": 32.83609400367947,
+    "err_oracle_pct": 6.972095821715289
+   },
+   {
+    "cell_id": "CS2_34",
+    "n_cross": 481.8709221666991,
+    "n_linear": 549.5935233161725,
+    "n_power": 626.0359631533319,
+    "n_oracle_wide_window": 495.4060757551116,
+    "b": 0.7189942212702178,
+    "err_linear_pct": 14.054095824035926,
+    "err_power_pct": 29.917771410319745,
+    "err_oracle_pct": 2.8088753576481955
+   },
+   {
+    "cell_id": "CS2_35",
+    "n_cross": 545.6882802974685,
+    "n_linear": 760.7025270089356,
+    "n_power": 670.2241344363605,
+    "n_oracle_wide_window": 538.7146433152483,
+    "b": 0.4854428715685002,
+    "err_linear_pct": 39.40239409104725,
+    "err_power_pct": 22.821793803415446,
+    "err_oracle_pct": -1.2779524930274702
+   },
+   {
+    "cell_id": "CS2_36",
+    "n_cross": 502.62937412920246,
+    "n_linear": 590.7499271091335,
+    "n_power": 659.9934308642472,
+    "n_oracle_wide_window": 519.6599733893918,
+    "b": 0.6210005431713443,
+    "err_linear_pct": 17.531914670247545,
+    "err_power_pct": 31.308169564836025,
+    "err_oracle_pct": 3.3883016267591937
+   },
+   {
+    "cell_id": "CS2_37",
+    "n_cross": 575.3605014872574,
+    "n_linear": 753.3572336565167,
+    "n_power": 672.8031736206527,
+    "n_oracle_wide_window": 548.4896452069037,
+    "b": 0.5133556492692903,
+    "err_linear_pct": 30.936557464259902,
+    "err_power_pct": 16.935933537584603,
+    "err_oracle_pct": -4.670264331822366
+   },
+   {
+    "cell_id": "CS2_38",
+    "n_cross": 604.3511967364411,
+    "n_linear": 802.775175310326,
+    "n_power": 659.9966155737515,
+    "n_oracle_wide_window": 553.408560630535,
+    "b": 0.5193692302182006,
+    "err_linear_pct": 32.83256153795919,
+    "err_power_pct": 9.20746399408181,
+    "err_oracle_pct": -8.429310040420471
+   },
+   {
+    "cell_id": "CS2_3",
+    "n_cross": 103.70380231305953,
+    "n_linear": 20.804401540618358,
+    "n_power": 103.05020464783557,
+    "n_oracle_wide_window": 103.2110461671805,
+    "b": 9.447281295997486,
+    "err_linear_pct": -79.93863187599011,
+    "err_power_pct": -0.6302542921723202,
+    "err_oracle_pct": -0.4751572602820318
+   },
+   {
+    "cell_id": "CS2_7",
+    "n_cross": 23.07165592330314,
+    "n_linear": 972.9357284923295,
+    "n_power": 11.006715087923723,
+    "n_oracle_wide_window": 20.286178768052935,
+    "b": 0.059912205082352475,
+    "err_linear_pct": 4117.017329517436,
+    "err_power_pct": -52.29334589370945,
+    "err_oracle_pct": -12.073156623477473
+   }
+  ],
+  "snl_correction_factor": 0.8192923698681324
+ },
+ "snl_shape": {
+  "b_median": 0.820625235538786,
+  "b_p25": 0.644346502595298,
+  "b_p75": 0.9481471336507872,
+  "n_cells": 57,
+  "share_b_lt_1": 0.9122807017543859
+ },
+ "old_anchor_table": {
+  "old_anchor_efc": 2000.0,
+  "old_anchor_note": "scripts/18 LFP 文献典型假设（非实测）",
+  "rows": [
+   {
+    "chem": "LFP",
+    "old_anchor_efc": 2000.0,
+    "new_n_eol_linear": 8015.227321533719,
+    "new_n_eol_power": 9140.101390528127,
+    "new_n_eol_corrected": 7027.614958185984,
+    "ratio_old_over_new": 0.24952505022868132
+   },
+   {
+    "chem": "NMC",
+    "old_anchor_efc": 2000.0,
+    "new_n_eol_linear": 729.1469948846624,
+    "new_n_eol_power": 586.3164801003345,
+    "new_n_eol_corrected": 538.8745939477134,
+    "ratio_old_over_new": 2.7429311428710794
+   },
+   {
+    "chem": "NCA",
+    "old_anchor_efc": 2000.0,
+    "new_n_eol_linear": 555.9185302677781,
+    "new_n_eol_power": 502.14376773293435,
+    "new_n_eol_corrected": 433.43118379856287,
+    "ratio_old_over_new": 3.5976494596009028
+   }
+  ],
+  "chem_spread_ratio": 14.417989120947087
+ },
+ "verdict": "绝对寿命按体系重标：LFP 8015 / NMC 729 / NCA 556 EFC（线性口径上界侧，25 °C 1C），体系跨度 14×——旧单锚 2000 EFC 作废。CS2 全寿命审计：线性窗口外推偏乐观 +24%、幂律 +20%（参考=平滑实测交叉；单点毛刺已滤）——SNL 的 N_EOL 按审计中位下修 ×0.82（中心带），线性/幂律原值保留为上界侧。跨电芯格式（SNL 18650 → 基准模型电芯）只保证量级；A_chem = fade_ref/d_ref 按体系入账，场景 N_EOL=FADE_EOL/(A·d_s·m(c))。",
+ "elapsed_s": 19.258924961090088
+}

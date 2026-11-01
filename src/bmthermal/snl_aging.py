@@ -54,6 +54,12 @@ class SnlCell:
     fade_rate_per_efc: float
     dt_s_per_cycle: float
     fade_final: float
+    #: 幂律 f=a·N^b 的指数（1–25% 窗）；形状检验用
+    b_fade: float = float("nan")
+    b_r2: float = float("nan")
+    a_fade: float = float("nan")
+    #: 衰减曲线首次到达 20% 的循环数（未到达为 nan）
+    n_eol_cross: float = float("nan")
 
     @property
     def efc_per_cycle(self) -> float:
@@ -133,7 +139,64 @@ def summarize_cycles(cycles: list, nominal_ah: float) -> dict:
         "dt_s_per_cycle": dt_med,
         "n_cycles": int(n.size),
         "fade_final": float(f[-1]),
+        "fade_power": fit_fade_power(n, f),
+        "n_eol_cross": first_crossing(n, f, 0.2),
     }
+
+
+def fit_fade_power(n: np.ndarray, f: np.ndarray,
+                   f_lo: float = 0.01, f_hi: float = 0.25) -> dict:
+    """幂律衰减 f = a·N^b（log-log 回归，1–25% 窗口）。
+
+    与 ``cs2_aging.fit_fade_power`` 同口径——形状检验要跨数据集对拍，
+    约定必须一致。
+    """
+    n = np.asarray(n, float)
+    f = np.asarray(f, float)
+    m = (f > f_lo) & (f < f_hi) & (n > 0)
+    if m.sum() < 5:
+        return {"a": float("nan"), "b": float("nan"), "r2": float("nan"),
+                "n_pts": int(m.sum())}
+    x = np.log(n[m])
+    y = np.log(f[m])
+    b, loga = np.polyfit(x, y, 1)
+    pred = loga + b * x
+    ss_res = float(np.sum((y - pred) ** 2))
+    ss_tot = float(np.sum((y - y.mean()) ** 2))
+    return {
+        "a": float(np.exp(loga)), "b": float(b),
+        "r2": 1.0 - ss_res / ss_tot if ss_tot > 0 else float("nan"),
+        "n_pts": int(m.sum()),
+    }
+
+
+def first_crossing(n: np.ndarray, f: np.ndarray, level: float = 0.2) -> float:
+    """衰减曲线首次到达 level 的循环数（线性插值）；未到达返回 nan。
+
+    必须先做滚动中位平滑——CS2/SNL 曲线有单点毛刺（个别循环容量
+    异常读数，fade 跳到 0.2–0.9 又回落），不平滑会把毛刺当 EOL。
+    再加交叉单调性护栏：level 交叉必须晚于 0.5·level 交叉，否则
+    判为噪声（病理曲线拒收，返回 nan）。
+    """
+    n = np.asarray(n, float)
+    f = np.asarray(f, float)
+    fs = pd.Series(f).rolling(11, center=True, min_periods=3).median().to_numpy()
+
+    def _cross(level_: float) -> float:
+        hit = np.nonzero(fs >= level_)[0]
+        if hit.size == 0:
+            return float("nan")
+        i = int(hit[0])
+        if i == 0 or not np.isfinite(fs[i - 1]) or fs[i] <= fs[i - 1]:
+            return float(n[i])
+        frac = (level_ - fs[i - 1]) / (fs[i] - fs[i - 1])
+        return float(n[i - 1] + frac * (n[i] - n[i - 1]))
+
+    cross = _cross(level)
+    half = _cross(level * 0.5)
+    if np.isfinite(cross) and np.isfinite(half) and cross < half:
+        return float("nan")
+    return cross
 
 
 def load_cell(zip_path: str | Path, member: str) -> SnlCell:
@@ -158,6 +221,10 @@ def load_cell(zip_path: str | Path, member: str) -> SnlCell:
         fade_rate_per_efc=s["fade_rate_per_efc"],
         dt_s_per_cycle=s["dt_s_per_cycle"],
         fade_final=s["fade_final"],
+        b_fade=s["fade_power"]["b"],
+        b_r2=s["fade_power"]["r2"],
+        a_fade=s["fade_power"]["a"],
+        n_eol_cross=s["n_eol_cross"],
     )
 
 
@@ -184,6 +251,8 @@ def load_dataset(zip_path: str | Path, cache_csv: str | Path | None = None) -> p
             "n_cycles": c.n_cycles, "cap0_ah": c.cap0_ah,
             "fade_rate_per_efc": c.fade_rate_per_efc,
             "dt_s_per_cycle": c.dt_s_per_cycle, "fade_final": c.fade_final,
+            "b_fade": c.b_fade, "b_r2": c.b_r2, "a_fade": c.a_fade,
+            "n_eol_cross": c.n_eol_cross,
         })
     df = pd.DataFrame(rows)
     if cache_csv is not None:

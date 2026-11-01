@@ -1,0 +1,420 @@
+{
+ "dataset": "Sandia SNL 温度轴（15/25/35 °C）+ CALCE CS2 内阻（scripts/19）",
+ "apparent_ea_pairs": [
+  {
+   "chem": "LFP",
+   "c_dis": 1.0,
+   "t_lo_c": 25.0,
+   "t_hi_c": 35.0,
+   "n_lo": 4,
+   "n_hi": 4,
+   "fade_lo": 2.4952505022868134e-05,
+   "fade_hi": 3.58167748033302e-05,
+   "fade_ratio": 1.4353979598643636,
+   "dt_lo_s": 9970.298000000417,
+   "dt_hi_s": 9538.745250000618,
+   "dt_ratio": 0.9567161633483994,
+   "ea_j_mol": 27610.225227952884,
+   "ea_kj_mol": 27.610225227952885,
+   "eligible": true,
+   "dt_confounded": false
+  },
+  {
+   "chem": "LFP",
+   "c_dis": 2.0,
+   "t_lo_c": 25.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 2.2336249479415504e-05,
+   "fade_hi": 4.1266463214765096e-05,
+   "fade_ratio": 1.847510847906457,
+   "dt_lo_s": 8094.067499999888,
+   "dt_hi_s": 7898.161499999464,
+   "dt_ratio": 0.9757963471393799,
+   "ea_j_mol": 46890.60348561387,
+   "ea_kj_mol": 46.89060348561387,
+   "eligible": true,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NMC",
+   "c_dis": 1.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 25.0,
+   "n_lo": 2,
+   "n_hi": 4,
+   "fade_lo": 0.0007791946263994642,
+   "fade_hi": 0.00027429311428710793,
+   "fade_ratio": 0.35202131148487675,
+   "dt_lo_s": 7960.030499999761,
+   "dt_hi_s": 9996.764000000083,
+   "dt_ratio": 1.2558700623069703,
+   "ea_j_mol": -74578.65751740901,
+   "ea_kj_mol": -74.57865751740901,
+   "eligible": false,
+   "dt_confounded": true
+  },
+  {
+   "chem": "NMC",
+   "c_dis": 1.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 4,
+   "fade_lo": 0.0007791946263994642,
+   "fade_hi": 0.00016395242587965324,
+   "fade_ratio": 0.21041267524809767,
+   "dt_lo_s": 7960.030499999761,
+   "dt_hi_s": 9734.924000000348,
+   "dt_ratio": 1.2229757159850885,
+   "ea_j_mol": -57536.47058181093,
+   "ea_kj_mol": -57.53647058181093,
+   "eligible": false,
+   "dt_confounded": true
+  },
+  {
+   "chem": "NMC",
+   "c_dis": 1.0,
+   "t_lo_c": 25.0,
+   "t_hi_c": 35.0,
+   "n_lo": 4,
+   "n_hi": 4,
+   "fade_lo": 0.00027429311428710793,
+   "fade_hi": 0.00016395242587965324,
+   "fade_ratio": 0.5977270931709976,
+   "dt_lo_s": 9996.764000000083,
+   "dt_hi_s": 9734.924000000348,
+   "dt_ratio": 0.9738075241148303,
+   "ea_j_mol": -39311.414520021775,
+   "ea_kj_mol": -39.31141452002178,
+   "eligible": false,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NMC",
+   "c_dis": 2.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 25.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 0.0008318618645647806,
+   "fade_hi": 0.00016312972685242317,
+   "fade_ratio": 0.19610194168207307,
+   "dt_lo_s": 6966.332250000036,
+   "dt_hi_s": 7869.2574999995995,
+   "dt_ratio": 1.1296127169357388,
+   "ea_j_mol": -116369.95591159814,
+   "ea_kj_mol": -116.36995591159814,
+   "eligible": false,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NMC",
+   "c_dis": 2.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 0.0008318618645647806,
+   "fade_hi": 0.00016660679351824034,
+   "fade_ratio": 0.2002818023223205,
+   "dt_lo_s": 6966.332250000036,
+   "dt_hi_s": 8291.829999999725,
+   "dt_ratio": 1.1902719684378653,
+   "ea_j_mol": -59357.978642839844,
+   "ea_kj_mol": -59.357978642839846,
+   "eligible": false,
+   "dt_confounded": true
+  },
+  {
+   "chem": "NMC",
+   "c_dis": 2.0,
+   "t_lo_c": 25.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 0.00016312972685242317,
+   "fade_hi": 0.00016660679351824034,
+   "fade_ratio": 1.021314733573745,
+   "dt_lo_s": 7869.2574999995995,
+   "dt_hi_s": 8291.829999999725,
+   "dt_ratio": 1.0536991577668093,
+   "ea_j_mol": 1611.1027223097908,
+   "ea_kj_mol": 1.611102722309791,
+   "eligible": true,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NCA",
+   "c_dis": 1.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 25.0,
+   "n_lo": 2,
+   "n_hi": 4,
+   "fade_lo": 0.0003115303588337159,
+   "fade_hi": 0.00035976494596009025,
+   "fade_ratio": 1.1548310967411053,
+   "dt_lo_s": 8526.99049999984,
+   "dt_hi_s": 9564.000999999931,
+   "dt_ratio": 1.1216150645412482,
+   "ea_j_mol": 10282.806214254222,
+   "ea_kj_mol": 10.282806214254222,
+   "eligible": true,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NCA",
+   "c_dis": 1.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 4,
+   "fade_lo": 0.0003115303588337159,
+   "fade_hi": 0.0004862450094741284,
+   "fade_ratio": 1.5608270452179882,
+   "dt_lo_s": 8526.99049999984,
+   "dt_hi_s": 10605.545999999973,
+   "dt_ratio": 1.2437619110752114,
+   "ea_j_mol": 16434.465754695724,
+   "ea_kj_mol": 16.434465754695726,
+   "eligible": true,
+   "dt_confounded": true
+  },
+  {
+   "chem": "NCA",
+   "c_dis": 1.0,
+   "t_lo_c": 25.0,
+   "t_hi_c": 35.0,
+   "n_lo": 4,
+   "n_hi": 4,
+   "fade_lo": 0.00035976494596009025,
+   "fade_hi": 0.0004862450094741284,
+   "fade_ratio": 1.3515630550844966,
+   "dt_lo_s": 9564.000999999931,
+   "dt_hi_s": 10605.545999999973,
+   "dt_ratio": 1.108902644405835,
+   "ea_j_mol": 23013.10149089925,
+   "ea_kj_mol": 23.013101490899253,
+   "eligible": true,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NCA",
+   "c_dis": 2.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 25.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 0.0004104156871115614,
+   "fade_hi": 0.0003772154806170693,
+   "fade_ratio": 0.919105902778352,
+   "dt_lo_s": 6791.046999999904,
+   "dt_hi_s": 7793.087000000058,
+   "dt_ratio": 1.1475530945375827,
+   "ea_j_mol": -6025.497692722005,
+   "ea_kj_mol": -6.025497692722005,
+   "eligible": false,
+   "dt_confounded": false
+  },
+  {
+   "chem": "NCA",
+   "c_dis": 2.0,
+   "t_lo_c": 15.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 0.0004104156871115614,
+   "fade_hi": 0.0004110959015524028,
+   "fade_ratio": 1.0016573792430514,
+   "dt_lo_s": 6791.046999999904,
+   "dt_hi_s": 8226.520500000566,
+   "dt_ratio": 1.211377347263343,
+   "ea_j_mol": 61.12899190638827,
+   "ea_kj_mol": 0.06112899190638827,
+   "eligible": true,
+   "dt_confounded": true
+  },
+  {
+   "chem": "NCA",
+   "c_dis": 2.0,
+   "t_lo_c": 25.0,
+   "t_hi_c": 35.0,
+   "n_lo": 2,
+   "n_hi": 2,
+   "fade_lo": 0.0003772154806170693,
+   "fade_hi": 0.0004110959015524028,
+   "fade_ratio": 1.0898171540571722,
+   "dt_lo_s": 7793.087000000058,
+   "dt_hi_s": 8226.520500000566,
+   "dt_ratio": 1.0556176903966945,
+   "ea_j_mol": 6570.218052701954,
+   "ea_kj_mol": 6.570218052701954,
+   "eligible": true,
+   "dt_confounded": false
+  }
+ ],
+ "apparent_ea_by_chem": {
+  "LFP": {
+   "n_eligible_pairs": 2,
+   "ea_median_kj": 37.25041435678338,
+   "ea_range_kj": [
+    27.610225227952885,
+    46.89060348561387
+   ],
+   "ea_median_dt_clean_kj": 37.25041435678338,
+   "n_dt_clean": 2
+  },
+  "NMC": {
+   "n_eligible_pairs": 1,
+   "ea_median_kj": 1.611102722309791,
+   "ea_range_kj": [
+    1.611102722309791,
+    1.611102722309791
+   ],
+   "ea_median_dt_clean_kj": 1.611102722309791,
+   "n_dt_clean": 1
+  },
+  "NCA": {
+   "n_eligible_pairs": 5,
+   "ea_median_kj": 10.282806214254222,
+   "ea_range_kj": [
+    0.06112899190638827,
+    23.013101490899253
+   ],
+   "ea_median_dt_clean_kj": 10.282806214254222,
+   "n_dt_clean": 3
+  }
+ },
+ "ea_default_j_mol": 45000.0,
+ "beta": {
+  "default": 2.5,
+  "literature_grid": [
+   1.5,
+   2.5,
+   3.5
+  ],
+  "cs2_measured_median": 0.4758,
+  "cs2_measured_cells": [
+   0.3407,
+   0.5972,
+   0.3829,
+   0.5686
+  ],
+  "snl_resistance_scan": {
+   "cells_scanned": 61,
+   "cells_with_resistance": 0,
+   "verdict": "SNL internal_resistance_in_ohm 字段 0/61 全空——β 无法从 SNL 实测重标（硬负结果）；CS2 脉冲内阻是唯一实测锚，NMC/NCA β 仍停留在文献带。"
+  },
+  "feedback_rows": [
+   {
+    "beta": 0.4758,
+    "source": "CS2 实测中位",
+    "amp_3c_cold": 1.0076322032653113,
+    "amp_1c_natural": 1.015120747643484,
+    "c5_open": 4.594770855498879,
+    "c5_closed": 4.628917885730316,
+    "c5_drift_pct": 0.7431715596996735
+   },
+   {
+    "beta": 1.5,
+    "source": "文献档",
+    "amp_3c_cold": 1.024210090687585,
+    "amp_1c_natural": 1.0481292269314018,
+    "c5_open": 4.594770855498879,
+    "c5_closed": 4.702070620070364,
+    "c5_drift_pct": 2.335258230409276
+   },
+   {
+    "beta": 2.5,
+    "source": "文献默认",
+    "amp_3c_cold": 1.0405928663280337,
+    "amp_1c_natural": 1.0809578130241042,
+    "c5_open": 4.594770855498879,
+    "c5_closed": 4.772988545121099,
+    "c5_drift_pct": 3.8787068001211455
+   },
+   {
+    "beta": 3.5,
+    "source": "文献档",
+    "amp_3c_cold": 1.0571702002884367,
+    "amp_1c_natural": 1.114372209852439,
+    "c5_open": 4.594770855498879,
+    "c5_closed": 4.843357757194166,
+    "c5_drift_pct": 5.410213251391749
+   }
+  ]
+ },
+ "c5_by_ea": {
+  "s_main": 0.4,
+  "s_hi": 0.61,
+  "cs2_s_rebased_check": 0.40161515979083673,
+  "rows": [
+   {
+    "ea_kj_mol": 22.0,
+    "s_tag": "main_0.40",
+    "s_rebased": 0.4,
+    "open_loop_ratio": 1.662337270487173,
+    "closed_loop_ratio": 1.6681867277050397
+   },
+   {
+    "ea_kj_mol": 22.0,
+    "s_tag": "id_hi_0.61",
+    "s_rebased": 0.61,
+    "open_loop_ratio": 2.0610957134795225,
+    "closed_loop_ratio": 2.0683483278628803
+   },
+   {
+    "ea_kj_mol": 28.0,
+    "s_tag": "main_0.40",
+    "s_rebased": 0.4,
+    "open_loop_ratio": 1.7556440363281098,
+    "closed_loop_ratio": 1.7635886019351443
+   },
+   {
+    "ea_kj_mol": 28.0,
+    "s_tag": "id_hi_0.61",
+    "s_rebased": 0.61,
+    "open_loop_ratio": 2.176784736716685,
+    "closed_loop_ratio": 2.1866350302815496
+   },
+   {
+    "ea_kj_mol": 45.0,
+    "s_tag": "main_0.40",
+    "s_rebased": 0.4,
+    "open_loop_ratio": 2.054923918381496,
+    "closed_loop_ratio": 2.0701955285163733
+   },
+   {
+    "ea_kj_mol": 45.0,
+    "s_tag": "id_hi_0.61",
+    "s_rebased": 0.61,
+    "open_loop_ratio": 2.5478553329081035,
+    "closed_loop_ratio": 2.5667902691245685
+   },
+   {
+    "ea_kj_mol": 60.0,
+    "s_tag": "main_0.40",
+    "s_rebased": 0.4,
+    "open_loop_ratio": 2.3664780553873332,
+    "closed_loop_ratio": 2.390166014601173
+   },
+   {
+    "ea_kj_mol": 60.0,
+    "s_tag": "id_hi_0.61",
+    "s_rebased": 0.61,
+    "open_loop_ratio": 2.934144510020372,
+    "closed_loop_ratio": 2.963514693835365
+   }
+  ],
+  "ref_45kj_main": {
+   "ea_kj_mol": 45.0,
+   "s_tag": "main_0.40",
+   "s_rebased": 0.4,
+   "open_loop_ratio": 2.054923918381496,
+   "closed_loop_ratio": 2.0701955285163733
+  }
+ },
+ "verdict": "LFP 表观 Ea ≈ 37 kJ/mol（dt 干净对中位 37），低于损伤模型默认 45——冷却寿命收益在 45 假设下偏乐观；Ea 22–60 kJ/mol 区间内 C5 闭环比 1.67–2.39（s=0.40）。β：SNL 无内阻（0/61，负结果），CS2 实测中位 0.48 低于文献 [1.5,3.5]——按实测 β，C5 反馈漂移 +0.7%，§18 的 +3.9% 是保守上界。NMC 温度轴被批次异质性污染（负结果），其 Ea 估计不给点值。",
+ "elapsed_s": 48.65168738365173
+}
