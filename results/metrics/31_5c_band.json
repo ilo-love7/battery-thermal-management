@@ -1,0 +1,88 @@
+{
+ "q_band_w": [
+  12.790231549188922,
+  14.746901151922058
+ ],
+ "h_band_w_m2k": [
+  584.5173690581456,
+  673.9377492840334
+ ],
+ "q_law5_w": 13.968032725935586,
+ "q_mohtat5_w": 14.2514738718453,
+ "p_local_band": [
+  1.0598987080656137,
+  1.3385676771709774
+ ],
+ "p_fd_mohtat_3_5": 1.271670801291638,
+ "shares_5c": {
+  "ohmic": 0.08484432004012535,
+  "irr": 0.29048172668951305,
+  "rev": 0.6246739532703616,
+  "q_mean_w": 14.2514738718453
+ },
+ "safety": {
+  "h×1 散热完好": {
+   "h_effective": 500.0,
+   "const": {
+    "mode": "const",
+    "q_mult_start": 1.0,
+    "q_mult_end": 1.0,
+    "t_core_peak_c": 84.01327230728879,
+    "t_surface_peak_c": 54.53158463149779,
+    "gap_peak_k": 29.481687675790994,
+    "exceeds_alarm": true
+   },
+   "tdep_ohmic": {
+    "mode": "tdep_ohmic",
+    "q_mult_start": 0.9632632608991549,
+    "q_mult_end": 0.935230985920943,
+    "t_core_peak_c": 81.66113860997288,
+    "t_surface_peak_c": 53.95904042130949,
+    "gap_peak_k": 27.702098188663392,
+    "exceeds_alarm": true
+   },
+   "tdep_full": {
+    "mode": "tdep_full",
+    "q_mult_start": 0.5670100357517012,
+    "q_mult_end": 0.37836850556706086,
+    "t_core_peak_c": 60.979564081913345,
+    "t_surface_peak_c": 48.91914415714964,
+    "gap_peak_k": 12.060419924763707,
+    "exceeds_alarm": false
+   }
+  },
+  "h×0.3 散热退化": {
+   "h_effective": 150.0,
+   "const": {
+    "mode": "const",
+    "q_mult_start": 1.0,
+    "q_mult_end": 1.0,
+    "t_core_peak_c": 97.43741334590162,
+    "t_surface_peak_c": 71.59252686986848,
+    "gap_peak_k": 25.84488647603314,
+    "exceeds_alarm": true
+   },
+   "tdep_ohmic": {
+    "mode": "tdep_ohmic",
+    "q_mult_start": 0.9632632608991549,
+    "q_mult_end": 0.9306871827469656,
+    "t_core_peak_c": 94.08695246962607,
+    "t_surface_peak_c": 69.90393325790858,
+    "gap_peak_k": 24.183019211717493,
+    "exceeds_alarm": true
+   },
+   "tdep_full": {
+    "mode": "tdep_full",
+    "q_mult_start": 0.5670100357517012,
+    "q_mult_end": 0.3430147320155961,
+    "t_core_peak_c": 65.09949945504265,
+    "t_surface_peak_c": 55.27387426341979,
+    "gap_peak_k": 9.825625191622855,
+    "exceeds_alarm": false
+   }
+  }
+ },
+ "assumption_note": "R(T) Arrhenius（Panasonic Ea 22.4 kJ/mol）外推到 45–60 °C 为载荷性假设；可逆/极化份不随 R 缩放。",
+ "verdict": "① 5C 产热带 Q=[12.8,14.7] W → h 需求 [585,674] W/(m²·K)：638 在带中（±10%），『5C 冷却需求』不脆弱；WP28『下界警示』的正确范围是欧姆份额/低温/老化，不是 25 °C 新芯总热——总热局部倍率指数 [1.06,1.34] 低于 0.5–2C 拟合 1.79（可逆热 62% 线性主导；Mohtat 3→5 实测差分 p=1.27 佐证），纯幂律外推从 3C 偏低（−25%）交叉到 5C 收敛，非幂律行为。② 安全边界 g(T) 修正：散热完好 84.0→81.7°C、退化 30% 97.4→94.1°C——5C 可逆热主导、欧姆只占 8%，自限是二阶（对比 2C 冷启动 105→30°C 的主导地位）；两幅图景不可互搬。退化案例仍超 80 °C 预警。",
+ "elapsed_s": 11.651267766952515
+}

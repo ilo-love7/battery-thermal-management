@@ -45,6 +45,10 @@ def _arrhenius_factor(t_c: np.ndarray, ea_j_mol: float = EA_DEFAULT, t_ref_c: fl
     return np.exp(-ea_j_mol / R_GAS * (1.0 / t_k - 1.0 / t_ref_k))
 
 
+#: 公开别名（rate_effect 等模块复用；约定与 _arrhenius_factor 一致）
+arrhenius_factor = _arrhenius_factor
+
+
 def damage_integral(
     t_s: np.ndarray,
     t_cell_c: np.ndarray,
