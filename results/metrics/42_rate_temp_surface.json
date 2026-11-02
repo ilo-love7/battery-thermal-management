@@ -1,0 +1,347 @@
+{
+ "dataset": "Sandia SNL 0-100%（15/25/35 °C × 0.5–3C）",
+ "m_2c_rows": [
+  {
+   "chem": "LFP",
+   "temp_c": 25.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 0.8951505854400221,
+   "pair_ci95": [
+    0.8456757762601225,
+    0.9290043079282212
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 4,
+   "pair_eligible": true,
+   "matched_m_matched": 0.8723706229870737,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 35.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 1.1521546381928334,
+   "pair_ci95": [
+    0.9782975405826172,
+    1.3435603728423964
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 4,
+   "pair_eligible": true,
+   "matched_m_matched": 1.0870544636237276,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 15.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 1.0675918908844166,
+   "pair_ci95": [
+    0.9296968121562073,
+    1.2493559939069778
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 2,
+   "pair_eligible": true,
+   "matched_m_matched": 1.0895264030315925,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 25.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 0.5947277505540008,
+   "pair_ci95": [
+    0.33653228445152306,
+    0.9639547747865966
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 4,
+   "pair_eligible": true,
+   "matched_m_matched": 0.7395122037918604,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 35.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 1.0161898649827572,
+   "pair_ci95": [
+    0.9611265266140309,
+    1.0743562564244789
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 4,
+   "pair_eligible": true,
+   "matched_m_matched": 1.0312040005382779,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 15.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 1.31741795132919,
+   "pair_ci95": [
+    0.9190660168331893,
+    2.0726953173302123
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 2,
+   "pair_eligible": true,
+   "matched_m_matched": 1.4958806670817009,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 25.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 1.0485053778944735,
+   "pair_ci95": [
+    0.9167665647906913,
+    1.1993489163540443
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 4,
+   "pair_eligible": true,
+   "matched_m_matched": 1.1068345150841874,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 35.0,
+   "c_fast": 2.0,
+   "c_ref": 1.0,
+   "pair_m": 0.8454501198829805,
+   "pair_ci95": [
+    0.7177193709969254,
+    0.9504423268453309
+   ],
+   "pair_n_fast": 2,
+   "pair_n_ref": 4,
+   "pair_eligible": true,
+   "matched_m_matched": 0.7999098440836931,
+   "matched_n_pairs": 2,
+   "matched_eligible": true
+  }
+ ],
+ "fade_1c_t_rows": [
+  {
+   "chem": "LFP",
+   "temp_c": 35.0,
+   "fade_1c": 3.58167748033302e-05,
+   "fade_1c_25c": 2.4952505022868134e-05,
+   "ratio_vs_25c": 1.4353979598643636,
+   "n": 4,
+   "n_ref": 4,
+   "eligible": true
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 15.0,
+   "fade_1c": 0.0007791946263994642,
+   "fade_1c_25c": 0.00027429311428710793,
+   "ratio_vs_25c": 2.8407371013472327,
+   "n": 2,
+   "n_ref": 4,
+   "eligible": true
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 35.0,
+   "fade_1c": 0.00016395242587965324,
+   "fade_1c_25c": 0.00027429311428710793,
+   "ratio_vs_25c": 0.5977270931709976,
+   "n": 4,
+   "n_ref": 4,
+   "eligible": true
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 15.0,
+   "fade_1c": 0.0003115303588337159,
+   "fade_1c_25c": 0.00035976494596009025,
+   "ratio_vs_25c": 0.8659274960831644,
+   "n": 2,
+   "n_ref": 4,
+   "eligible": true
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 35.0,
+   "fade_1c": 0.0004862450094741284,
+   "fade_1c_25c": 0.00035976494596009025,
+   "ratio_vs_25c": 1.3515630550844966,
+   "n": 4,
+   "n_ref": 4,
+   "eligible": true
+  }
+ ],
+ "m_ratio_envelope": {
+  "LFP": {
+   "m_25c": 0.8951505854400221,
+   "ratios": [
+    1.0,
+    1.2871070598992882
+   ],
+   "band": [
+    1.0,
+    1.2871070598992882
+   ],
+   "max_flat_error_pct": 28.71070598992882
+  },
+  "NMC": {
+   "m_25c": 0.5947277505540008,
+   "ratios": [
+    1.7950934522391688,
+    1.0,
+    1.708663945874656
+   ],
+   "band": [
+    1.0,
+    1.7950934522391688
+   ],
+   "max_flat_error_pct": 79.50934522391688
+  },
+  "NCA": {
+   "m_25c": 1.0485053778944735,
+   "ratios": [
+    1.2564722881772201,
+    1.0,
+    0.8063383724180292
+   ],
+   "band": [
+    0.8063383724180292,
+    1.2564722881772201
+   ],
+   "max_flat_error_pct": 25.647228817722013
+  }
+ },
+ "env_band": [
+  0.8063383724180292,
+  1.7950934522391688
+ ],
+ "robust_band": [
+  0.8063383724180292,
+  1.473304155692129
+ ],
+ "m3c_t_proxy_bands": {
+  "LFP": {
+   "m_25c_band": [
+    2.3,
+    3.35
+   ],
+   "t_proxy_band_outer": [
+    1.854578256561467,
+    6.0135630650012155
+   ],
+   "t_proxy_band_robust": [
+    1.854578256561467,
+    4.935568921568632
+   ],
+   "note": "2C 代理假设定量化：outer=全量 m 比值包络，robust=剔 NMC 异常"
+  },
+  "NMC": {
+   "m_25c_band": [
+    0.7,
+    1.1
+   ],
+   "t_proxy_band_outer": [
+    0.5644368606926204,
+    1.974602797463086
+   ],
+   "t_proxy_band_robust": [
+    0.5644368606926204,
+    1.620634571261342
+   ],
+   "note": "2C 代理假设定量化：outer=全量 m 比值包络，robust=剔 NMC 异常"
+  },
+  "NCA": {
+   "m_25c_band": [
+    0.85,
+    1.3
+   ],
+   "t_proxy_band_outer": [
+    0.6853876165553248,
+    2.3336214879109196
+   ],
+   "t_proxy_band_robust": [
+    0.6853876165553248,
+    1.9152954023997677
+   ],
+   "note": "2C 代理假设定量化：outer=全量 m 比值包络，robust=剔 NMC 异常"
+  }
+ },
+ "apparent_ea_rows": [
+  {
+   "chem": "LFP",
+   "t_lo": 25.0,
+   "t_hi": 35.0,
+   "fade_lo": 2.4952505022868134e-05,
+   "fade_hi": 3.58167748033302e-05,
+   "ea_kj_mol": 27.610225227952885,
+   "ratio": 1.4353979598643636,
+   "eligible": true
+  },
+  {
+   "chem": "NMC",
+   "t_lo": 15.0,
+   "t_hi": 25.0,
+   "fade_lo": 0.0007791946263994642,
+   "fade_hi": 0.00027429311428710793,
+   "ea_kj_mol": -74.57865751740901,
+   "ratio": 0.35202131148487675,
+   "eligible": false
+  },
+  {
+   "chem": "NMC",
+   "t_lo": 25.0,
+   "t_hi": 35.0,
+   "fade_lo": 0.00027429311428710793,
+   "fade_hi": 0.00016395242587965324,
+   "ea_kj_mol": -39.31141452002178,
+   "ratio": 0.5977270931709976,
+   "eligible": false
+  },
+  {
+   "chem": "NCA",
+   "t_lo": 15.0,
+   "t_hi": 25.0,
+   "fade_lo": 0.0003115303588337159,
+   "fade_hi": 0.00035976494596009025,
+   "ea_kj_mol": 10.282806214254222,
+   "ratio": 1.1548310967411053,
+   "eligible": true
+  },
+  {
+   "chem": "NCA",
+   "t_lo": 25.0,
+   "t_hi": 35.0,
+   "fade_lo": 0.00035976494596009025,
+   "fade_hi": 0.0004862450094741284,
+   "ea_kj_mol": 23.013101490899253,
+   "ratio": 1.3515630550844966,
+   "eligible": true
+  }
+ ],
+ "additive_check": "可加分离检验（分化学）：m(2C) 比值 T-flat LFP±29%/NMC±80%/NCA±26%，而 1C fade 温度加速比 0.60–2.84——LFP/NCA（±29%）m 近平而 fade 随 T 变 → 可加近似可容；NMC ±80% 是 25 °C 已知批次异质性异常（组基 m=0.60，rep 配对 0.74）的宽度，不作温度交互证据（v1.9 §57 同判）。",
+ "identifiability": {
+  "rate_3c_temperature": "not_identifiable（LFP/NMC 3C 仅 25C）",
+  "proxy_quantified": "m(3C,T)=m(3C,25)×[env lo, env hi]（2C 代理假设的数值化）"
+ },
+ "verdict": "温度交互面补全收口：NCA m(2C;T) 补入（1.05 @25C），三化学 m(2C;T) 全表完成——资格对 m 带 [0.59, 1.32]。可加分离检验（分化学）：m(2C) 比值 T-flat LFP±29%/NMC±80%/NCA±26%，而 1C fade 温度加速比 0.60–2.84——LFP/NCA（±29%）m 近平而 fade 随 T 变 → 可加近似可容；NMC ±80% 是 25 °C 已知批次异质性异常（组基 m=0.60，rep 配对 0.74）的宽度，不作温度交互证据（v1.9 §57 同判）。3C×T 代理带定量化：m(3C,T)=m(3C,25)×比值包络（稳健 [0.81,1.47]、全量 [0.81,1.80]）——LFP [1.854578256561467, 4.935568921568632]、NMC [0.5644368606926204, 1.620634571261342]、NCA [0.6853876165553248, 1.9152954023997677]（稳健）——v1.9「2C 代理假设」升级为数值带，3C×T 本身仍不可辨识（3C 仅 25 °C 有组）。表观 Ea：NCA 温度轴 10.3 kJ/mol 进带；NMC 反向对仍资格否决（v1.7 NMC 温度轴失效一致）。",
+ "elapsed_s": 4.693666458129883
+}

@@ -1,0 +1,377 @@
+{
+ "dataset": "Sandia SNL 0-100%（内嵌 0.5C RPT 段）",
+ "group_stats": [
+  {
+   "chem": "LFP",
+   "temp_c": 15.0,
+   "c_dis": 2.0,
+   "n_cells": 1,
+   "share_shape_eol_median": 1.0,
+   "share_shape_eol_ci95": [
+    1.0,
+    1.0
+   ],
+   "share_at_10pct_median": 1.0,
+   "fade_eol_median": 0.09329446064139935,
+   "n_rpt_median": 39.0,
+   "low_n": true
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 25.0,
+   "c_dis": 0.5,
+   "n_cells": 1,
+   "share_shape_eol_median": 0.5011609671362233,
+   "share_shape_eol_ci95": [
+    0.5011609671362233,
+    0.5011609671362233
+   ],
+   "share_at_10pct_median": 0.5011609671362233,
+   "fade_eol_median": 0.09653233364573566,
+   "n_rpt_median": 3021.0,
+   "low_n": true
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 25.0,
+   "c_dis": 1.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.05156939011788002,
+   "share_shape_eol_ci95": [
+    0.0,
+    0.1493263922097687
+   ],
+   "share_at_10pct_median": 0.05156939011788002,
+   "fade_eol_median": 0.07930232558139538,
+   "n_rpt_median": 35.0,
+   "low_n": false
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 25.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.4401542661406899,
+   "share_shape_eol_ci95": [
+    0.2969307577980521,
+    0.5833777744833277
+   ],
+   "share_at_10pct_median": 0.44126711244983424,
+   "fade_eol_median": 0.08519511189414108,
+   "n_rpt_median": 39.0,
+   "low_n": false
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 25.0,
+   "c_dis": 3.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.6187261737451182,
+   "share_shape_eol_ci95": [
+    0.5574849993274468,
+    0.7995786662024787
+   ],
+   "share_at_10pct_median": 0.5840190537701144,
+   "fade_eol_median": 0.20500039991565422,
+   "n_rpt_median": 37.0,
+   "low_n": false
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 35.0,
+   "c_dis": 1.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.7286725869198081,
+   "share_shape_eol_ci95": [
+    0.4512182720852331,
+    0.8469100174402363
+   ],
+   "share_at_10pct_median": 0.7598320843711565,
+   "fade_eol_median": 0.15169833199775218,
+   "n_rpt_median": 64.5,
+   "low_n": false
+  },
+  {
+   "chem": "LFP",
+   "temp_c": 35.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.7972530882995592,
+   "share_shape_eol_ci95": [
+    0.7422470833580518,
+    0.8522590932410666
+   ],
+   "share_at_10pct_median": 0.795075250657912,
+   "fade_eol_median": 0.1780359223371229,
+   "n_rpt_median": 71.5,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 15.0,
+   "c_dis": 1.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.9636231062913783,
+   "share_shape_eol_ci95": [
+    0.9272462125827566,
+    1.0
+   ],
+   "share_at_10pct_median": 0.9265933098520003,
+   "fade_eol_median": 0.3679386869860074,
+   "n_rpt_median": 9.0,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 15.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.7920675727486869,
+   "share_shape_eol_ci95": [
+    0.6910879599877274,
+    0.8930471855096463
+   ],
+   "share_at_10pct_median": 0.6910879599877274,
+   "fade_eol_median": 0.17198990318572527,
+   "n_rpt_median": 9.0,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 25.0,
+   "c_dis": 0.5,
+   "n_cells": 1,
+   "share_shape_eol_median": 0.6331281142205395,
+   "share_shape_eol_ci95": [
+    0.6331281142205395,
+    0.6331281142205395
+   ],
+   "share_at_10pct_median": 0.8818175444209533,
+   "fade_eol_median": 0.24648829431438124,
+   "n_rpt_median": 446.0,
+   "low_n": true
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 25.0,
+   "c_dis": 1.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.2547673793212555,
+   "share_shape_eol_ci95": [
+    0.0915991187235062,
+    0.8583827545403903
+   ],
+   "share_at_10pct_median": 0.19295801547817173,
+   "fade_eol_median": 0.10174960492002993,
+   "n_rpt_median": 14.5,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 25.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.4995793764515769,
+   "share_shape_eol_ci95": [
+    0.431936992612227,
+    0.5672217602909267
+   ],
+   "share_at_10pct_median": 0.5306415040730513,
+   "fade_eol_median": 0.19161521078216198,
+   "n_rpt_median": 28.5,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 25.0,
+   "c_dis": 3.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.3961362855037043,
+   "share_shape_eol_ci95": [
+    0.10574109420507052,
+    0.9655285765119364
+   ],
+   "share_at_10pct_median": 0.35591189581926447,
+   "fade_eol_median": 0.08125447584011508,
+   "n_rpt_median": 10.5,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 35.0,
+   "c_dis": 1.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.1501254271668725,
+   "share_shape_eol_ci95": [
+    0.12324456392101936,
+    0.4734156386129412
+   ],
+   "share_at_10pct_median": 0.16309132592154355,
+   "fade_eol_median": 0.07785861519246973,
+   "n_rpt_median": 17.0,
+   "low_n": false
+  },
+  {
+   "chem": "NMC",
+   "temp_c": 35.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.16970302611296376,
+   "share_shape_eol_ci95": [
+    0.14034715887813534,
+    0.19905889334779217
+   ],
+   "share_at_10pct_median": 0.17252641572117944,
+   "fade_eol_median": 0.08173420627430372,
+   "n_rpt_median": 15.0,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 15.0,
+   "c_dis": 1.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.5884041333897986,
+   "share_shape_eol_ci95": [
+    0.43373945774083134,
+    0.7430688090387658
+   ],
+   "share_at_10pct_median": 0.4543118710203676,
+   "fade_eol_median": 0.15268936305613823,
+   "n_rpt_median": 12.0,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 15.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.7888968819874329,
+   "share_shape_eol_ci95": [
+    0.769817737823428,
+    0.8079760261514378
+   ],
+   "share_at_10pct_median": 0.958549628428891,
+   "fade_eol_median": 0.18639607632595756,
+   "n_rpt_median": 16.0,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 25.0,
+   "c_dis": 0.5,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.922713480812451,
+   "share_shape_eol_ci95": [
+    0.8454269616249019,
+    1.0
+   ],
+   "share_at_10pct_median": 0.9711583073388912,
+   "fade_eol_median": 0.21920020940776186,
+   "n_rpt_median": 222.5,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 25.0,
+   "c_dis": 1.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.6482975689050201,
+   "share_shape_eol_ci95": [
+    0.5256284816768445,
+    0.7138115138777483
+   ],
+   "share_at_10pct_median": 0.5560512503719699,
+   "fade_eol_median": 0.21175213675213678,
+   "n_rpt_median": 12.0,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 25.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 0.6423138326433131,
+   "share_shape_eol_ci95": [
+    0.5671831530481319,
+    0.7174445122384941
+   ],
+   "share_at_10pct_median": 0.7127381984725948,
+   "fade_eol_median": 0.16591137540962003,
+   "n_rpt_median": 15.0,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 35.0,
+   "c_dis": 1.0,
+   "n_cells": 4,
+   "share_shape_eol_median": 0.8217701214414088,
+   "share_shape_eol_ci95": [
+    0.8052643414321028,
+    0.8723519480823126
+   ],
+   "share_at_10pct_median": 0.9123678476938902,
+   "fade_eol_median": 0.20769914521886623,
+   "n_rpt_median": 6.5,
+   "low_n": false
+  },
+  {
+   "chem": "NCA",
+   "temp_c": 35.0,
+   "c_dis": 2.0,
+   "n_cells": 2,
+   "share_shape_eol_median": 1.0,
+   "share_shape_eol_ci95": [
+    1.0,
+    1.0
+   ],
+   "share_at_10pct_median": 1.0,
+   "fade_eol_median": 0.1898106669678944,
+   "n_rpt_median": 16.5,
+   "low_n": false
+  }
+ ],
+ "v19_crosscheck": {
+  "mech_share_lfp3c": 0.54,
+  "ci95": [
+   0.5,
+   0.62
+  ]
+ },
+ "contrast": {
+  "lfp_25c_3c": 0.6187261737451182,
+  "lfp_25c_1c": 0.05156939011788002,
+  "lfp_25c_2c": 0.4401542661406899,
+  "nmc_25c_3c": 0.3961362855037043,
+  "nmc_25c_1c": 0.2547673793212555,
+  "lfp_3c_minus_1c": 0.5671567836272382,
+  "nmc_3c_minus_1c": 0.1413689061824488,
+  "lfp_1c_35c_vs_25c": 0.6771031968019281,
+  "nca_1c_35c_vs_25c": 0.1734725525363887
+ },
+ "peak_summary": {
+  "n_cells_with_peaks": 1,
+  "median_shift_v": -0.023323223259152703,
+  "median_height_ratio": 0.741673704059324,
+  "by_chem": {
+   "LFP": {
+    "n": 1,
+    "shift_v": -0.023323223259152703,
+    "height_ratio": 0.741673704059324
+   },
+   "NMC": {
+    "n": 0,
+    "shift_v": NaN,
+    "height_ratio": NaN
+   },
+   "NCA": {
+    "n": 0,
+    "shift_v": NaN,
+    "height_ratio": NaN
+   }
+  }
+ },
+ "verdict": "无损退化模式分解收口（post-mortem 数据侧替身）：SNL 内嵌 0.5C RPT（细采样，5221 段 / 57 芯）V(Q) 两模式分解——LFP 25 °C 3C shape-like（形变/曲线几何）份额 EOL 62%（fade=10% 锚 58%），vs v1.9 锚定超额分解机械份额 54% CI95 [0.5, 0.62]——独立估计器同量级同向（LFP 3C − 1C 形状差 +0.57）。NMC 3C CI [0.11, 0.97] 组内散布主导（0.11–0.97），中位差 +0.14 在 CI 内不显著——与 v1.9 nuisance（异质性主导）定性一致，非机械升高证据。dQ/dV 峰跟踪 1 芯可辨识（峰位漂移中位 -0.0233 V、峰高比 0.74）；LFP 峰弱如实记录。⚠️ 温度轴负结果：shape 份额 35 °C 反而高于 25 °C（LFP 1C Δ+0.68、NCA 1C Δ+0.17），与「SEI/LLI 随 T 加速」教科书预期反向——两模式几何归属在温度轴上≠LLI/LAM 物理份额（映射假设失效），温度轴不外推。⚠️ 曲线几何归属≠拆解材料位点（LLI/LAM 标签是文献惯例映射，Dubarry et al. 2020）——份额对拍是互证不是同口径重复。",
+ "elapsed_s": 24.63134479522705
+}

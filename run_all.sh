@@ -2,7 +2,7 @@
 # A5 全流水线：环境勘察 → 产热 → 冷却 → 梯度/辨识 → 模组 → 寿命 → 安全 → 动态
 #              → v1.1 深化（10–13）→ v1.2 深化（14–17）→ v1.3 深化（18–21）
 #              → v1.4 深化（22–25）→ v1.5 深化（26–28）→ v1.6 深化（29–31）
-#              → v1.7 深化（32–34）→ v1.8 深化（35–37）→ v1.9 深化（38–40）
+#              → v1.7 深化（32–34）→ v1.8 深化（35–37）→ v1.9 深化（38–40）+ v1.10 深化（41–43）
 set -e
 PY="${PY:-python}"
 cd "$(dirname "$0")"
@@ -17,7 +17,8 @@ for s in 00_env_check 01_heat_analysis 02_cooling_sweep 03_gradient_ident \
          29_rate_effect 30_module_life 31_5c_band \
          32_abs_life 33_ea_beta 34_life_ledger \
          35_beta_anchor 36_joint_sens 37_5c_extrap \
-         38_mech_attribution 39_rate_temp 40_5c_refine; do
+         38_mech_attribution 39_rate_temp 40_5c_refine \
+  41_degrade_modes 42_rate_temp_surface 43_mode_rate_temp; do
   echo "===== $s ====="
   "$PY" "scripts/$s.py"
 done
