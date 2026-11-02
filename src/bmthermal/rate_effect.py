@@ -166,6 +166,78 @@ def cross_chem_envelope(points: list[RatePoint]) -> dict:
     }
 
 
+def pair_m_ratio(fade_fast, fade_ref, n_boot: int = 5000,
+                 seed: int = 20261102) -> dict:
+    """m = mean(fade_fast)/mean(fade_ref) 的组内电芯 bootstrap。
+
+    fade_fast/fade_ref 为逐芯 fade 率数组（同温度不同倍率组）。
+    n<2 任一侧 → 点值仍给但 eligible=False（v1.5 资格判据同款）。
+    """
+    rng = np.random.default_rng(seed)
+    fa = np.asarray(fade_fast, float)
+    fr = np.asarray(fade_ref, float)
+    if fa.size == 0 or fr.size == 0:
+        return {"m": float("nan"), "ci95": [float("nan")] * 2,
+                "n_fast": int(fa.size), "n_ref": int(fr.size), "eligible": False}
+    m0 = float(np.mean(fa) / np.mean(fr))
+    if fa.size < 2 or fr.size < 2:
+        return {"m": m0, "ci95": [float("nan")] * 2,
+                "n_fast": int(fa.size), "n_ref": int(fr.size), "eligible": False}
+    stats = []
+    for _ in range(n_boot):
+        a = rng.choice(fa, size=fa.size, replace=True)
+        r = rng.choice(fr, size=fr.size, replace=True)
+        if np.mean(r) > 0:
+            stats.append(float(np.mean(a) / np.mean(r)))
+    arr = np.asarray(stats, float)
+    return {
+        "m": m0,
+        "ci95": [float(np.percentile(arr, 2.5)), float(np.percentile(arr, 97.5))],
+        "n_fast": int(fa.size), "n_ref": int(fr.size),
+        "eligible": True,
+    }
+
+
+def matched_rep_m(rows_fast: list, rows_ref: list) -> dict:
+    """rep 配对 m：同 rep 标签逐对比值取中位（批次异质性控制）。
+
+    rows_*: [(rep, fade_rate)]。配对数 <2 → eligible=False。
+    """
+    ref = dict(rows_ref)
+    ratios = []
+    for rep, fade in rows_fast:
+        if rep in ref and ref[rep] > 0:
+            ratios.append(float(fade / ref[rep]))
+    if len(ratios) < 2:
+        return {"m_matched": float(np.median(ratios)) if ratios else float("nan"),
+                "n_pairs": len(ratios), "eligible": False}
+    return {
+        "m_matched": float(np.median(ratios)),
+        "n_pairs": len(ratios),
+        "eligible": True,
+    }
+
+
+def apparent_ea_from_fade(fade_hi_t: float, fade_lo_t: float,
+                          t_lo_c: float, t_hi_c: float) -> dict:
+    """两温度 fade 比 → 表观 Ea（kJ/mol）。
+
+    符号约定：fade 须随 T 升（fade_hi>fade_lo）→ Ea>0 合格；
+    反向（负 Ea）→ eligible=False（NMC 温度轴失效口径，v1.7 §33）。
+    """
+    r_gas = 8.314462618
+    t1, t2 = t_lo_c + 273.15, t_hi_c + 273.15
+    if fade_lo_t <= 0 or fade_hi_t <= 0:
+        return {"ea_kj_mol": float("nan"), "ratio": float("nan"), "eligible": False}
+    ratio = float(fade_hi_t / fade_lo_t)
+    ea = r_gas * np.log(ratio) / (1.0 / t1 - 1.0 / t2) / 1000.0
+    return {
+        "ea_kj_mol": float(ea),
+        "ratio": ratio,
+        "eligible": bool(ea > 0),
+    }
+
+
 def damage_per_efc(m_per_efc: float, t_core_c, ea_j_mol: float = EA_DEFAULT,
                    t_ref_c: float = 25.0) -> float:
     """每 EFC 相对损伤 = m(c) × <k(T_core)>（放电窗平均）。"""

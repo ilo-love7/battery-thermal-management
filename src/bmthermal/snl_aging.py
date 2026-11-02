@@ -228,6 +228,20 @@ def load_cell(zip_path: str | Path, member: str) -> SnlCell:
     )
 
 
+def load_curves(zip_path: str | Path, member: str) -> tuple[np.ndarray, np.ndarray]:
+    """单芯衰减轨迹 (n, f)，与 summarize_cycles 同清洗口径（签名去重+容量过滤）。
+
+    机理分解要原始轨迹（SnlCell 只存汇总），此处复用
+    ``summarize_cycles`` 的去重逻辑避免口径漂移。
+    """
+    with zipfile.ZipFile(zip_path) as zf:
+        with zf.open(member) as fh:
+            d = pickle.load(fh)
+    nominal = float(d.get("nominal_capacity_in_Ah") or 3.0)
+    s = summarize_cycles(d["cycle_data"], nominal)
+    return s["n"], s["f"]
+
+
 def list_members(zip_path: str | Path) -> list[str]:
     with zipfile.ZipFile(zip_path) as zf:
         return [n for n in zf.namelist() if n.endswith(".pkl")]
