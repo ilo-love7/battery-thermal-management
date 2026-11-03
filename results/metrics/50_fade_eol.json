@@ -1,32 +1,38 @@
 {
- "n_cells": 12,
- "n_blocks": 156,
+ "n_cells": 22,
+ "n_blocks": 258,
  "segment_compare": {
   "n": 12,
   "fade_mol_med": 11.749938770918188,
-  "fade_eol_med": 15.376359888377406,
-  "later_share_med": 0.12575038428072619
+  "fade_eol_med": 17.485314634027212,
+  "later_share_med": 0.3055623864020829
  },
  "condition_anchors": {
   "g5": {
    "n": 0
   },
   "g6": {
-   "n": 0
+   "n": 1,
+   "fade_eol_med": 3.992615338838823,
+   "fade_mol_med": null,
+   "rpt_med": 22.0,
+   "fade_eol_iqr": null
   },
   "g1_4": {
    "n": 12,
-   "fade_eol_med": 15.376359888377406
+   "fade_eol_med": 17.485314634027212,
+   "rpt_med": 14.0
   },
   "g7_10": {
-   "n": 0,
-   "fade_eol_med": null
+   "n": 9,
+   "fade_eol_med": 9.727838265577471,
+   "rpt_med": 6.0
   }
  },
  "drpol_per_fade_eol": {
-  "n": 32,
-  "drpol_per_fade_med": 2.9572003613216644,
-  "drpol_per_fade_iqr": 1.6961044415094642
+  "n": 35,
+  "drpol_per_fade_med": 2.4381947174323773,
+  "drpol_per_fade_iqr": 0.9635598485177135
  },
  "fade_table": [
   {
@@ -107,11 +113,11 @@
    "kind": "combined",
    "q_bol": 3.145194195213753,
    "q_mol": 2.6383674298296937,
-   "q_eol": 2.6383674298296937,
+   "q_eol": 2.4889844485135177,
    "fade_mol_pct": 16.114323438448753,
-   "fade_eol_pct": 16.114323438448753,
-   "n_rpt": 14,
-   "n_rpt_p2": 0
+   "fade_eol_pct": 20.863886487480887,
+   "n_rpt": 20,
+   "n_rpt_p2": 6
   },
   {
    "group": 3,
@@ -119,11 +125,11 @@
    "kind": "combined",
    "q_bol": 3.153226597958682,
    "q_mol": 2.6204883232454237,
-   "q_eol": 2.6204883232454237,
+   "q_eol": 2.4655990999296384,
    "fade_mol_pct": 16.895020328007494,
-   "fade_eol_pct": 16.895020328007494,
-   "n_rpt": 14,
-   "n_rpt_p2": 0
+   "fade_eol_pct": 21.807106995551674,
+   "n_rpt": 20,
+   "n_rpt_p2": 6
   },
   {
    "group": 3,
@@ -131,11 +137,11 @@
    "kind": "combined",
    "q_bol": 3.137208467909429,
    "q_mol": 2.6919657920280082,
-   "q_eol": 2.6919657920280082,
+   "q_eol": 2.463905239354715,
    "fade_mol_pct": 14.192320352179898,
-   "fade_eol_pct": 14.192320352179898,
-   "n_rpt": 11,
-   "n_rpt_p2": 0
+   "fade_eol_pct": 21.461858064006478,
+   "n_rpt": 17,
+   "n_rpt_p2": 6
   },
   {
    "group": 4,
@@ -143,11 +149,11 @@
    "kind": "combined",
    "q_bol": 3.1486079344794566,
    "q_mol": 2.8350812629807676,
-   "q_eol": 2.8350812629807676,
+   "q_eol": 2.6824467587294314,
    "fade_mol_pct": 9.957628197062995,
-   "fade_eol_pct": 9.957628197062995,
-   "n_rpt": 8,
-   "n_rpt_p2": 0
+   "fade_eol_pct": 14.805310329216748,
+   "n_rpt": 11,
+   "n_rpt_p2": 3
   },
   {
    "group": 4,
@@ -155,11 +161,11 @@
    "kind": "combined",
    "q_bol": 3.1561044272356584,
    "q_mol": 2.8336327619677375,
-   "q_eol": 2.8336327619677375,
+   "q_eol": 2.6820283222281516,
    "fade_mol_pct": 10.217395295451759,
-   "fade_eol_pct": 10.217395295451759,
-   "n_rpt": 8,
-   "n_rpt_p2": 0
+   "fade_eol_pct": 15.020925826042342,
+   "n_rpt": 11,
+   "n_rpt_p2": 3
   },
   {
    "group": 4,
@@ -167,11 +173,131 @@
    "kind": "combined",
    "q_bol": 2.9681426298918874,
    "q_mol": 2.8004028585234324,
-   "q_eol": 2.8004028585234324,
+   "q_eol": 2.6730357417156227,
    "fade_mol_pct": 5.651337967359227,
-   "fade_eol_pct": 5.651337967359227,
-   "n_rpt": 8,
-   "n_rpt_p2": 0
+   "fade_eol_pct": 9.942476658778821,
+   "n_rpt": 11,
+   "n_rpt_p2": 3
+  },
+  {
+   "group": 6,
+   "cell": 1,
+   "kind": "calendar_only",
+   "q_bol": 3.0873496501021505,
+   "q_mol": NaN,
+   "q_eol": 2.964083654408585,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 3.992615338838823,
+   "n_rpt": 22,
+   "n_rpt_p2": 22
+  },
+  {
+   "group": 7,
+   "cell": 4,
+   "kind": "combined_cccv",
+   "q_bol": 3.0789641678301622,
+   "q_mol": NaN,
+   "q_eol": 2.7808213084356983,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.683219522641407,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 7,
+   "cell": 19,
+   "kind": "combined_cccv",
+   "q_bol": 3.090768536990417,
+   "q_mol": NaN,
+   "q_eol": 2.7743080289730737,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 10.238893797123072,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 7,
+   "cell": 27,
+   "kind": "combined_cccv",
+   "q_bol": 3.070935353618296,
+   "q_mol": NaN,
+   "q_eol": 2.7628064139009694,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 10.033716253723057,
+   "n_rpt": 5,
+   "n_rpt_p2": 5
+  },
+  {
+   "group": 8,
+   "cell": 5,
+   "kind": "combined_cccv",
+   "q_bol": 3.0794171512232653,
+   "q_mol": NaN,
+   "q_eol": 2.7809263720403847,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.693093352562132,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 8,
+   "cell": 18,
+   "kind": "combined_cccv",
+   "q_bol": 3.081045495444537,
+   "q_mol": NaN,
+   "q_eol": 2.781326372758832,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.727838265577471,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 8,
+   "cell": 20,
+   "kind": "combined_cccv",
+   "q_bol": 3.0642560854886627,
+   "q_mol": NaN,
+   "q_eol": 2.7750391810610107,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.438405158018314,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 9,
+   "cell": 1,
+   "kind": "combined_cccv",
+   "q_bol": 3.084566466360214,
+   "q_mol": NaN,
+   "q_eol": 2.7787175571736418,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.915458542460065,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 9,
+   "cell": 8,
+   "kind": "combined_cccv",
+   "q_bol": 3.0942564851987635,
+   "q_mol": NaN,
+   "q_eol": 2.7884827087815536,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.881979011108644,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
+  },
+  {
+   "group": 9,
+   "cell": 9,
+   "kind": "combined_cccv",
+   "q_bol": 3.0786411547773467,
+   "q_mol": NaN,
+   "q_eol": 2.787817095648646,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 9.446507225351953,
+   "n_rpt": 6,
+   "n_rpt_p2": 6
   }
  ],
  "caveats": [
@@ -180,5 +306,5 @@
   "fade 参考=BoL RPT 最大者（48 坑十三纪律）",
   "TestTime 分钟制积分（v1.12 坑十五）"
  ],
- "verdict": "fade 到 EoL + 新工况解耦收口：12 芯 RPT 轨迹（156 块，Part 1+2/3 Guide 拼接）——组合工况（组 1–4）分段 fade：BoL→MoL 中位 11.7% → 全链 EoL 15.4%，后段份额中位 13%（退化放缓/持平，与 49 阻抗链后段 63% **反向**——fade 后段放缓而界面阻抗增长加速，容量与阻抗在时间维度解耦（与 §72 fade 差不在阻抗总量的结论一致的另一表现））。循环/日历 fade 锚待补（组 5/6 Group 包未就绪；EIS 侧三通道解耦见 49）。CCCV/满充 fade 修订待补（组 7–10 Group 包未就绪）。ΔR_pol/fade 到 EoL：3.0 mΩ/%（n=32）。配比图景收口：EIS 侧工况解耦已闭合（49：组 5 尾段 88% vs 组 6 弧段 94%），fade 侧解耦待组 5/6 包到齐后补跑。⚠️ EoL=Guide 末 RPT 标签口径；组 6 n=1；跨 Part 步号仅组内单调。"
+ "verdict": "fade 到 EoL + 新工况解耦收口：22 芯 RPT 轨迹（258 块，Part 1+2/3 Guide 拼接）——组合工况（组 1–4）分段 fade：BoL→MoL 中位 11.7% → 全链 EoL 17.5%，后段份额中位 31%（退化放缓/持平，与 49 阻抗链后段 63% **反向**——fade 后段放缓而界面阻抗增长加速，容量与阻抗在时间维度解耦（与 §72 fade 差不在阻抗总量的结论一致的另一表现））。循环/日历解耦锚：组 6 纯日历 fade 4.0%（n=1，RPT 中位 22 点）已入库；组 5 连续循环包未就绪，fade 侧解耦对比待补。CCCV/满充修订：组 7–10 fade 9.7% （RPT 中位 6 点）vs CC/90% 组 1–4 17.5%（RPT 中位 14 点）——⚠️ EoL=数据集末标签非 20% SOH，RPT 跨度差异大时水平不可直接比，只作方向参考。ΔR_pol/fade 到 EoL：2.4 mΩ/%（n=35）。配比图景收口：EIS 侧工况解耦已闭合（49：组 5 尾段 88% vs 组 6 弧段 94%），fade 侧解耦待组 5/6 包到齐后补跑。⚠️ EoL=Guide 末 RPT 标签口径；组 6 n=1；跨 Part 步号仅组内单调。"
 }

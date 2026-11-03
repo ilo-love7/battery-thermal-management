@@ -254,6 +254,7 @@ def main() -> None:
             "fade_eol_med": float(np.nanmedian(sub.fade_eol_pct)),
             "fade_mol_med": float(np.nanmedian(sub.fade_mol_pct))
             if sub.fade_mol_pct.notna().any() else None,
+            "rpt_med": float(np.nanmedian(sub.n_rpt)),
             "fade_eol_iqr": float(sub.fade_eol_pct.quantile(0.75)
                                   - sub.fade_eol_pct.quantile(0.25))
             if len(sub) > 1 else None,
@@ -264,11 +265,16 @@ def main() -> None:
         "n": int(fdf[fdf.group.isin([1, 2, 3, 4])].shape[0]),
         "fade_eol_med": float(np.nanmedian(
             fdf[fdf.group.isin([1, 2, 3, 4])].fade_eol_pct)),
+        "rpt_med": float(np.nanmedian(
+            fdf[fdf.group.isin([1, 2, 3, 4])].n_rpt)),
     }
     anchors["g7_10"] = {
         "n": int(fdf[fdf.group.isin([7, 8, 9, 10])].shape[0]),
         "fade_eol_med": float(np.nanmedian(
             fdf[fdf.group.isin([7, 8, 9, 10])].fade_eol_pct))
+        if fdf[fdf.group.isin([7, 8, 9, 10])].shape[0] else None,
+        "rpt_med": float(np.nanmedian(
+            fdf[fdf.group.isin([7, 8, 9, 10])].n_rpt))
         if fdf[fdf.group.isin([7, 8, 9, 10])].shape[0] else None,
     }
     print(f"[4] anchors: {anchors}")
@@ -409,27 +415,58 @@ def main() -> None:
         f"{seg_sentence}。"
         + (
             f"循环/日历解耦锚：组 5 纯 C/2 连续循环 fade "
-            f"{g5.get('fade_eol_med') or float('nan'):.1f}%（n={g5.get('n', 0)}）"
+            f"{g5.get('fade_eol_med') or float('nan'):.1f}%（n={g5.get('n', 0)}，"
+            f"RPT 中位 {g5.get('rpt_med') or float('nan'):.0f} 点）"
             f"vs 组 6 纯日历 {g6.get('fade_eol_med') or float('nan'):.1f}%"
-            f"（n={g6.get('n', 0)}，个案）——循环贡献远超日历（同 24 °C）。"
+            f"（n={g6.get('n', 0)}，RPT 中位 {g6.get('rpt_med') or float('nan'):.0f} 点）"
+            + (
+                "——循环 fade 快于日历" if (g5.get("fade_eol_med") or 0)
+                > (g6.get("fade_eol_med") or 0) else
+                "——循环 fade 不高于日历（与常规预期反向，如实记录）"
+            )
+            + "（同 24 °C；⚠️ RPT 跨度不同则水平不可直接比）。"
             if g5.get("n") and g6.get("n") else
-            f"循环/日历 fade 锚待补（组 5/6 Group 包未就绪；"
-            f"EIS 侧三通道解耦见 49）。"
+            (
+                f"循环/日历解耦锚：组 6 纯日历 fade "
+                f"{g6.get('fade_eol_med') or float('nan'):.1f}%"
+                f"（n={g6.get('n', 0)}，RPT 中位 {g6.get('rpt_med') or float('nan'):.0f} 点）"
+                f"已入库；组 5 连续循环包未就绪，fade 侧解耦对比待补。"
+                if g6.get("n") else
+                (
+                    f"循环/日历解耦锚：组 5 纯循环 fade "
+                    f"{g5.get('fade_eol_med') or float('nan'):.1f}%"
+                    f"（n={g5.get('n', 0)}）已入库；组 6 日历包未就绪。"
+                    if g5.get("n") else
+                    f"循环/日历 fade 锚待补（组 5/6 Group 包未就绪；"
+                    f"EIS 侧三通道解耦见 49）。"
+                )
+            )
         )
         + (
             f"CCCV/满充修订：组 7–10 fade "
             f"{(anchors.get('g7_10') or {}).get('fade_eol_med') or float('nan'):.1f}% "
-            f"vs CC/90% 组 1–4 {(anchors.get('g1_4') or {}).get('fade_eol_med') or float('nan'):.1f}%。"
+            f"（RPT 中位 {(anchors.get('g7_10') or {}).get('rpt_med') or float('nan'):.0f} 点）"
+            f"vs CC/90% 组 1–4 {(anchors.get('g1_4') or {}).get('fade_eol_med') or float('nan'):.1f}%"
+            f"（RPT 中位 {(anchors.get('g1_4') or {}).get('rpt_med') or float('nan'):.0f} 点）"
+            f"——⚠️ EoL=数据集末标签非 20% SOH，RPT 跨度差异大时"
+            f"水平不可直接比，只作方向参考。"
             if (anchors.get("g7_10") or {}).get("n") else
             f"CCCV/满充 fade 修订待补（组 7–10 Group 包未就绪）。"
         )
         + f"ΔR_pol/fade 到 EoL：{(dr_fade.get('drpol_per_fade_med') or float('nan')):.1f} mΩ/%"
         f"（n={dr_fade.get('n', 0)}）。"
         + (
-            f"配比图景收口：连续循环（快通量）fade 快且 49 显示尾段主导"
-            f"（类 shape/LAM）、日历/慢路径 fade 慢且弧段主导（类 shift/SEI）"
-            f"——v1.12「慢→shift、快→shape」在同体系内成立，三线合流"
-            f"（SNL shape 份额 + Oxford 阻抗解耦 + fade 解耦）。"
+            f"配比图景收口：49 EIS 侧工况解耦已闭合（组 5 尾段 88% "
+            f"vs 组 6 弧段 94%）；fade 侧"
+            + (
+                "解耦同向（循环 fade 高于日历 + 尾段主导 = 类 shape/LAM，"
+                "日历 fade 低 + 弧段主导 = 类 shift/SEI）——"
+                "v1.12「慢→shift、快→shape」在同体系内成立，三线合流"
+                "（SNL shape 份额 + Oxford 阻抗解耦 + fade 解耦）。"
+                if (g5.get("fade_eol_med") or 0) > (g6.get("fade_eol_med") or 0)
+                else "与 EIS 解耦**不**同向（循环 fade 未高于日历）"
+                "——配比图景只在阻抗通道成立，fade 通道不支持，不写三线合流。"
+            )
             if g5.get("n") and g6.get("n") else
             f"配比图景收口：EIS 侧工况解耦已闭合（49：组 5 尾段 88% "
             f"vs 组 6 弧段 94%），fade 侧解耦待组 5/6 包到齐后补跑。"
