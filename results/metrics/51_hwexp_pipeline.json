@@ -1,0 +1,70 @@
+{
+ "n_seeds": 40,
+ "schema_negative_tests": {
+  "good_passes": true,
+  "missing_col_caught": true,
+  "bad_dtype_caught": true,
+  "nan_caught": true,
+  "pm_missing_col_caught": true,
+  "pm_unpaired_caught": true
+ },
+ "e1": {
+  "m_true": 2.3,
+  "n_seeds": 40,
+  "n_cells_per_arm": 5,
+  "correct_rate": 0.925,
+  "m_est_mean": 2.331967811350308,
+  "m_est_sd": 0.1994600744954326,
+  "ci_width_mean": 0.8290967095292512,
+  "decisions": {
+   "throughput_positive": 34,
+   "inconclusive": 3,
+   "throughput_positive_at_lower_bound": 3
+  }
+ },
+ "e2": {
+  "n_seeds": 40,
+  "dir_b_correct_rate": 1.0,
+  "dir_a_correct_rate": 1.0,
+  "dir_b_decisions": {
+   "reading_b_confirmed": 40
+  },
+  "dir_a_decisions": {
+   "reading_a_gains_weight": 40
+  }
+ },
+ "e3": {
+  "m_true": 2.0,
+  "n_seeds": 40,
+  "direction_ok_rate": 1.0,
+  "m_est_mean": 2.032376586667659
+ },
+ "precision_gates": {
+  "sigma_0p2pct": {
+   "sigma_q_meas_ah": 0.002078,
+   "sigma_q_req_ah": 0.00059550728327599,
+   "sigma_q_meas_rel": 0.002,
+   "adequate": false
+  },
+  "sigma_0p057pct": {
+   "sigma_q_meas_ah": 0.00059550728327599,
+   "sigma_q_req_ah": 0.00059550728327599,
+   "sigma_q_meas_rel": 0.0005731542668681328,
+   "adequate": true
+  },
+  "sigma_0p01pct": {
+   "sigma_q_meas_ah": 0.0001,
+   "sigma_q_req_ah": 0.00059550728327599,
+   "sigma_q_meas_rel": 9.62463907603465e-05,
+   "adequate": true
+  }
+ },
+ "sigma_q_req_ah": 0.00059550728327599,
+ "caveats": [
+  "合成验证只证管线能判，不证假设为真",
+  "5C sd 是 3C×1.2 代理（45）——真实数据到手须回填重算",
+  "E1 判对率口径=方向正确（m_true=2.3 低于 m*，期望 positive）",
+  "E2 指标 lam/crack 为合成代理——真实 SEM/EDS 量纲到手后标定"
+ ],
+ "verdict": "硬件实验数据侧管线收口（§67 E1/E2/E3 判据代码化）：数据模式（AGING/POSTMORTEM schema）+ fade 率拟合 + m 比 CI + 预注册判据（decision_5c / decision_postmortem）全链打通，合成端到端 40 种子——E1（m_true=2.3，n=5/臂，45 的 sd 代理）判对率 92%，m̂=2.33±0.20，CI 宽 0.83；E2 两读法双方向判对率 100%/100%；E3（m_true=2.0）方向性 100%。精度门：σ_Q 预算 0.596 mAh（0.057% Q_nom）——0.2% 容量计（2.08 mAh）超预算 3.5×（45 负结果函数化，adequate=False），0.01% 级达标。模式校验负向测试 6/6 拦截（缺列/坏类型/NaN/PM 缺列/PM 缺配对，明细 schema_negative_tests）。⚠️ 合成验证只证「管线能判」不证「假设为真」；5C sd 仍是 3C×1.2 代理——首组真实 5C 数据到手须回填重算功效；E1 m_true=2.3 是带下界情景（m*=3.1 处期望多为不可判），判对率口径=方向正确非显著性。"
+}

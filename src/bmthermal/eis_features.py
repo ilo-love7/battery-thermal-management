@@ -162,9 +162,7 @@ class EISPair:
     deltas: dict = field(default_factory=dict)
 
     def __post_init__(self):
-        for k in _DELTA_FIELDS:
-            self.deltas[f"d_{k}"] = float(getattr(self.mol, k)
-                                          - getattr(self.bol, k))
+        self.deltas.update(stage_deltas(self.bol, self.mol))
 
     @property
     def fade_share_rpol(self) -> float:
@@ -173,6 +171,29 @@ class EISPair:
         if d["d_r_pol"] <= 0:
             return float("nan")
         return float(d["d_arc_dre"] / d["d_r_pol"])
+
+
+def stage_deltas(before: NyquistFeatures,
+                 after: NyquistFeatures) -> dict[str, float]:
+    """任意两阶段特征差分（BoL→MoL / MoL→EoL / BoL→EoL 通用）。
+
+    与 EISPair.deltas 同口径；阶段链可加性由测试把关
+    （d_BoL→EoL ≈ d_BoL→MoL + d_MoL→EoL，数值误差 < 1e-9）。
+    """
+    return {f"d_{k}": float(getattr(after, k) - getattr(before, k))
+            for k in _DELTA_FIELDS}
+
+
+def chain_share(seg1: dict[str, float], seg2: dict[str, float],
+                key: str = "d_arc_dre") -> float:
+    """两段增量中后段占比（MoL→EoL 段占全链 BoL→EoL 的份额）。
+
+    分母 ≤ 0 时返回 nan（如实透传，不裁剪）。
+    """
+    total = seg1.get(key, 0.0) + seg2.get(key, 0.0)
+    if total <= 0:
+        return float("nan")
+    return float(seg2.get(key, 0.0) / total)
 
 
 def pair_deltas(bol: NyquistFeatures, mol: NyquistFeatures,
@@ -347,7 +368,7 @@ def block_cc_discharge_capacity(df: pd.DataFrame,
 # ---------------------------------------------------------------------------
 
 _EIS_NAME_RE = re.compile(
-    r"EIS/(BoL|MoL)/Group(\d+)_(?:BoL|MoL)_Cell(\d+)_SOC(\d+)\.mat")
+    r"EIS/(BoL|MoL|EoL)/Group(\d+)_(?:BoL|MoL|EoL)_Cell(\d+)_SOC(\d+)\.mat")
 
 # Maccor 块成员名不规则：'TPG1 - Cell 15.mat' / 'TPG1.2 - Cell15.mat' /
 # 'TPG1.4 - Cell 15.mat' / 'TPG1.6-Cell15.mat' 皆有之
