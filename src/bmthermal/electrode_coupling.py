@@ -90,6 +90,9 @@ def parse_mat_elements(buf: bytes, off: int = 0, end: int | None = None) -> list
             a = np.frombuffer(buf, dtype=dt,
                               count=ln // dt.itemsize, offset=data_off)
             out.append((_MI_NAME.get(typ, str(typ)), 0, a))
+        elif typ in (16, 17, 18):          # miUTF8/16/32 → 原始 bytes
+            out.append((_MI_NAME.get(typ, f"utf{typ}"), 0,
+                        bytes(buf[data_off:data_off + ln])))
         else:
             out.append((str(typ), 0, None))
         off = nxt
