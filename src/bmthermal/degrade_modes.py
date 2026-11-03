@@ -223,7 +223,17 @@ def mode_split(
     pred = delta + gamma * q0
     ss_res = float(np.sum((loss - pred) ** 2))
     ss_tot = float(np.sum((loss - loss.mean()) ** 2))
-    r2 = 1.0 - ss_res / ss_tot if ss_tot > 0 else 1.0
+    # 纯 shift 边界（v1.11 教训）：损失剖面近常数时 ss_tot≈0，r² 数值
+    # 无意义（残差噪声会被放大成 r²=0.19 之类）——拟合残差<1% 损失
+    # 尺度即视为完美（r²=1），否则走常规定义
+    rmse = float(np.sqrt(ss_res / max(len(loss), 1)))
+    loss_scale = float(abs(loss.mean())) + 1e-12
+    if rmse < 0.01 * loss_scale:
+        r2 = 1.0
+    elif ss_tot > 0:
+        r2 = 1.0 - ss_res / ss_tot
+    else:
+        r2 = 1.0
 
     # 可分性诊断（v1.9 教训）：Q0 在锚点窗内的变异系数——常数列与
     # Q0 列的 Pearson 相关在常数列下方差为 0 不可用，改用 CV 判可分

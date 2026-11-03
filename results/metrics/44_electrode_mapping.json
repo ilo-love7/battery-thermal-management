@@ -1,0 +1,195 @@
+{
+  "dataset": {
+    "halfcell": "D:\\项目\\02_数据集\\01_国际公开集\\Oxford_PathDependent\\Half_Cell.zip",
+    "pocv_branch": "full_dch",
+    "electrodes": "cathode_dch (锂化) + anode_chg (脱锂→嵌锂度)",
+    "snl_cells": {
+      "LFP": "SNL_18650_LFP_25C_0-100_0.5-3C_a.pkl",
+      "NMC": "SNL_18650_NMC_25C_0-100_0.5-3C_a.pkl"
+    }
+  },
+  "coupling_fit": {
+    "x_p0": 0.02,
+    "x_n0": 0.8054545454545454,
+    "np_ratio": 1.0,
+    "rmse_v": 0.04306300795312081,
+    "q_meas_ah": 3.1839629620032803,
+    "q_use_norm": 0.8054545454545454,
+    "grid_edge": [
+      "x_p0",
+      "np_ratio"
+    ]
+  },
+  "recovery": {
+    "0.05": [
+      {
+        "injected": "lli",
+        "q_loss_frac": 0.05,
+        "loss_eod_ah": 0.15919814810016364,
+        "q_shift_ah": 0.15951024348085818,
+        "q_shape_ah": 0.0,
+        "share_shape": 0.0,
+        "r2": 1.0,
+        "boundary": "shift_only",
+        "low_quality": false
+      },
+      {
+        "injected": "lam_pe",
+        "q_loss_frac": 0.05,
+        "loss_eod_ah": 0.15919814810016364,
+        "q_shift_ah": 0.04725812128901035,
+        "q_shape_ah": 0.46725653072244167,
+        "share_shape": 0.9081500962037551,
+        "r2": 0.9120600939463975,
+        "boundary": "interior",
+        "low_quality": true
+      },
+      {
+        "injected": "lam_ne",
+        "q_loss_frac": 0.05,
+        "loss_eod_ah": 0.15919814810016408,
+        "q_shift_ah": 0.0,
+        "q_shape_ah": 0.055999551650108156,
+        "share_shape": 1.0,
+        "r2": 0.6587142247979462,
+        "boundary": "shape_only",
+        "low_quality": true
+      }
+    ],
+    "0.10": [
+      {
+        "injected": "lli",
+        "q_loss_frac": 0.1,
+        "loss_eod_ah": 0.31839629620032817,
+        "q_shift_ah": 0.31821463446976456,
+        "q_shape_ah": 0.0,
+        "share_shape": 0.0,
+        "r2": 1.0,
+        "boundary": "shift_only",
+        "low_quality": false
+      },
+      {
+        "injected": "lam_pe",
+        "q_loss_frac": 0.1,
+        "loss_eod_ah": 0.3183962962003273,
+        "q_shift_ah": 0.049257984644527984,
+        "q_shape_ah": 0.5820758187360994,
+        "share_shape": 0.9219779071217724,
+        "r2": 0.9338017393590533,
+        "boundary": "interior",
+        "low_quality": true
+      },
+      {
+        "injected": "lam_ne",
+        "q_loss_frac": 0.1,
+        "loss_eod_ah": 0.3183962962003277,
+        "q_shift_ah": 0.0,
+        "q_shape_ah": 0.1189336546884812,
+        "share_shape": 1.0,
+        "r2": 0.6077207913427478,
+        "boundary": "shape_only",
+        "low_quality": true
+      }
+    ],
+    "0.15": [
+      {
+        "injected": "lli",
+        "q_loss_frac": 0.15,
+        "loss_eod_ah": 0.4775944443004918,
+        "q_shift_ah": 0.42339049078993035,
+        "q_shape_ah": 0.08140806181284548,
+        "share_shape": 0.1612684136931454,
+        "r2": 0.21751946370929176,
+        "boundary": "interior",
+        "low_quality": true
+      },
+      {
+        "injected": "lam_pe",
+        "q_loss_frac": 0.15,
+        "loss_eod_ah": 0.4775944443004918,
+        "q_shift_ah": 0.048894241781139006,
+        "q_shape_ah": 0.7078531101781536,
+        "share_shape": 0.9353889489609087,
+        "r2": 0.9524560091987387,
+        "boundary": "interior",
+        "low_quality": true
+      },
+      {
+        "injected": "lam_ne",
+        "q_loss_frac": 0.15,
+        "loss_eod_ah": 0.47759444430049136,
+        "q_shift_ah": 0.0,
+        "q_shape_ah": 0.19884688379714177,
+        "share_shape": 1.0,
+        "r2": 0.6033602013784134,
+        "boundary": "shape_only",
+        "low_quality": true
+      }
+    ]
+  },
+  "recovery_10pct_shares": {
+    "lli": 0.0,
+    "lam_pe": 0.9219779071217724,
+    "lam_ne": 1.0
+  },
+  "diagonal_dominance": {
+    "class_level": true,
+    "strict": true
+  },
+  "geometry_sensitivity": {
+    "LFP": {
+      "loss_frac": 0.1,
+      "shift_injected": {
+        "share_shape": 0.031086827978887517,
+        "q_shift": 0.10121452150276108,
+        "q_shape": 0.003247389456331166,
+        "r2": 0.3385239415137903,
+        "low_quality": true,
+        "basis_corr": 0.4553807693214433
+      },
+      "shape_injected": {
+        "share_shape": 0.9999999999999999,
+        "q_shift": 6.977240096197474e-18,
+        "q_shape": 0.1036,
+        "r2": 1.0,
+        "low_quality": false,
+        "basis_corr": 0.4553807693214433
+      },
+      "member": "SNL_18650_LFP_25C_0-100_0.5-3C_a.pkl"
+    },
+    "NMC": {
+      "loss_frac": 0.1,
+      "shift_injected": {
+        "share_shape": 0.002921096399473954,
+        "q_shift": 0.2545956223690788,
+        "q_shape": 0.0007458771348371692,
+        "r2": 1.0,
+        "low_quality": false,
+        "basis_corr": 0.4926366347867682
+      },
+      "shape_injected": {
+        "share_shape": 1.0,
+        "q_shift": 1.8274851651485683e-17,
+        "q_shape": 0.2550999999999998,
+        "r2": 1.0,
+        "low_quality": false,
+        "basis_corr": 0.4926366347867682
+      },
+      "member": "SNL_18650_NMC_25C_0-100_0.5-3C_a.pkl"
+    }
+  },
+  "lfp_geometry_ok": true,
+  "temperature_axis_reading": "b_lam_accel",
+  "v1_10_crosscheck": {
+    "shape_share_lfp3c_eol": 0.62,
+    "mech_share_lfp3c": 0.54
+  },
+  "caveats": [
+    "LCO/石墨 Kokam 几何验证 ≠ LFP/NMC/NCA 化学统一",
+    "OCV 级注入不含动力学/阻抗贡献",
+    "LAM-PE vs LAM-NE 位点区分不在两模式分辨率内",
+    "耦合 (x_n0, N/P) 沿山脊弱可辨识（V(q) 只约束轨迹组合）；x_p0 与 q_use 可辨识，恢复矩阵对山脊解不敏感（三档一致）"
+  ],
+  "verdict": "电极级耦合验证收口（post-mortem 数据侧几何裁决）：Oxford Half_Cell（MCOS 解码）电极耦合重建 FC_POCV RMSE 43.1 mV（N/P=1.00）——耦合自洽。合成损伤恢复矩阵（loss=10%）：LLI→share_shape 0.00（shift-like）、LAM-PE→0.92、LAM-NE→1.00（shape-like）——严格对角占优。SNL 真实几何：LFP shift注入恢复 0.03/shape注入 1.00，NMC 同款——平台型几何可分离。→ v1.10 温度轴两读法证据权重：恢复矩阵严格对角占优（LLI→shift、LAM→shape）+ LFP 平台几何下估计器可分离 → v1.10 温度轴 35°C shape↑ 的证据权重落「高温 LAM 型加速」读法。 与 v1.10 份额对拍：LFP 3C shape 62% ↔ 机械 54%（两读法之下均指向 LAM 型主导）。⚠️ 耦合验证是 LCO/石墨 Kokam 几何——LFP/NMC 化学迁移经 SNL 真实曲线合成扰动补强，但 LAM-PE/NE 位点区分（正极 vs 负极）不在两模式分辨率内。",
+  "elapsed_s": 2.6
+}

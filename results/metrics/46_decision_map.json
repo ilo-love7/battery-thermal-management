@@ -1,0 +1,95 @@
+{
+  "questions": [
+    {
+      "id": "Q1",
+      "name": "LFP 5C 方向（m 带）",
+      "width_before": 1.0505323160080833,
+      "kind": "interval",
+      "anchor": "[2.30, 3.35]"
+    },
+    {
+      "id": "Q2",
+      "name": "温度轴两读法（映射失效 vs LAM 加速）",
+      "width_before": 1.0,
+      "kind": "binary",
+      "anchor": "v1.44 几何证据倾向读法 b（b_lam_accel）"
+    },
+    {
+      "id": "Q3",
+      "name": "m(3C;T) 代理带（LFP）",
+      "width_before": 3.080990665007165,
+      "kind": "interval",
+      "anchor": "[1.85, 4.94]（2C 代理）"
+    },
+    {
+      "id": "Q4",
+      "name": "材料位点（颗粒开裂/集流体）",
+      "width_before": 1.0,
+      "kind": "binary",
+      "anchor": "未知"
+    },
+    {
+      "id": "Q5",
+      "name": "LAM-PE vs LAM-NE 位点分辨",
+      "width_before": 1.0,
+      "kind": "binary",
+      "anchor": "v1.44 两模式分辨率边界（不区分 PE/NE）"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "E1",
+      "name": "5C 台架 m(c) 实测",
+      "resolves": {
+        "Q1": 0.4461535023521609
+      },
+      "n_cost": "5×2 臂",
+      "evi_proxy": 0.4686986721211334,
+      "after": {
+        "Q1": 0.5818336438869499
+      }
+    },
+    {
+      "id": "E2",
+      "name": "post-mortem 拆解（8 牺牲芯）",
+      "resolves": {
+        "Q2": 1.0,
+        "Q4": 1.0,
+        "Q5": 0.8
+      },
+      "n_cost": "8 芯",
+      "evi_proxy": 2.8,
+      "after": {
+        "Q2": 0.0,
+        "Q4": 0.0,
+        "Q5": 0.19999999999999996
+      }
+    },
+    {
+      "id": "E3",
+      "name": "3C/5C×多温度老化组",
+      "resolves": {
+        "Q3": 0.6754290717730316
+      },
+      "n_cost": "72 芯",
+      "evi_proxy": 2.080990665007165,
+      "after": {
+        "Q3": 1.0000000000000002
+      }
+    }
+  ],
+  "ranking": [
+    "E2",
+    "E3",
+    "E1"
+  ],
+  "evi_note": "EVI 代理 = 未决带宽收缩（非货币口径）",
+  "sources": [
+    "40_5c_refine.json",
+    "42_rate_temp_surface.json",
+    "44_electrode_mapping.json",
+    "45_exp_design.json"
+  ],
+  "verdict": "决策解析图收口（v1.11 第三线）：未决 5 问映射 3 实验——E2 post-mortem 拆解（2.80） > E3 3C/5C×多温度老化组（2.08） > E1 5C 台架 m(c) 实测（0.47）。E2 一次裁决 3 问（两读法/材料位点/PE-NE 分辨）；E1 把 LFP 5C 带 [2.30,3.35] 收到 CI ±0.29；E3 消掉 2C 代理带（宽 3.08）。EVI 代理=带宽收缩口径（非货币），先后仅作参考——E2 依赖破坏性拆解窗口，实际排期常与 E1 并行。",
+  "elapsed_s": 0.8
+}

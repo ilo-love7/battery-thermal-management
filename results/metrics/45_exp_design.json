@@ -1,0 +1,283 @@
+{
+  "variance_source": {
+    "file": "D:\\项目\\01_在研项目\\电池热管理-A5\\results\\cache\\snl_summary.csv",
+    "ref_group": {
+      "chem": "LFP",
+      "temp_c": 25.0,
+      "c_dis": 1.0,
+      "n": 4,
+      "mean": 2.4952505022868134e-05,
+      "sd": 1.4209828218932186e-06
+    },
+    "g3": {
+      "n": 4,
+      "mean": 5.7455102710501574e-05,
+      "sd": 8.59540725759439e-06
+    },
+    "g2": {
+      "n": 2,
+      "mean": 2.2336249479415504e-05,
+      "sd": 1.6842928600889804e-07
+    },
+    "sd_5_assumed": 1.0314488709113267e-05,
+    "sd_5_note": "5C 无实测方差 → 3C sd×1.2 代理（假设定量化）"
+  },
+  "bench_5c": {
+    "delta_rate_per_efc": 1.9962004018294513e-05,
+    "hypotheses_m": [
+      2.3,
+      3.1,
+      3.35
+    ],
+    "n_per_arm_power80": 5,
+    "power_curve": {
+      "n": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "power": [
+        0.49017595250472457,
+        0.659217753305759,
+        0.7814249815180617,
+        0.8643494770375031,
+        0.9180595040271315,
+        0.951615014345703,
+        0.9719789764438606,
+        0.9840437218983653,
+        0.9910475624676337,
+        0.9950428182736242,
+        0.9972872593278483
+      ]
+    },
+    "m_se_by_n": {
+      "2": 0.3053303190987328,
+      "3": 0.25445664866074336,
+      "4": 0.22474202364270565,
+      "6": 0.1904462347603122,
+      "8": 0.17073419079393762,
+      "10": 0.15772888527175083,
+      "12": 0.14842694997116068
+    },
+    "m_se_target": 0.2,
+    "decision_rule": {
+      "positive": "CI 整体 < 3.1",
+      "negative": "CI 整体 > 3.1",
+      "inconclusive": "CI 跨打平点 → 加样本"
+    }
+  },
+  "precision_budget": {
+    "efc_window": 240.0,
+    "n_rpt_obs": 25,
+    "sigma_q_req_ah": 0.00059550728327599,
+    "sigma_q_req_rel": 0.0005731542668681327,
+    "q_nom_ah": 1.0390000000000001,
+    "typical_0p2pct_se": 5.998669296880213e-06,
+    "adequate": false
+  },
+  "postmortem_plan": {
+    "groups": [
+      {
+        "chem": "LFP",
+        "c_dis": 1.0,
+        "temp_c": 35.0,
+        "n_sacrifice": 2,
+        "role": "reading_b_test",
+        "fade_trigger": 0.1,
+        "measure": "SEM/EDS 正负极截面裂纹密度 + XRD + dQ/dV 对拍"
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 1.0,
+        "temp_c": 25.0,
+        "n_sacrifice": 2,
+        "role": "reading_b_pair_control",
+        "fade_trigger": 0.1,
+        "measure": "同上（同 fade 深度配对）"
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 3.0,
+        "temp_c": 25.0,
+        "n_sacrifice": 2,
+        "role": "mech_share_validate",
+        "fade_trigger": 0.1,
+        "measure": "同上 + 与 54%/62% 双估计器对拍"
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 3.0,
+        "temp_c": 25.0,
+        "n_sacrifice": 2,
+        "role": "nuisance_control",
+        "fade_trigger": 0.1,
+        "measure": "同上（nuisance 应无系统性 LAM 签名）"
+      }
+    ],
+    "total_sacrifice": 8,
+    "decision_fn": "decision_postmortem(lam_35c, lam_25c, crack_35c, crack_25c)",
+    "rule_example": "reading_b_confirmed"
+  },
+  "rate_temp_matrix": {
+    "groups": [
+      {
+        "chem": "LFP",
+        "c_dis": 3.0,
+        "temp_c": 15.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 3.0,
+        "temp_c": 25.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 3.0,
+        "temp_c": 35.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 5.0,
+        "temp_c": 15.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 5.0,
+        "temp_c": 25.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 5.0,
+        "temp_c": 35.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 1.0,
+        "temp_c": 15.0,
+        "n_cells": 4,
+        "role": "reference",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 1.0,
+        "temp_c": 25.0,
+        "n_cells": 4,
+        "role": "reference",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "LFP",
+        "c_dis": 1.0,
+        "temp_c": 35.0,
+        "n_cells": 4,
+        "role": "reference",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 3.0,
+        "temp_c": 15.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 3.0,
+        "temp_c": 25.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 3.0,
+        "temp_c": 35.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 5.0,
+        "temp_c": 15.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 5.0,
+        "temp_c": 25.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 5.0,
+        "temp_c": 35.0,
+        "n_cells": 4,
+        "role": "target",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 1.0,
+        "temp_c": 15.0,
+        "n_cells": 4,
+        "role": "reference",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 1.0,
+        "temp_c": 25.0,
+        "n_cells": 4,
+        "role": "reference",
+        "rpt_every_efc": 100
+      },
+      {
+        "chem": "NMC",
+        "c_dis": 1.0,
+        "temp_c": 35.0,
+        "n_cells": 4,
+        "role": "reference",
+        "rpt_every_efc": 100
+      }
+    ],
+    "total_cells": 72,
+    "channel_days": 15000.0,
+    "rpt_every_efc": 100,
+    "decision_rule": "m(3C;T) CI 半宽 ≤ 0.5 替代 2C 代理带"
+  },
+  "verdict": "三项硬件实验方案量化收口（开放项①②③数据方案设计）：① 5C 台架——区分 LFP 5C 打平点 m*=3.1（带 [2.3,3.35]）需每臂 n≥5（δ_rate=2.00e-05/EFC，sd 代理 1.03e-05=3C×1.2 假定），n=4 时 m SE 0.22（目标 0.2），判据预注册：CI 全 <3.1 → 吞吐正 / 全 > → 负 / 跨 → 不可判。② post-mortem——35 vs 25 °C 同 fade 配对 2+2（两读法裁决）+ 3C 验证 2 + NMC nuisance 对照 2 = 8 牺牲芯，SEM/EDS+XRD+dQ/dV。③ 3C/5C×T——72 芯/18 组全矩阵（含 1C 对照），通道日 ≈ 15000，RPT 每 100 EFC。测量精度：σ_Q ≤ 0.6 mAh（0.06% Q_nom）方可不淹没电芯散布。⚠️ 5C sd 是 3C×1.2 代理（无 5C 实测方差）；功效数字是方案下界参考，首组 5C 数据到手后应回填真实 sd 重算。",
+  "elapsed_s": 1.8
+}
