@@ -1,6 +1,6 @@
 {
- "n_cells": 22,
- "n_blocks": 258,
+ "n_cells": 27,
+ "n_blocks": 313,
  "segment_compare": {
   "n": 12,
   "fade_mol_med": 11.749938770918188,
@@ -9,13 +9,21 @@
  },
  "condition_anchors": {
   "g5": {
-   "n": 0
+   "n": 3,
+   "fade_eol_med": 61.40914797088809,
+   "fade_mol_med": null,
+   "rpt_med": 10.0,
+   "fade_eol_min": 57.99332406603463,
+   "fade_eol_max": 67.35942310238703,
+   "fade_eol_iqr": 4.683049518176205
   },
   "g6": {
    "n": 1,
    "fade_eol_med": 3.992615338838823,
    "fade_mol_med": null,
    "rpt_med": 22.0,
+   "fade_eol_min": 3.992615338838823,
+   "fade_eol_max": 3.992615338838823,
    "fade_eol_iqr": null
   },
   "g1_4": {
@@ -24,8 +32,8 @@
    "rpt_med": 14.0
   },
   "g7_10": {
-   "n": 9,
-   "fade_eol_med": 9.727838265577471,
+   "n": 11,
+   "fade_eol_med": 9.881979011108644,
    "rpt_med": 6.0
   }
  },
@@ -180,6 +188,42 @@
    "n_rpt_p2": 3
   },
   {
+   "group": 5,
+   "cell": 5,
+   "kind": "cycle_only",
+   "q_bol": 3.110360339682781,
+   "q_mol": NaN,
+   "q_eol": 1.2003145562591646,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 61.40914797088809,
+   "n_rpt": 10,
+   "n_rpt_p2": 10
+  },
+  {
+   "group": 5,
+   "cell": 6,
+   "kind": "cycle_only",
+   "q_bol": 3.1131683318074304,
+   "q_mol": NaN,
+   "q_eol": 1.3077385324211828,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 57.99332406603463,
+   "n_rpt": 11,
+   "n_rpt_p2": 11
+  },
+  {
+   "group": 5,
+   "cell": 16,
+   "kind": "cycle_only",
+   "q_bol": 3.1161566751862866,
+   "q_mol": NaN,
+   "q_eol": 1.0171315158142795,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 67.35942310238703,
+   "n_rpt": 10,
+   "n_rpt_p2": 10
+  },
+  {
    "group": 6,
    "cell": 1,
    "kind": "calendar_only",
@@ -298,6 +342,30 @@
    "fade_eol_pct": 9.446507225351953,
    "n_rpt": 6,
    "n_rpt_p2": 6
+  },
+  {
+   "group": 10,
+   "cell": 22,
+   "kind": "combined_cccv",
+   "q_bol": 3.0746149394301607,
+   "q_mol": NaN,
+   "q_eol": 2.4135674279218966,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 21.50017236404831,
+   "n_rpt": 12,
+   "n_rpt_p2": 12
+  },
+  {
+   "group": 10,
+   "cell": 25,
+   "kind": "combined_cccv",
+   "q_bol": 3.083277119732455,
+   "q_mol": NaN,
+   "q_eol": 2.418934030797368,
+   "fade_mol_pct": NaN,
+   "fade_eol_pct": 21.546655170351148,
+   "n_rpt": 12,
+   "n_rpt_p2": 12
   }
  ],
  "caveats": [
@@ -306,5 +374,5 @@
   "fade 参考=BoL RPT 最大者（48 坑十三纪律）",
   "TestTime 分钟制积分（v1.12 坑十五）"
  ],
- "verdict": "fade 到 EoL + 新工况解耦收口：22 芯 RPT 轨迹（258 块，Part 1+2/3 Guide 拼接）——组合工况（组 1–4）分段 fade：BoL→MoL 中位 11.7% → 全链 EoL 17.5%，后段份额中位 31%（退化放缓/持平，与 49 阻抗链后段 63% **反向**——fade 后段放缓而界面阻抗增长加速，容量与阻抗在时间维度解耦（与 §72 fade 差不在阻抗总量的结论一致的另一表现））。循环/日历解耦锚：组 6 纯日历 fade 4.0%（n=1，RPT 中位 22 点）已入库；组 5 连续循环包未就绪，fade 侧解耦对比待补。CCCV/满充修订：组 7–10 fade 9.7% （RPT 中位 6 点）vs CC/90% 组 1–4 17.5%（RPT 中位 14 点）——⚠️ EoL=数据集末标签非 20% SOH，RPT 跨度差异大时水平不可直接比，只作方向参考。ΔR_pol/fade 到 EoL：2.4 mΩ/%（n=35）。配比图景收口：EIS 侧工况解耦已闭合（49：组 5 尾段 88% vs 组 6 弧段 94%），fade 侧解耦待组 5/6 包到齐后补跑。⚠️ EoL=Guide 末 RPT 标签口径；组 6 n=1；跨 Part 步号仅组内单调。"
+ "verdict": "fade 到 EoL + 新工况解耦收口：27 芯 RPT 轨迹（313 块，Part 1+2/3 Guide 拼接）——组合工况（组 1–4）分段 fade：BoL→MoL 中位 11.7% → 全链 EoL 17.5%，后段份额中位 31%（退化放缓/持平，与 49 阻抗链后段 63% **反向**——fade 后段放缓而界面阻抗增长加速，容量与阻抗在时间维度解耦（与 §72 fade 差不在阻抗总量的结论一致的另一表现））。循环/日历解耦锚：组 5 纯 C/2 连续循环 fade 61.4%（n=3，RPT 中位 10 点）vs 组 6 纯日历 4.0%（n=1，RPT 中位 22 点）——循环 fade 快于日历（同 24 °C）。⚠️ EoL 语义不同：组 5 连续循环走到真寿命终点（单芯 fade 58–67%），组 6 日历是试验终点——水平差是「同窗口内谁死谁活」不是同里程 fade 速率。CCCV/满充修订：组 7–10 fade 9.9% （RPT 中位 6 点）vs CC/90% 组 1–4 17.5%（RPT 中位 14 点）——⚠️ EoL=数据集末标签非 20% SOH，RPT 跨度差异大时水平不可直接比，只作方向参考。ΔR_pol/fade 到 EoL：2.4 mΩ/%（n=35）。配比图景收口：49 EIS 侧工况解耦已闭合（组 5 尾段 88% vs 组 6 弧段 94%）；fade 侧解耦同向（循环 fade 高于日历 + 尾段主导 = 类 shape/LAM，日历 fade 低 + 弧段主导 = 类 shift/SEI）——v1.12「慢→shift、快→shape」在同体系内成立，三线合流（SNL shape 份额 + Oxford 阻抗解耦 + fade 解耦）。⚠️ EoL=Guide 末 RPT 标签口径；组 6 n=1；跨 Part 步号仅组内单调。"
 }

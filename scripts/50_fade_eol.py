@@ -255,6 +255,8 @@ def main() -> None:
             "fade_mol_med": float(np.nanmedian(sub.fade_mol_pct))
             if sub.fade_mol_pct.notna().any() else None,
             "rpt_med": float(np.nanmedian(sub.n_rpt)),
+            "fade_eol_min": float(np.nanmin(sub.fade_eol_pct)),
+            "fade_eol_max": float(np.nanmax(sub.fade_eol_pct)),
             "fade_eol_iqr": float(sub.fade_eol_pct.quantile(0.75)
                                   - sub.fade_eol_pct.quantile(0.25))
             if len(sub) > 1 else None,
@@ -424,7 +426,10 @@ def main() -> None:
                 > (g6.get("fade_eol_med") or 0) else
                 "——循环 fade 不高于日历（与常规预期反向，如实记录）"
             )
-            + "（同 24 °C；⚠️ RPT 跨度不同则水平不可直接比）。"
+            + "（同 24 °C）。⚠️ EoL 语义不同：组 5 连续循环走到"
+            f"真寿命终点（单芯 fade {g5.get('fade_eol_min') or float('nan'):.0f}–"
+            f"{g5.get('fade_eol_max') or float('nan'):.0f}%），组 6 日历是试验终点"
+            "——水平差是「同窗口内谁死谁活」不是同里程 fade 速率。"
             if g5.get("n") and g6.get("n") else
             (
                 f"循环/日历解耦锚：组 6 纯日历 fade "
