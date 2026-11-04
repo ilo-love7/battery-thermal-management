@@ -1,0 +1,178 @@
+{
+ "n_cells": 27,
+ "n_blocks": 563,
+ "n_q_points": 313,
+ "dual_estimator": {
+  "n": 546,
+  "rel_diff_med": 2.870858103915741e-06,
+  "rel_diff_p95": 0.00012094011504439024,
+  "frac_over_5pct": 0.04395604395604396
+ },
+ "group_rates": {
+  "g1": {
+   "n": 3,
+   "kind": "combined",
+   "efc_total_med": 668.3935007779855,
+   "days_total_med": 857.8004418981483,
+   "fade_eol_med": 18.827633880964612,
+   "rate_efc_secant_med": 2.8168487364179837,
+   "rate_efc_ols_med": 2.477848336384478,
+   "rate_day_secant_med": 2.11677054009402
+  },
+  "g2": {
+   "n": 3,
+   "kind": "combined",
+   "efc_total_med": 379.2276217482125,
+   "days_total_med": 888.642441550926,
+   "fade_eol_med": 14.638396338306059,
+   "rate_efc_secant_med": 3.8075594884044595,
+   "rate_efc_ols_med": 3.348349113076778,
+   "rate_day_secant_med": 1.6472763007760491
+  },
+  "g3": {
+   "n": 3,
+   "kind": "combined",
+   "efc_total_med": 631.0489080286015,
+   "days_total_med": 891.7385968750002,
+   "fade_eol_med": 21.461858064006478,
+   "rate_efc_secant_med": 3.4556920577958268,
+   "rate_efc_ols_med": 3.2954588998404546,
+   "rate_day_secant_med": 2.4453702025062625
+  },
+  "g4": {
+   "n": 3,
+   "kind": "combined",
+   "efc_total_med": 379.22886634038593,
+   "days_total_med": 881.7906939814816,
+   "fade_eol_med": 14.805310329216748,
+   "rate_efc_secant_med": 3.9040567961216035,
+   "rate_efc_ols_med": 2.9926570477217034,
+   "rate_day_secant_med": 1.6820349628625568
+  },
+  "g5": {
+   "n": 3,
+   "kind": "cycle_only",
+   "efc_total_med": 851.7508986030974,
+   "days_total_med": 252.12252118055557,
+   "fade_eol_med": 61.40914797088809,
+   "rate_efc_secant_med": 7.209754409605125,
+   "rate_efc_ols_med": 6.002011339845692,
+   "rate_day_secant_med": 24.356867321230066
+  },
+  "g6": {
+   "n": 1,
+   "kind": "calendar_only",
+   "efc_total_med": 82.2202149749593,
+   "days_total_med": 818.548375115741,
+   "fade_eol_med": 3.992615338838823,
+   "rate_efc_secant_med": 4.856002067198195,
+   "rate_efc_ols_med": 4.724252513794062,
+   "rate_day_secant_med": 0.487767792376874
+  },
+  "g7": {
+   "n": 3,
+   "kind": "combined_cccv",
+   "efc_total_med": 290.32597374629705,
+   "days_total_med": 359.9168269675926,
+   "fade_eol_med": 7.598845742920912,
+   "rate_efc_secant_med": 2.617349610462757,
+   "rate_efc_ols_med": 4.363744947182177,
+   "rate_day_secant_med": 2.1107492517872717
+  },
+  "g8": {
+   "n": 3,
+   "kind": "combined_cccv",
+   "efc_total_med": 290.82860663172806,
+   "days_total_med": 328.0133483796297,
+   "fade_eol_med": 8.208882230951742,
+   "rate_efc_secant_med": 2.822584176303718,
+   "rate_efc_ols_med": 4.38741318248203,
+   "rate_day_secant_med": 2.503357080228573
+  },
+  "g9": {
+   "n": 3,
+   "kind": "combined_cccv",
+   "efc_total_med": 259.92768475269014,
+   "days_total_med": 318.4424247685185,
+   "fade_eol_med": 8.453421104821624,
+   "rate_efc_secant_med": 3.256040431695432,
+   "rate_efc_ols_med": 5.093142699312687,
+   "rate_day_secant_med": 2.654615229414412
+  },
+  "g10": {
+   "n": 2,
+   "kind": "combined_cccv",
+   "efc_total_med": 521.4375524681714,
+   "days_total_med": 548.5825521412037,
+   "fade_eol_med": 20.06289941186811,
+   "rate_efc_secant_med": 3.8477054317239046,
+   "rate_efc_ols_med": 3.9551591134714768,
+   "rate_day_secant_med": 3.657224733697879
+  }
+ },
+ "g1_4_pooled": {
+  "n": 12,
+  "efc": 550.2370481376876,
+  "sec": 3.7298725169806057,
+  "day": 1.9644262990916255
+ },
+ "drpol_per_efc": {
+  "g1": {
+   "n": 9,
+   "drpol_per_100efc_med": 10.28878077359441,
+   "d_r_pol_med_mohm": 65.417203
+  },
+  "g2": {
+   "n": 9,
+   "drpol_per_100efc_med": 15.363799787227904,
+   "d_r_pol_med_mohm": 65.742085
+  },
+  "g3": {
+   "n": 9,
+   "drpol_per_100efc_med": 17.3888580065328,
+   "d_r_pol_med_mohm": 96.848927
+  },
+  "g4": {
+   "n": 9,
+   "drpol_per_100efc_med": 13.320090447613836,
+   "d_r_pol_med_mohm": 51.504161999999994
+  },
+  "g5": {
+   "n": 6,
+   "drpol_per_100efc_med": 61.17898870277835,
+   "d_r_pol_med_mohm": 526.6544100000001
+  },
+  "g6": {
+   "n": 3,
+   "drpol_per_100efc_med": 8.687093559868849,
+   "d_r_pol_med_mohm": 7.142547000000013
+  },
+  "g7": {
+   "n": 9,
+   "drpol_per_100efc_med": 17.804075913236595,
+   "d_r_pol_med_mohm": 51.03699399999999
+  },
+  "g8": {
+   "n": 9,
+   "drpol_per_100efc_med": 18.75282483303228,
+   "d_r_pol_med_mohm": 54.656212
+  },
+  "g9": {
+   "n": 9,
+   "drpol_per_100efc_med": 19.704783293373264,
+   "d_r_pol_med_mohm": 51.218187000000015
+  },
+  "g10": {
+   "n": 6,
+   "drpol_per_100efc_med": 17.64181674535255,
+   "d_r_pol_med_mohm": 92.208624
+  }
+ },
+ "caveats": [
+  "EFC=放电 Ah/q_bol；块级累积+容量点对齐段结束点",
+  "合并块（Profile+RPT）q 点=块内最大 CC 段（块粒度近似）",
+  "组 6 n=1 个案；EoL 标签块计吞吐不计容量点",
+  "TestTime 分钟制；Amphr 步内累积（双估计器口径）"
+ ],
+ "verdict": "EFC/时间轴归一化收口（27 芯、563 块全量解析）——「61% vs 4%」分解为里程×速率：组 5 连续循环 EFC 中位 852 vs 组 1–4 组合 550（里程比 1.5×）；同里程 fade 速率（fade/100 EFC 割线中位）组 5 7.21% vs 组 1–4 3.73%（速率比 1.93）——组 5 单位里程退化也更快（速率×里程双杀）；组 6 日历 fade/100 天 0.488% vs 组 5 24.36%（组 6 EFC 中位 82.22≈0——日历老化是时间驱动非通量驱动）。ΔR_pol/100 EFC：组 1 10.3 mΩ，组 10 17.6 mΩ，组 2 15.4 mΩ，组 3 17.4 mΩ，组 4 13.3 mΩ，组 5 61.2 mΩ，组 6 8.7 mΩ，组 7 17.8 mΩ，组 8 18.8 mΩ，组 9 19.7 mΩ——跨工况差异显著=阻抗机制配比不同（49 三通道）。双估计器（∫|I|dt vs 分步 Amphr）中位相对差 0.0%、>5% 占 4%（Amphr 步内累积口径核对）。⚠️ EFC=放电 Ah/q_bol 口径；合并块（Profile+多 RPT）容量点取块内最大 CC 放电段（≈首个 RPT，块粒度近似）；组 6 n=1 个案；EoL 标签块计吞吐不计容量点（与 50 同口径）。"
+}

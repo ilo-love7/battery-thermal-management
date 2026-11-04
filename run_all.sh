@@ -21,7 +21,8 @@ for s in 00_env_check 01_heat_analysis 02_cooling_sweep 03_gradient_ident \
   41_degrade_modes 42_rate_temp_surface 43_mode_rate_temp \
   44_electrode_mapping 45_exp_design 46_decision_map \
   47_eis_degrade 48_eis_mode_link \
-  49_eis_eol 50_fade_eol 51_hwexp_pipeline 52_efc_rate; do
+  49_eis_eol 50_fade_eol 51_hwexp_pipeline 52_efc_rate
+  53_rest_dose 54_soc_axis; do
   echo "===== $s ====="
   "$PY" "scripts/$s.py"
 done

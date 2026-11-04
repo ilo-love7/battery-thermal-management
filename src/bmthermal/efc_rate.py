@@ -101,3 +101,118 @@ def group_rates(rates: pd.DataFrame,
             "rate_day_secant_med": med("rate_day_secant"),
         }
     return out
+
+
+# ---------------------------------------------------------------------------
+# matched-depth 速率（v1.15）：修「割线跨深度不可比」混杂
+# ---------------------------------------------------------------------------
+
+def matched_depth_rates(traj: pd.DataFrame, fade_cap: float = 15.0,
+                        min_pts: int = 3) -> pd.DataFrame:
+    """逐芯 matched-depth fade 速率（%/100 EFC）。
+
+    - rate_early：fade ≤ fade_cap 的点做 OLS fade~efc → %/100 EFC
+      （点数不足 min_pts 时取前 min_pts 点，flag=1）；负 fade 点
+      （q_bol 参考噪声伪影，fade<0=容量高于参考）不入 OLS；
+    - efc_at_cap：线性插值到 fade=fade_cap 的 EFC（未达 → NaN）；
+    - rate_to_cap：fade_cap/efc_at_cap×100（到该深度割线）。
+    fade 轨迹非单调时按 fade 排序后插值（如实，不平滑）。
+    """
+    rows = []
+    for (g, cell), sub in traj.groupby(["group", "cell"]):
+        sub = sub.sort_values("efc")
+        sub = sub[sub.fade_pct >= 0]          # 滤 q_bol 噪声负 fade
+        if len(sub) < min_pts:
+            continue
+        efc = sub.efc.to_numpy(float)
+        fade = sub.fade_pct.to_numpy(float)
+        early = sub[sub.fade_pct <= fade_cap]
+        flag = 0
+        if len(early) < min_pts:
+            early = sub.head(min_pts)
+            flag = 1
+        ea = early.efc.to_numpy(float)
+        fa = early.fade_pct.to_numpy(float)
+        if ea.max() - ea.min() < 1e-9:
+            slope = float("nan")
+        else:
+            slope = float(np.polyfit(ea, fa, 1)[0]) * 100.0
+        efc_at_cap = float("nan")
+        if len(sub) and np.nanmax(fade) >= fade_cap:
+            order = np.argsort(fade)
+            f_sorted = fade[order]
+            e_sorted = efc[order]
+            uniq_f, idx = np.unique(f_sorted, return_index=True)
+            efc_at_cap = float(np.interp(fade_cap, uniq_f, e_sorted[idx]))
+        rate_to_cap = (fade_cap / efc_at_cap * 100.0
+                       if np.isfinite(efc_at_cap) and efc_at_cap > 0
+                       else float("nan"))
+        rows.append({
+            "group": int(g), "cell": int(cell),
+            "n_used": int(len(early)), "flag": flag,
+            "rate_early": slope,
+            "efc_at_cap": efc_at_cap,
+            "rate_to_cap": rate_to_cap,
+            "fade_max": float(np.nanmax(fade)),
+            "efc_total": float(efc[-1]),
+        })
+    return pd.DataFrame(rows)
+
+
+def fade_at_efc(traj: pd.DataFrame, target: float,
+                efc_col: str = "efc", fade_col: str = "fade_pct") -> pd.DataFrame:
+    """逐芯 fade@target EFC（线性插值；轨迹未达 → NaN）。
+
+    同里程锚：比 fade 水平不比深度混杂割线（v1.15）。
+    """
+    rows = []
+    for (g, cell), sub in traj.groupby(["group", "cell"]):
+        s = sub.sort_values(efc_col)
+        e = s[efc_col].to_numpy(float)
+        f = s[fade_col].to_numpy(float)
+        if len(s) < 2 or e[-1] < target:
+            val = float("nan")
+        else:
+            val = float(np.interp(target, e, f))
+        rows.append({"group": int(g), "cell": int(cell),
+                     "fade_at_efc": val, "efc_max": float(e[-1])})
+    return pd.DataFrame(rows)
+
+
+def early_rate_band(traj: pd.DataFrame, fade_cap: float = 15.0,
+                    max_skip: int = 2, min_pts: int = 3) -> dict:
+    """逐芯 early 速率的 BoL 选点敏感带（skip first k=0..max_skip）。
+
+    返回 {cell_key: (rate_k0, rate_k1, ...)} 与组级带；BoL 区容量
+    点噪声（v1.13 坑十八变体）使 OLS 对起点敏感——报告带宽比单值
+    诚实。负 fade 点（q_bol 噪声伪影）在 matched_depth_rates 已滤。
+    """
+    out: dict = {"per_cell": {}, "group_med_band": {}}
+    for (g, cell), sub in traj.groupby(["group", "cell"]):
+        s = sub.sort_values("efc")
+        rates = []
+        for k in range(max_skip + 1):
+            sk = s.iloc[k:]
+            early = sk[sk.fade_pct <= fade_cap]
+            if len(early) < min_pts:
+                early = sk.head(min_pts)
+            ea = early.efc.to_numpy(float)
+            fa = early.fade_pct.to_numpy(float)
+            if ea.max() - ea.min() < 1e-9:
+                rates.append(float("nan"))
+            else:
+                rates.append(float(np.polyfit(ea, fa, 1)[0]) * 100.0)
+        out["per_cell"][f"g{int(g)}_c{int(cell)}"] = rates
+    # 组级：各 skip 档的逐芯中位（带=档间极差）
+    df = pd.DataFrame([
+        {"group": int(k.split("_")[0][1:]), "rates": v}
+        for k, v in out["per_cell"].items()
+    ])
+    for g, sub in df.groupby("group"):
+        med_by_k = [float(np.nanmedian([r[i] for r in sub.rates]))
+                    for i in range(max_skip + 1)]
+        out["group_med_band"][f"g{int(g)}"] = {
+            "med_by_skip": med_by_k,
+            "band": [float(np.nanmin(med_by_k)), float(np.nanmax(med_by_k))],
+        }
+    return out

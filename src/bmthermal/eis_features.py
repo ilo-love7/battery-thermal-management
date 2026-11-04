@@ -210,6 +210,48 @@ def pair_deltas(bol: NyquistFeatures, mol: NyquistFeatures,
 # ⚠️ TestTime/StepTime 单位是**分钟**（d(Amphr)/(I·dt)=1/60 实测标定，
 # 1 Hz 采样）——容量积分必须 /60。
 _MACCOR_REQUIRED = ("TestTime", "Amps", "Volts", "Amphr")
+
+# ---- 脏数据防线（v1.15）：块内 TestTime 哨兵（~1.3e15）/荒谬电流
+# 会让 dt 积分爆炸（q 6.5e292、EFC 1e12 量级野值）。
+I_MAX_A = 50.0        # 18650 物理上限（C/2≈1.5 A；脉冲 ≲4C≈12 A）
+T_SENTINEL_MIN = 1e9  # |TestTime| 超此视为哨兵脏值（分钟）
+DT_MAX_MIN = 600.0    # 相邻样本可信最大间隔（1 s 采样；越界视为断点按 0 计）
+
+# ---- 静置窗口径（v1.15 rest dose）----
+REST_I_THRESH = 0.01   # A：|I| 低于此视为静置
+REST_MIN_MIN = 1.0     # 分钟：静置窗最小时长
+REST_EXT_MIN = 120.0   # 分钟：延长静置窗（恢复相关）阈值
+
+
+def _sanitize_mi(t: np.ndarray, i: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """清洗时间/电流：剔除非有限值、时间哨兵、荒谬电流。"""
+    t = np.asarray(t, dtype=float)
+    i = np.asarray(i, dtype=float)
+    if t.size != i.size:
+        raise ValueError("t/i size mismatch")
+    ok = (np.isfinite(t) & np.isfinite(i)
+          & (np.abs(t) < T_SENTINEL_MIN) & (np.abs(i) <= I_MAX_A))
+    return t[ok], i[ok]
+
+
+def rest_run_durations(t: np.ndarray, i: np.ndarray,
+                       i_thresh: float = REST_I_THRESH,
+                       min_run_min: float = REST_MIN_MIN) -> np.ndarray:
+    """静置窗时长数组 [分钟]：|I|<i_thresh 的连续段（跨段不合并）。
+
+    时长 = 末样本时间 − 首样本时间（单样本段记 0，被 min_run_min 滤除）。
+    """
+    t = np.asarray(t, dtype=float)
+    i = np.asarray(i, dtype=float)
+    if t.size < 2:
+        return np.empty(0)
+    mask = np.abs(i) < i_thresh
+    padded = np.concatenate(([False], mask, [False]))
+    d = np.diff(padded.astype(np.int8))
+    starts = np.flatnonzero(d == 1)
+    ends = np.flatnonzero(d == -1) - 1
+    durs = t[ends] - t[starts]
+    return durs[np.isfinite(durs) & (durs >= min_run_min)]
 _MACCOR_NAME_RE = re.compile(
     r"^(Cyc|Step|TestTime|StepTime|Amphr|Watthr|Amps|Volts|Temp\d*|VARx\d+)$")
 
@@ -304,21 +346,25 @@ def block_discharge_capacity(df: pd.DataFrame) -> float:
 
     对 RPT 块（含充/放/静置）返回总放出 Ah；对纯充电块返回 ≈0。
     """
-    t = df["TestTime"].to_numpy(dtype=float)
-    i = df["Amps"].to_numpy(dtype=float)
-    dt = np.diff(t)
+    t, i = _sanitize_mi(df["TestTime"].to_numpy(dtype=float),
+                        df["Amps"].to_numpy(dtype=float))
+    if t.size < 2:
+        return 0.0
+    dt = np.where(np.diff(t) > DT_MAX_MIN, 0.0, np.maximum(np.diff(t), 0.0))
     i_mid = 0.5 * (i[1:] + i[:-1])
-    q_dis = np.cumsum(np.maximum(-i_mid, 0.0) * np.maximum(dt, 0.0))
+    q_dis = np.cumsum(np.maximum(-i_mid, 0.0) * dt)
     return float(q_dis[-1] / 60.0) if q_dis.size else 0.0
 
 
 def block_charge_capacity(df: pd.DataFrame) -> float:
     """块内充电容量 [Ah] = ∫max(I,0)dt / 60。"""
-    t = df["TestTime"].to_numpy(dtype=float)
-    i = df["Amps"].to_numpy(dtype=float)
-    dt = np.diff(t)
+    t, i = _sanitize_mi(df["TestTime"].to_numpy(dtype=float),
+                        df["Amps"].to_numpy(dtype=float))
+    if t.size < 2:
+        return 0.0
+    dt = np.where(np.diff(t) > DT_MAX_MIN, 0.0, np.maximum(np.diff(t), 0.0))
     i_mid = 0.5 * (i[1:] + i[:-1])
-    q_chg = np.cumsum(np.maximum(i_mid, 0.0) * np.maximum(dt, 0.0))
+    q_chg = np.cumsum(np.maximum(i_mid, 0.0) * dt)
     return float(q_chg[-1] / 60.0) if q_chg.size else 0.0
 
 
@@ -330,8 +376,10 @@ def block_cc_discharge_capacity(df: pd.DataFrame,
     找 |I − median(段)| ≤ tol·|median| 的最长负电流段，积分其 Ah。
     对 RPT 块返回参考放电容量；对脉冲/杂块返回较小值。
     """
-    t = df["TestTime"].to_numpy(dtype=float)
-    i = df["Amps"].to_numpy(dtype=float)
+    t, i = _sanitize_mi(df["TestTime"].to_numpy(dtype=float),
+                        df["Amps"].to_numpy(dtype=float))
+    if t.size < 3:
+        return 0.0
     dis = i < i_min
     if not dis.any():
         return 0.0
@@ -358,7 +406,8 @@ def block_cc_discharge_capacity(df: pd.DataFrame,
                 continue
             tt = t[seg[sub]]
             ii = i[seg[sub]]
-            q = float(np.sum(0.5 * (ii[1:] + ii[:-1]) * np.diff(tt)) / 60.0)
+            q = float(np.sum(0.5 * (ii[1:] + ii[:-1])
+                          * np.where(np.diff(tt) > DT_MAX_MIN, 0.0, np.maximum(np.diff(tt), 0.0))) / 60.0)
             best_q = max(best_q, -q)
     return best_q
 
@@ -373,12 +422,12 @@ def block_cc_discharge_segment(df: pd.DataFrame,
     下标；ah_tp_at_end = ∫|I|dt/60 到该点（含之前所有段）；
     ah_dis_at_end = ∫max(−I,0)dt/60 到该点（EFC 轴用放电口径）。
     """
-    t = df["TestTime"].to_numpy(dtype=float)
-    i = df["Amps"].to_numpy(dtype=float)
+    t, i = _sanitize_mi(df["TestTime"].to_numpy(dtype=float),
+                        df["Amps"].to_numpy(dtype=float))
     if t.size < 3:
         return {"q": 0.0, "end_idx": -1, "t_end": float("nan"),
                 "ah_tp_at_end": 0.0, "ah_dis_at_end": 0.0}
-    dt = np.maximum(np.diff(t), 0.0)
+    dt = np.where(np.diff(t) > DT_MAX_MIN, 0.0, np.maximum(np.diff(t), 0.0))
     i_mid = 0.5 * (i[1:] + i[:-1])
     tp_cum = np.cumsum(np.abs(i_mid) * dt) / 60.0
     dis_cum = np.cumsum(np.maximum(-i_mid, 0.0) * dt) / 60.0
@@ -404,7 +453,8 @@ def block_cc_discharge_segment(df: pd.DataFrame,
                     continue
                 tt = t[seg[sub]]
                 ii = i[seg[sub]]
-                q = float(np.sum(0.5 * (ii[1:] + ii[:-1]) * np.diff(tt))
+                q = float(np.sum(0.5 * (ii[1:] + ii[:-1])
+                                * np.where(np.diff(tt) > DT_MAX_MIN, 0.0, np.maximum(np.diff(tt), 0.0)))
                           / 60.0)
                 if -q > best_q:
                     best_q = -q
@@ -427,9 +477,17 @@ def block_throughput_stats(mat_bytes: bytes) -> dict:
     （Profile+多 RPT）的容量点由此对齐吞吐轴。
     """
     df = load_maccor_block(mat_bytes)
-    t = df["TestTime"].to_numpy(dtype=float)
-    i = df["Amps"].to_numpy(dtype=float)
-    dt = np.maximum(np.diff(t), 0.0)
+    t, i = _sanitize_mi(df["TestTime"].to_numpy(dtype=float),
+                        df["Amps"].to_numpy(dtype=float))
+    if t.size < 2:
+        return {"n_rows": 0, "t_min": 0.0, "ah_tp": 0.0, "ah_chg": 0.0,
+                "ah_dis": 0.0, "ah_amphr": 0.0, "q_cc": 0.0,
+                "t_cc_end_min": float("nan"), "ah_tp_at_cc": 0.0,
+                "ah_dis_at_cc": 0.0, "rest_min_total": 0.0, "rest_n": 0,
+                "rest_med_min": 0.0, "rest_max_min": 0.0,
+                "ext_rest_min": 0.0, "ext_rest_n": 0,
+                "ext_rest_max_min": 0.0}
+    dt = np.where(np.diff(t) > DT_MAX_MIN, 0.0, np.maximum(np.diff(t), 0.0))
     i_mid = 0.5 * (i[1:] + i[:-1])
     ah_chg = float(np.sum(np.maximum(i_mid, 0.0) * dt) / 60.0)
     ah_dis = float(np.sum(np.maximum(-i_mid, 0.0) * dt) / 60.0)
@@ -447,6 +505,8 @@ def block_throughput_stats(mat_bytes: bytes) -> dict:
             ah_amphr = float(np.nanmax(am) - np.nanmin(am)) if am.size else 0.0
     seg = block_cc_discharge_segment(df)
     del df
+    durs = rest_run_durations(t, i)
+    ext = durs[durs >= REST_EXT_MIN]
     return {
         "n_rows": int(t.size),
         "t_min": float(t[-1] - t[0]) if t.size else 0.0,
@@ -458,6 +518,13 @@ def block_throughput_stats(mat_bytes: bytes) -> dict:
         "t_cc_end_min": seg["t_end"],
         "ah_tp_at_cc": seg["ah_tp_at_end"],
         "ah_dis_at_cc": seg["ah_dis_at_end"],
+        "rest_min_total": float(durs.sum()) if durs.size else 0.0,
+        "rest_n": int(durs.size),
+        "rest_med_min": float(np.median(durs)) if durs.size else 0.0,
+        "rest_max_min": float(durs.max()) if durs.size else 0.0,
+        "ext_rest_min": float(ext.sum()) if ext.size else 0.0,
+        "ext_rest_n": int(ext.size),
+        "ext_rest_max_min": float(ext.max()) if ext.size else 0.0,
     }
 
 
