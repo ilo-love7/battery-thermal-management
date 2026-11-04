@@ -41,6 +41,7 @@ from bmthermal.eis_features import (  # noqa: E402
     block_cc_discharge_capacity, block_discharge_capacity,
     load_maccor_block, parse_block_member,
 )
+from bmthermal.guide_map import is_rpt, load_guide_rows  # noqa: E402
 from bmthermal.plotting import save as save_fig, setup_style  # noqa: E402
 
 import matplotlib.pyplot as plt  # noqa: E402
@@ -91,45 +92,6 @@ ZIP_FILES = {
     9: [OXFORD / "Part3" / "Group_9.zip"],
     10: [OXFORD / "Part3" / "Group_10.zip"],
 }
-
-
-def load_guide_rows() -> pd.DataFrame:
-    """全部 Guide xlsx → 统一表（tpg, step, cell, group, label, part）。"""
-    rows = []
-    for path, g_lo, g_hi in GUIDE_FILES:
-        if not path.exists():
-            print(f"    ! guide 缺 {path.name}")
-            continue
-        df = pd.read_excel(path, sheet_name=0, header=None)
-        group = None
-        cell = None
-        for _, r in df.iterrows():
-            v0 = str(r[0]) if pd.notna(r[0]) else ""
-            v1 = str(r[1]) if pd.notna(r[1]) else ""
-            v2 = str(r[2]) if pd.notna(r[2]) else ""
-            if v0.startswith("Group"):
-                m = re.search(r"Group\s*(\d+)", v0)
-                group = int(m.group(1)) if m else None
-                continue
-            if v0.strip() == "Cell" or not v1:
-                continue
-            if v0.strip().isdigit():
-                cell = int(v0.strip())
-            m = re.match(r"TPG(\d+)(?:\.(\d+))?$", v1.strip())
-            if m is None or cell is None or group is None:
-                continue
-            if not (g_lo <= group <= g_hi):
-                continue
-            step = int(m.group(2)) if m.group(2) else 1
-            rows.append({"tpg": int(m.group(1)), "step": step,
-                         "cell": cell, "group": group,
-                         "label": v2.strip(),
-                         "guide": path.name})
-    return pd.DataFrame(rows)
-
-
-def is_rpt(label: str) -> bool:
-    return "RPT" in label.upper()
 
 
 def collect_fade(guide: pd.DataFrame) -> pd.DataFrame:
@@ -228,7 +190,7 @@ def main() -> None:
     (ROOT / "results" / "cache").mkdir(parents=True, exist_ok=True)
 
     # ---- 1. Guide 拼接 ---------------------------------------------
-    guide = load_guide_rows()
+    guide = load_guide_rows(GUIDE_FILES)
     n_rpt = int(guide.label.map(is_rpt).sum())
     print(f"[1] guide 映射 {len(guide)} 块（RPT {n_rpt}）")
 

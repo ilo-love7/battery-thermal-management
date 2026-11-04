@@ -363,6 +363,104 @@ def block_cc_discharge_capacity(df: pd.DataFrame,
     return best_q
 
 
+def block_cc_discharge_segment(df: pd.DataFrame,
+                               i_min: float = -0.1,
+                               tol: float = 0.05) -> dict:
+    """最大 CC 放电段 + 定位（合并块 Profile+RPT 的容量点定位用）。
+
+    返回 {q, end_idx, t_end, ah_tp_at_end, ah_dis_at_end}：q 与
+    block_cc_discharge_capacity 同口径；end_idx 为段内最后一个样本
+    下标；ah_tp_at_end = ∫|I|dt/60 到该点（含之前所有段）；
+    ah_dis_at_end = ∫max(−I,0)dt/60 到该点（EFC 轴用放电口径）。
+    """
+    t = df["TestTime"].to_numpy(dtype=float)
+    i = df["Amps"].to_numpy(dtype=float)
+    if t.size < 3:
+        return {"q": 0.0, "end_idx": -1, "t_end": float("nan"),
+                "ah_tp_at_end": 0.0, "ah_dis_at_end": 0.0}
+    dt = np.maximum(np.diff(t), 0.0)
+    i_mid = 0.5 * (i[1:] + i[:-1])
+    tp_cum = np.cumsum(np.abs(i_mid) * dt) / 60.0
+    dis_cum = np.cumsum(np.maximum(-i_mid, 0.0) * dt) / 60.0
+    dis = i < i_min
+    best_q, best_end = 0.0, -1
+    if dis.any():
+        idx = np.nonzero(dis)[0]
+        splits = np.nonzero(np.diff(idx) > 1)[0]
+        for seg in np.split(idx, splits + 1):
+            if seg.size < 3:
+                continue
+            i_seg = i[seg]
+            i_med = float(np.median(i_seg))
+            if i_med >= i_min:
+                continue
+            cc = np.abs(i_seg - i_med) <= tol * abs(i_med) + 1e-9
+            sub_idx = np.nonzero(cc)[0]
+            if sub_idx.size < 3:
+                continue
+            s2 = np.nonzero(np.diff(sub_idx) > 1)[0]
+            for sub in np.split(sub_idx, s2 + 1):
+                if sub.size < 3:
+                    continue
+                tt = t[seg[sub]]
+                ii = i[seg[sub]]
+                q = float(np.sum(0.5 * (ii[1:] + ii[:-1]) * np.diff(tt))
+                          / 60.0)
+                if -q > best_q:
+                    best_q = -q
+                    best_end = int(seg[sub[-1]])
+    return {
+        "q": float(best_q),
+        "end_idx": best_end,
+        "t_end": float(t[best_end]) if best_end >= 0 else float("nan"),
+        "ah_tp_at_end": float(tp_cum[best_end - 1]) if best_end > 0 else 0.0,
+        "ah_dis_at_end": float(dis_cum[best_end - 1]) if best_end > 0 else 0.0,
+    }
+
+
+def block_throughput_stats(mat_bytes: bytes) -> dict:
+    """块吞吐/时长/参考容量统计（EFC 轨迹构件，v1.14）。
+
+    双估计器：∫|I|dt/60（主） vs 分步 Amphr 极差和（核对）——
+    Amphr 步内累积、步间重置（v1.13 坑）；TestTime 分钟制
+    （v1.12 坑十五）。q_cc 定位到块内结束时点，合并块
+    （Profile+多 RPT）的容量点由此对齐吞吐轴。
+    """
+    df = load_maccor_block(mat_bytes)
+    t = df["TestTime"].to_numpy(dtype=float)
+    i = df["Amps"].to_numpy(dtype=float)
+    dt = np.maximum(np.diff(t), 0.0)
+    i_mid = 0.5 * (i[1:] + i[:-1])
+    ah_chg = float(np.sum(np.maximum(i_mid, 0.0) * dt) / 60.0)
+    ah_dis = float(np.sum(np.maximum(-i_mid, 0.0) * dt) / 60.0)
+    # 双估计器：步内 Amphr 极差求和
+    ah_amphr = 0.0
+    if "Step" in df.columns and "Amphr" in df.columns:
+        st = df["Step"].to_numpy(dtype=float)
+        am = df["Amphr"].to_numpy(dtype=float)
+        if st.size > 1:
+            cuts = np.nonzero(np.diff(st) != 0)[0] + 1
+            for r in np.split(np.arange(st.size), cuts):
+                if r.size:
+                    ah_amphr += float(np.nanmax(am[r]) - np.nanmin(am[r]))
+        else:
+            ah_amphr = float(np.nanmax(am) - np.nanmin(am)) if am.size else 0.0
+    seg = block_cc_discharge_segment(df)
+    del df
+    return {
+        "n_rows": int(t.size),
+        "t_min": float(t[-1] - t[0]) if t.size else 0.0,
+        "ah_tp": ah_chg + ah_dis,
+        "ah_chg": ah_chg,
+        "ah_dis": ah_dis,
+        "ah_amphr": float(ah_amphr),
+        "q_cc": seg["q"],
+        "t_cc_end_min": seg["t_end"],
+        "ah_tp_at_cc": seg["ah_tp_at_end"],
+        "ah_dis_at_cc": seg["ah_dis_at_end"],
+    }
+
+
 # ---------------------------------------------------------------------------
 # 文件名解析
 # ---------------------------------------------------------------------------
