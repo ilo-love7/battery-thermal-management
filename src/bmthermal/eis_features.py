@@ -223,14 +223,23 @@ REST_MIN_MIN = 1.0     # 分钟：静置窗最小时长
 REST_EXT_MIN = 120.0   # 分钟：延长静置窗（恢复相关）阈值
 
 
+def _ok_mask(t: np.ndarray, i: np.ndarray,
+             v: np.ndarray | None = None) -> np.ndarray:
+    """清洗掩码（t/i 同 _sanitize_mi；v 传入时要求其有限）。"""
+    ok = (np.isfinite(t) & np.isfinite(i)
+          & (np.abs(t) < T_SENTINEL_MIN) & (np.abs(i) <= I_MAX_A))
+    if v is not None:
+        ok = ok & np.isfinite(v)
+    return ok
+
+
 def _sanitize_mi(t: np.ndarray, i: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     """清洗时间/电流：剔除非有限值、时间哨兵、荒谬电流。"""
     t = np.asarray(t, dtype=float)
     i = np.asarray(i, dtype=float)
     if t.size != i.size:
         raise ValueError("t/i size mismatch")
-    ok = (np.isfinite(t) & np.isfinite(i)
-          & (np.abs(t) < T_SENTINEL_MIN) & (np.abs(i) <= I_MAX_A))
+    ok = _ok_mask(t, i)
     return t[ok], i[ok]
 
 
@@ -466,6 +475,112 @@ def block_cc_discharge_segment(df: pd.DataFrame,
         "ah_tp_at_end": float(tp_cum[best_end - 1]) if best_end > 0 else 0.0,
         "ah_dis_at_end": float(dis_cum[best_end - 1]) if best_end > 0 else 0.0,
     }
+
+
+def block_cc_discharge_curve(df: pd.DataFrame,
+                             i_min: float = -0.1,
+                             tol: float = 0.05) -> dict:
+    """最大 CC 放电段的 V(q) 曲线（V(Q) 两模式分解输入）。
+
+    选段口径与 block_cc_discharge_capacity 一致（段内 |I−median| ≤
+    tol·|median| 的最长子段中取 q 最大者）；对合并块 Profile+RPT 返回
+    其中 RPT 参考放电（C/25 ≈ −0.125 A）的 V(q)。返回：
+    {q, v, i_med, q_end, n_pts}——q 为段内容量 [Ah]（单调化、自 0
+    起），v 为对应电压 [V]；q 与 v 等长。
+    """
+    t = df["TestTime"].to_numpy(dtype=float)
+    i = df["Amps"].to_numpy(dtype=float)
+    v = df["Volts"].to_numpy(dtype=float)
+    ok = _ok_mask(t, i, v)
+    t, i, v = t[ok], i[ok], v[ok]
+    if t.size < 3:
+        return {"q": np.empty(0), "v": np.empty(0), "i_med": float("nan"),
+                "q_end": 0.0, "n_pts": 0}
+    dis = i < i_min
+    best: tuple | None = None
+    best_q = 0.0
+    if dis.any():
+        idx = np.nonzero(dis)[0]
+        splits = np.nonzero(np.diff(idx) > 1)[0]
+        for seg in np.split(idx, splits + 1):
+            if seg.size < 3:
+                continue
+            i_seg = i[seg]
+            i_med = float(np.median(i_seg))
+            if i_med >= i_min:
+                continue
+            cc = np.abs(i_seg - i_med) <= tol * abs(i_med) + 1e-9
+            sub_idx = np.nonzero(cc)[0]
+            if sub_idx.size < 3:
+                continue
+            s2 = np.nonzero(np.diff(sub_idx) > 1)[0]
+            for sub in np.split(sub_idx, s2 + 1):
+                if sub.size < 3:
+                    continue
+                g = seg[sub]
+                tt, ii, vv = t[g], i[g], v[g]
+                dt = np.where(np.diff(tt) > DT_MAX_MIN, 0.0,
+                              np.maximum(np.diff(tt), 0.0))
+                q_inc = np.maximum(-(0.5 * (ii[1:] + ii[:-1]) * dt), 0.0)
+                q_cum = np.concatenate([[0.0], np.cumsum(q_inc)]) / 60.0
+                q_end = float(q_cum[-1])
+                if q_end > best_q:
+                    best_q = q_end
+                    best = (q_cum, vv, i_med)
+    if best is None:
+        return {"q": np.empty(0), "v": np.empty(0), "i_med": float("nan"),
+                "q_end": 0.0, "n_pts": 0}
+    q_cum, vv, i_med = best
+    q_cum = np.maximum.accumulate(q_cum)  # 容量列偶发毛刺
+    return {"q": q_cum, "v": np.asarray(vv, dtype=float), "i_med": i_med,
+            "q_end": float(q_cum[-1]), "n_pts": int(q_cum.size)}
+
+
+def block_rpt_curves(df: pd.DataFrame,
+                     i_ref: float = -0.125,
+                     i_tol: float = 0.03,
+                     q_min: float = 0.5,
+                     min_pts: int = 500) -> list[dict]:
+    """块内全部参考放电段（i_med ≈ i_ref）的 V(q) 曲线（模式轨迹用）。
+
+    合并块 Profile+RPTx-RPTy 内含多个 C/25（−0.125 A）RPT 参考放电
+    段（细采样数千~数万点）——每段是一次不同深度的 V(q) 观测。筛选：
+    |i_med − i_ref| ≤ i_tol、段容量 ≥ q_min Ah、点数 ≥ min_pts。
+    返回按段内时间顺序的列表：{q, v, q_end, i_med, n_pts}。
+    """
+    t = df["TestTime"].to_numpy(dtype=float)
+    i = df["Amps"].to_numpy(dtype=float)
+    v = df["Volts"].to_numpy(dtype=float)
+    ok = _ok_mask(t, i, v)
+    t, i, v = t[ok], i[ok], v[ok]
+    if t.size < 3:
+        return []
+    out: list[dict] = []
+    dis = i < -0.1
+    if not dis.any():
+        return out
+    idx = np.nonzero(dis)[0]
+    splits = np.nonzero(np.diff(idx) > 1)[0]
+    for seg in np.split(idx, splits + 1):
+        if seg.size < min_pts:
+            continue
+        i_seg = i[seg]
+        i_med = float(np.median(i_seg))
+        if abs(i_med - i_ref) > i_tol:
+            continue
+        g = seg
+        tt, ii, vv = t[g], i[g], v[g]
+        dt = np.where(np.diff(tt) > DT_MAX_MIN, 0.0,
+                      np.maximum(np.diff(tt), 0.0))
+        q_inc = np.maximum(-(0.5 * (ii[1:] + ii[:-1]) * dt), 0.0)
+        q_cum = np.maximum.accumulate(
+            np.concatenate([[0.0], np.cumsum(q_inc)]) / 60.0)
+        q_end = float(q_cum[-1])
+        if q_end < q_min:
+            continue
+        out.append({"q": q_cum, "v": np.asarray(vv, dtype=float),
+                    "q_end": q_end, "i_med": i_med, "n_pts": int(g.size)})
+    return out
 
 
 def block_throughput_stats(mat_bytes: bytes) -> dict:

@@ -1,0 +1,727 @@
+{
+ "n_cells": 27,
+ "n_traj_points": 313,
+ "bands_pct": [
+  [
+   0.0,
+   15.0
+  ],
+  [
+   15.0,
+   25.0
+  ],
+  [
+   25.0,
+   100.0
+  ]
+ ],
+ "group_table": [
+  {
+   "group": 1,
+   "kind": "combined_c2_5d",
+   "n": 3,
+   "rate_0_15_med": 2.6319462916346135,
+   "rate_15_25_med": 2.6413841295588094,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": 1.00358587785556,
+   "drpol_early_med": 1.8713996396983374,
+   "drpol_late_med": 7.793256755838769,
+   "drpol_full_med": 3.5496858174917145
+  },
+  {
+   "group": 2,
+   "kind": "combined_c4_5d",
+   "n": 3,
+   "rate_0_15_med": 3.3031062923888355,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": 3.1160735867689313,
+   "drpol_late_med": 7.153506196672554,
+   "drpol_full_med": 4.115430546112872
+  },
+  {
+   "group": 3,
+   "kind": "combined_c2_10d",
+   "n": 3,
+   "rate_0_15_med": 3.349887303550399,
+   "rate_15_25_med": 2.6889544501878855,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": 0.8026999736194051,
+   "drpol_early_med": 2.1458450385509162,
+   "drpol_late_med": 12.822189684916326,
+   "drpol_full_med": 4.507636976793064
+  },
+  {
+   "group": 4,
+   "kind": "combined_c4_10d",
+   "n": 3,
+   "rate_0_15_med": 2.9926570477217034,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": 2.8376788569324454,
+   "drpol_late_med": 5.670198922013021,
+   "drpol_full_med": 3.7651269551571125
+  },
+  {
+   "group": 5,
+   "kind": "cycle_only",
+   "n": 3,
+   "rate_0_15_med": 2.4719811304156543,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": 17.885611391055928,
+   "acc_25_100_med": 7.235334918615876,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": NaN,
+   "drpol_late_med": NaN,
+   "drpol_full_med": 8.502401796654743
+  },
+  {
+   "group": 6,
+   "kind": "calendar_only",
+   "n": 1,
+   "rate_0_15_med": 4.724252513794062,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": NaN,
+   "drpol_late_med": NaN,
+   "drpol_full_med": 1.7889394278781907
+  },
+  {
+   "group": 7,
+   "kind": "cccv_90_5d",
+   "n": 3,
+   "rate_0_15_med": 3.979197241768626,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": NaN,
+   "drpol_late_med": NaN,
+   "drpol_full_med": 5.086549460780544
+  },
+  {
+   "group": 8,
+   "kind": "cccv_90_10d",
+   "n": 3,
+   "rate_0_15_med": 4.365053939260726,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": NaN,
+   "drpol_late_med": NaN,
+   "drpol_full_med": 5.704751095253298
+  },
+  {
+   "group": 9,
+   "kind": "cccv_42_5d",
+   "n": 3,
+   "rate_0_15_med": 4.8844904757857135,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": NaN,
+   "drpol_late_med": NaN,
+   "drpol_full_med": 5.222418789635977
+  },
+  {
+   "group": 10,
+   "kind": "cccv_42_10d",
+   "n": 2,
+   "rate_0_15_med": 2.7631822784562265,
+   "rate_15_25_med": NaN,
+   "rate_25_100_med": NaN,
+   "acc_25_100_med": NaN,
+   "acc_15_25_med": NaN,
+   "drpol_early_med": NaN,
+   "drpol_late_med": NaN,
+   "drpol_full_med": 4.2940982545995885
+  }
+ ],
+ "per_cell_band": [
+  {
+   "group": 1,
+   "cell": 9,
+   "kind": "combined_c2_5d",
+   "rate_0_15": 2.6834517192036462,
+   "rate_15_25": 1.8656564409663865,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": 0.6952450187999087
+  },
+  {
+   "group": 1,
+   "cell": 15,
+   "kind": "combined_c2_5d",
+   "rate_0_15": 2.6319462916346135,
+   "rate_15_25": 2.6413841295588094,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": 1.00358587785556
+  },
+  {
+   "group": 1,
+   "cell": 20,
+   "kind": "combined_c2_5d",
+   "rate_0_15": 2.277911575715857,
+   "rate_15_25": 3.6468753305193378,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": 1.6009731762187784
+  },
+  {
+   "group": 2,
+   "cell": 3,
+   "kind": "combined_c4_5d",
+   "rate_0_15": 3.269950036238592,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 2,
+   "cell": 4,
+   "kind": "combined_c4_5d",
+   "rate_0_15": 3.3031062923888355,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 2,
+   "cell": 8,
+   "kind": "combined_c4_5d",
+   "rate_0_15": 3.426748189914964,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 3,
+   "cell": 10,
+   "kind": "combined_c2_10d",
+   "rate_0_15": 3.190987810483311,
+   "rate_15_25": 2.6018917103371377,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": 0.81538754293864
+  },
+  {
+   "group": 3,
+   "cell": 11,
+   "kind": "combined_c2_10d",
+   "rate_0_15": 3.349887303550399,
+   "rate_15_25": 2.6889544501878855,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": 0.8026999736194051
+  },
+  {
+   "group": 3,
+   "cell": 14,
+   "kind": "combined_c2_10d",
+   "rate_0_15": 3.7359959175494324,
+   "rate_15_25": 2.8900516098810543,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": 0.773569263367059
+  },
+  {
+   "group": 4,
+   "cell": 12,
+   "kind": "combined_c4_10d",
+   "rate_0_15": 2.9926570477217034,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 4,
+   "cell": 18,
+   "kind": "combined_c4_10d",
+   "rate_0_15": 3.1315463881029832,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 4,
+   "cell": 19,
+   "kind": "combined_c4_10d",
+   "rate_0_15": 0.5685955272609016,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 5,
+   "cell": 5,
+   "kind": "cycle_only",
+   "rate_0_15": 2.4719811304156543,
+   "rate_15_25": NaN,
+   "rate_25_100": 17.885611391055928,
+   "acc_25_100": 7.235334918615876,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 5,
+   "cell": 6,
+   "kind": "cycle_only",
+   "rate_0_15": 2.285867421574248,
+   "rate_15_25": NaN,
+   "rate_25_100": 13.839236880412653,
+   "acc_25_100": 6.054260518259517,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 5,
+   "cell": 16,
+   "kind": "cycle_only",
+   "rate_0_15": 2.735094028314488,
+   "rate_15_25": NaN,
+   "rate_25_100": 20.663033803639983,
+   "acc_25_100": 7.554780051336538,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 6,
+   "cell": 1,
+   "kind": "calendar_only",
+   "rate_0_15": 4.724252513794062,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 7,
+   "cell": 4,
+   "kind": "cccv_90_5d",
+   "rate_0_15": 4.109558990260036,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 7,
+   "cell": 19,
+   "kind": "cccv_90_5d",
+   "rate_0_15": 2.555684955525411,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 7,
+   "cell": 27,
+   "kind": "cccv_90_5d",
+   "rate_0_15": 3.979197241768626,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 8,
+   "cell": 5,
+   "kind": "cccv_90_10d",
+   "rate_0_15": 4.365053939260726,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 8,
+   "cell": 18,
+   "kind": "cccv_90_10d",
+   "rate_0_15": 4.463148484424444,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 8,
+   "cell": 20,
+   "kind": "cccv_90_10d",
+   "rate_0_15": 4.26187846862703,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 9,
+   "cell": 1,
+   "kind": "cccv_42_5d",
+   "rate_0_15": 4.8844904757857135,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 9,
+   "cell": 8,
+   "kind": "cccv_42_5d",
+   "rate_0_15": 5.019810943132328,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 9,
+   "cell": 9,
+   "kind": "cccv_42_5d",
+   "rate_0_15": 4.835002888940173,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 10,
+   "cell": 22,
+   "kind": "cccv_42_10d",
+   "rate_0_15": 3.528699529671485,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  },
+  {
+   "group": 10,
+   "cell": 25,
+   "kind": "cccv_42_10d",
+   "rate_0_15": 1.9976650272409684,
+   "rate_15_25": NaN,
+   "rate_25_100": NaN,
+   "acc_25_100": NaN,
+   "acc_15_25": NaN
+  }
+ ],
+ "eis_depth_coupling": [
+  {
+   "group": 1,
+   "cell": 9,
+   "kind": "combined_c2_5d",
+   "fade_mol": 15.390346784755081,
+   "fade_eol": 20.561606663478106,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 3.4312340545505706
+  },
+  {
+   "group": 1,
+   "cell": 15,
+   "kind": "combined_c2_5d",
+   "fade_mol": 13.059986158359294,
+   "fade_eol": 18.429012133311907,
+   "drpol_early": 1.7545143403795638,
+   "drpol_late": 7.9163837534563495,
+   "drpol_full": 3.5496858174917145
+  },
+  {
+   "group": 1,
+   "cell": 20,
+   "kind": "combined_c2_5d",
+   "fade_mol": 12.391534289939099,
+   "fade_eol": 18.827633880964612,
+   "drpol_early": 1.9882849390171111,
+   "drpol_late": 7.670129758221188,
+   "drpol_full": 3.9305852486764277
+  },
+  {
+   "group": 2,
+   "cell": 3,
+   "kind": "combined_c4_5d",
+   "fade_mol": 10.37443380410168,
+   "fade_eol": 14.23641787742932,
+   "drpol_early": 2.9844772818116243,
+   "drpol_late": 7.153506196672554,
+   "drpol_full": 4.115430546112872
+  },
+  {
+   "group": 2,
+   "cell": 4,
+   "kind": "combined_c4_5d",
+   "fade_mol": 11.10834325189728,
+   "fade_eol": 16.541617134742516,
+   "drpol_early": 3.1160735867689313,
+   "drpol_late": 7.252546779284533,
+   "drpol_full": 4.474743152199803
+  },
+  {
+   "group": 2,
+   "cell": 8,
+   "kind": "combined_c4_5d",
+   "fade_mol": 10.816221327594588,
+   "fade_eol": 14.638396338306059,
+   "drpol_early": 3.2428742846186247,
+   "drpol_late": 5.9814720508426875,
+   "drpol_full": 3.957938947751195
+  },
+  {
+   "group": 3,
+   "cell": 10,
+   "kind": "combined_c2_10d",
+   "fade_mol": 16.114323438448753,
+   "fade_eol": 20.863886487480887,
+   "drpol_early": 2.1458450385509162,
+   "drpol_late": 14.079144714928406,
+   "drpol_full": 4.862403107919178
+  },
+  {
+   "group": 3,
+   "cell": 11,
+   "kind": "combined_c2_10d",
+   "fade_mol": 16.895020328007494,
+   "fade_eol": 21.807106995551674,
+   "drpol_early": 2.0557681095194114,
+   "drpol_late": 12.822189684916326,
+   "drpol_full": 4.480922252545127
+  },
+  {
+   "group": 3,
+   "cell": 14,
+   "kind": "combined_c2_10d",
+   "fade_mol": 14.192320352179898,
+   "fade_eol": 21.461858064006478,
+   "drpol_early": 2.5073379910378257,
+   "drpol_late": 8.41282120326649,
+   "drpol_full": 4.507636976793064
+  },
+  {
+   "group": 4,
+   "cell": 12,
+   "kind": "combined_c4_10d",
+   "fade_mol": 9.957628197062995,
+   "fade_eol": 14.805310329216748,
+   "drpol_early": 2.8376788569324454,
+   "drpol_late": 5.670198922013021,
+   "drpol_full": 3.7651269551571125
+  },
+  {
+   "group": 4,
+   "cell": 18,
+   "kind": "combined_c4_10d",
+   "fade_mol": 10.217395295451759,
+   "fade_eol": 15.020925826042342,
+   "drpol_early": 2.615344637971991,
+   "drpol_late": 5.432945795556623,
+   "drpol_full": 3.516383185144629
+  },
+  {
+   "group": 4,
+   "cell": 19,
+   "kind": "combined_c4_10d",
+   "fade_mol": 5.651337967359227,
+   "fade_eol": 9.942476658778821,
+   "drpol_early": 5.05990672742619,
+   "drpol_late": 5.79376612779094,
+   "drpol_full": 5.376637917756583
+  },
+  {
+   "group": 5,
+   "cell": 5,
+   "kind": "cycle_only",
+   "fade_mol": NaN,
+   "fade_eol": 61.40914797088809,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": NaN
+  },
+  {
+   "group": 5,
+   "cell": 6,
+   "kind": "cycle_only",
+   "fade_mol": NaN,
+   "fade_eol": 57.99332406603463,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 9.819389337841372
+  },
+  {
+   "group": 5,
+   "cell": 16,
+   "kind": "cycle_only",
+   "fade_mol": NaN,
+   "fade_eol": 67.35942310238703,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 7.185414255468114
+  },
+  {
+   "group": 6,
+   "cell": 1,
+   "kind": "calendar_only",
+   "fade_mol": NaN,
+   "fade_eol": 3.992615338838823,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 1.7889394278781907
+  },
+  {
+   "group": 7,
+   "cell": 4,
+   "kind": "cccv_90_5d",
+   "fade_mol": NaN,
+   "fade_eol": 9.683219522641407,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.360302622349438
+  },
+  {
+   "group": 7,
+   "cell": 19,
+   "kind": "cccv_90_5d",
+   "fade_mol": NaN,
+   "fade_eol": 10.238893797123072,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 4.722106797668432
+  },
+  {
+   "group": 7,
+   "cell": 27,
+   "kind": "cccv_90_5d",
+   "fade_mol": NaN,
+   "fade_eol": 10.033716253723057,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.086549460780544
+  },
+  {
+   "group": 8,
+   "cell": 5,
+   "kind": "cccv_90_10d",
+   "fade_mol": NaN,
+   "fade_eol": 9.693093352562132,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.479463992365338
+  },
+  {
+   "group": 8,
+   "cell": 18,
+   "kind": "cccv_90_10d",
+   "fade_mol": NaN,
+   "fade_eol": 9.727838265577471,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.704751095253298
+  },
+  {
+   "group": 8,
+   "cell": 20,
+   "kind": "cccv_90_10d",
+   "fade_mol": NaN,
+   "fade_eol": 9.438405158018314,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.8258052159677485
+  },
+  {
+   "group": 9,
+   "cell": 1,
+   "kind": "cccv_42_5d",
+   "fade_mol": NaN,
+   "fade_eol": 9.915458542460065,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.222418789635977
+  },
+  {
+   "group": 9,
+   "cell": 8,
+   "kind": "cccv_42_5d",
+   "fade_mol": NaN,
+   "fade_eol": 9.881979011108644,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.18298884691255
+  },
+  {
+   "group": 9,
+   "cell": 9,
+   "kind": "cccv_42_5d",
+   "fade_mol": NaN,
+   "fade_eol": 9.446507225351953,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 5.3919125646042465
+  },
+  {
+   "group": 10,
+   "cell": 2,
+   "kind": "cccv_42_10d",
+   "fade_mol": NaN,
+   "fade_eol": NaN,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": NaN
+  },
+  {
+   "group": 10,
+   "cell": 22,
+   "kind": "cccv_42_10d",
+   "fade_mol": NaN,
+   "fade_eol": 21.50017236404831,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 4.130811674259396
+  },
+  {
+   "group": 10,
+   "cell": 25,
+   "kind": "cccv_42_10d",
+   "fade_mol": NaN,
+   "fade_eol": 21.546655170351148,
+   "drpol_early": NaN,
+   "drpol_late": NaN,
+   "drpol_full": 4.457384834939781
+  }
+ ],
+ "g5_vs_g1_4": {
+  "g5_deep_rate_med": 17.885611391055928,
+  "g5_early_rate_med": 2.4719811304156543,
+  "g5_acc_25_100_med": 7.235334918615876,
+  "g5_n_deep_cells": 3,
+  "g1_4_early_rate_med": 3.161267099293147,
+  "g1_4_rate_15_25_med": 2.6651692898733472,
+  "g1_4_acc_15_25_med": 0.8090437582790226,
+  "late_over_early_drpol": 2.39690422181075,
+  "drpol_early_med_g1_4": 2.615344637971991,
+  "drpol_late_med_g1_4": 7.252546779284533,
+  "drpol_full_med_g5": 8.502401796654743
+ },
+ "caveats": [
+  "fade 带内 OLS 需 ≥3 点；flag=1 为无数据档（不用默认值顶实测标签）",
+  "G5 无 MoL 谱：早/晚段分割只在 G1–4 可做；G5 只有 BoL→EoL 全程代价",
+  "G5 C5 无 EoL 谱（EIS 全程代价 n=2）",
+  "EIS 特征同芯 SOC 中位（20/50/80 三谱）",
+  "G1–4 晚段 fade 区间窄（5–8%）→ 比值散布大，用逐芯配对中位",
+  "短轨迹（G7–10，5–6 点）深带无点，不入加速比",
+  "带边界（15/25%）与 EIS 段边界（MoL 落点 10–17%）不重合"
+ ],
+ "verdict": "深段加速定位 + 阻抗-深度耦合收口（27 芯/313 轨迹点、EIS 三阶段逐芯配对）——① 轨迹侧：深段加速确认（>25% 带速率/早带 = 7.2×，深段中位 17.9 vs 早段 2.47 %/100 EFC）；G1–4（止步 21%）15–25% 带与早带持平（比 0.81×）。② EIS 侧：阻抗每 % fade 代价晚段抬升（晚/早 = 2.4×，早 2.62 → 晚 7.25 mΩ/%）；G5 全程代价 8.50 mΩ/% ≈ G1–4 晚段水平（7.25）而非早段（2.62）。③ 共变判读：fade>25% 深段加速与阻抗每 % fade 代价抬升深段同向但**非锁定**（阻抗代价随深度单调抬升发生在 fade 放平段——G1–4 代价 2.4× 而速率 0.81×，与 50「fade 后段放缓而阻抗加速」解耦一致；fade 速率加速只在 >25% 膝区出现，G5 深段两量合流与 49「后段阻抗链份额 63%」/50「fade 后段放缓而阻抗加速」的容量-阻抗解耦图景拼合）。⚠️ fade 带内 OLS 需 ≥3 点（flag=1 为无数据档，不用默认值顶）；短轨迹（G7–10 仅 5–6 点）深带全 flag；G5 C5 无 EoL 谱（全程代价 n=2）；EIS 特征同芯 SOC 中位（谱间散布见 47–49）；早/晚段窗口由 MoL 落点决定（fade_mol 10–17%），带边界与段边界不完全重合；G1–4 晚段只跨 5–8% fade（分母窄→比值散布大，逐芯配对线见图 55a 右）。"
+}

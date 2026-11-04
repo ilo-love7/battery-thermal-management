@@ -434,3 +434,37 @@ def cell_mode_trajectory(
         fade_at_eol=float(traj["fade"].iloc[-1]),
         peak_track=peak_track,
     )
+
+
+def mode_split_trajectory(
+    curves: list[dict], ref_idx: int = 0,
+) -> pd.DataFrame:
+    """多条 V(q) 段（dict 含 q, v, + 任意元数据列）→ 逐条 mode_split。
+
+    与 cell_mode_trajectory 同分解核，但输入是已提取的 V(q) 曲线段
+    （Oxford RPT 块的 block_cc_discharge_curve 输出），元数据（group/
+    cell/step/efc/fade_pct…）原样透传到输出表。参考 = curves[ref_idx]
+    （BoL 段）。fade_pct 可由调用方预计算（=1−q_end/q_bol）后透传。
+    输出列：元数据 + loss_eod/q_shift/q_shape/share_shape/gamma/r2/
+    basis_corr/qsum_err/low_quality/boundary/q_end。
+    """
+    if not curves:
+        return pd.DataFrame()
+    ref = curves[ref_idx]
+    q_ref, v_ref = resample_discharge(
+        {"q": np.asarray(ref["q"], dtype=float),
+         "v": np.asarray(ref["v"], dtype=float)})
+    rows = []
+    for k, cur in enumerate(curves):
+        qg, vg = resample_discharge(
+            {"q": np.asarray(cur["q"], dtype=float),
+             "v": np.asarray(cur["v"], dtype=float)})
+        sp = mode_split(q_ref, v_ref, qg, vg, cycle_number=k)
+        row = sp.to_dict()
+        row["q_end"] = float(np.asarray(cur["q"], dtype=float)[-1]) \
+            if len(cur["q"]) else 0.0
+        for key, val in cur.items():
+            if key not in ("q", "v"):
+                row[key] = val
+        rows.append(row)
+    return pd.DataFrame(rows)

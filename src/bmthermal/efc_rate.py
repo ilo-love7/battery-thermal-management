@@ -216,3 +216,42 @@ def early_rate_band(traj: pd.DataFrame, fade_cap: float = 15.0,
             "band": [float(np.nanmin(med_by_k)), float(np.nanmax(med_by_k))],
         }
     return out
+
+
+# ---------------------------------------------------------------------------
+# fade 深度分带速率（v1.16）：深段加速的逐带定位
+# ---------------------------------------------------------------------------
+
+def segment_band_rates(traj: pd.DataFrame,
+                       bands: tuple = ((0.0, 15.0), (15.0, 25.0),
+                                       (25.0, 40.0), (40.0, 100.0)),
+                       min_pts: int = 3) -> pd.DataFrame:
+    """fade 深度分带的逐芯局部速率（%/100 EFC）——深段加速定位。
+
+    对每芯每个 fade 带 [lo, hi)：取带内轨迹点做 fade~efc OLS 斜率；
+    点数 < min_pts 或 efc 跨度≈0 时速率记 NaN 并 flag=1。带间速率比
+    （加速比）由调用方组合（深带/首带）。负 fade 点（q_bol 噪声）
+    不参与（fade<0 不落任何带）。返回长表：
+    group, cell, band_lo, band_hi, n_pts, rate_band, flag。
+    """
+    rows = []
+    for (g, cell), sub in traj.groupby(["group", "cell"]):
+        s = sub.sort_values("efc")
+        for lo, hi in bands:
+            m = (s.fade_pct >= lo) & (s.fade_pct < hi)
+            pts = s[m]
+            if len(pts) < min_pts or \
+                    pts.efc.max() - pts.efc.min() < 1e-9:
+                rows.append({"group": int(g), "cell": int(cell),
+                             "band_lo": lo, "band_hi": hi,
+                             "n_pts": int(len(pts)),
+                             "rate_band": float("nan"), "flag": 1})
+                continue
+            slope = float(np.polyfit(
+                pts.efc.to_numpy(float),
+                pts.fade_pct.to_numpy(float), 1)[0]) * 100.0
+            rows.append({"group": int(g), "cell": int(cell),
+                         "band_lo": lo, "band_hi": hi,
+                         "n_pts": int(len(pts)),
+                         "rate_band": slope, "flag": 0})
+    return pd.DataFrame(rows)
