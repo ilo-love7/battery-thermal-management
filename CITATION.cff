@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below and also cite the datasets you use."
+title: "battery-thermal-management: cooling scheme evaluation and lifetime accounting by simulation"
+abstract: >-
+  A reproducible PyBaMM-based pipeline that answers two questions for early
+  battery thermal management design without a test bench: how much heat a cell
+  produces, and how to cool it. Provides an analytic selection map (h x C-rate
+  to steady temperature rise), Arrhenius lifetime accounting across cooling
+  schemes (4.6x relative lifetime for a cold plate vs natural convection at 3C),
+  core-vs-surface temperature diagnostics, and deep-fade failure mechanics
+  (band rate acceleration, EIS depth coupling, V(Q) mode split).
+version: 1.16.0
+date-released: 2026-11-05
+license: MIT
+repository-code: "https://github.com/ilo-love7/battery-thermal-management"
+keywords:
+  - battery
+  - thermal-management
+  - cooling
+  - pybamm
+  - arrhenius
+  - simulation
+  - state-of-health
+authors:
+  - name: "ilo-love7"
+references:
+  - type: software
+    title: "PyBaMM: Python Battery Mathematical Modelling"
+    url: "https://github.com/pybamm-team/PyBaMM"
+    year: 2021
